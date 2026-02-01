@@ -319,6 +319,11 @@ class Database:
         """, (status, agent_id))
         self.conn.commit()
 
+    def get_transaction_count_total(self) -> int:
+        """Get total number of transactions in database."""
+        result = self.conn.execute("SELECT COUNT(*) as count FROM transactions").fetchone()
+        return result['count'] if result else 0
+
     def close(self):
         """Close database connection."""
         self.conn.close()

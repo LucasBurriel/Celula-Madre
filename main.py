@@ -20,48 +20,67 @@ def main():
     print("[Setup] Initializing database...")
     db = Database("celula_madre.db")
 
-    # Create initial population (3 agents with different prompts)
-    print("[Setup] Creating initial agent population...")
-    initial_prompts = [
-        "You are a helpful Python coding assistant. Generate clean, working code.",
-        "You are a minimalist coder. Prefer brevity and simplicity.",
-        "You are a documentation-focused developer. Always include comprehensive docstrings and comments."
-    ]
+    # EXPERIMENTAL vs CONTROL GROUP
+    USE_GUIDED_MUTATION = True  # CONTROL GROUP: Random mutations
 
-    agents = []
-    for i, prompt in enumerate(initial_prompts):
-        config = AgentConfig(
-            agent_id=f"agent_gen0_{i}",
-            generation=0,
-            parent_id=None,
-            system_prompt=prompt
-        )
-        agent = SimpleAgent(config)
-        agents.append(agent)
-        db.save_agent(config)
-        print(f"  Created: {config.agent_id}")
+    # Check for existing checkpoint (resume support)
+    existing_agents = db.get_all_agents()
+    completed_txs = db.get_transaction_count_total()
+
+    if existing_agents and completed_txs > 0:
+        print(f"[RESUME] Found checkpoint: {completed_txs} transactions completed, {len(existing_agents)} agents")
+        agents = []
+        for agent_config in existing_agents:
+            if agent_config.status == "active":
+                agent = SimpleAgent(agent_config)
+                agents.append(agent)
+        print(f"[RESUME] Loaded {len(agents)} active agents")
+        start_tx = completed_txs
+    else:
+        # Create initial population (3 agents with different prompts)
+        print("[Setup] Creating initial agent population...")
+        initial_prompts = [
+            "You are a helpful Python coding assistant. Generate clean, working code.",
+            "You are a minimalist coder. Prefer brevity and simplicity.",
+            "You are a documentation-focused developer. Always include comprehensive docstrings and comments."
+        ]
+
+        agents = []
+        for i, prompt in enumerate(initial_prompts):
+            config = AgentConfig(
+                agent_id=f"agent_gen0_{i}",
+                generation=0,
+                parent_id=None,
+                system_prompt=prompt
+            )
+            agent = SimpleAgent(config)
+            agents.append(agent)
+            db.save_agent(config)
+            print(f"  Created: {config.agent_id}")
+        start_tx = 0
 
     # Initialize marketplace and evolution
     print("\n[Setup] Initializing marketplace and evolution engine...")
     marketplace = Marketplace(agents, db)
 
-    # EXPERIMENTAL vs CONTROL GROUP
-    # Set use_guided_mutation=True for price-guided evolution (experimental)
-    # Set use_guided_mutation=False for random mutations (control group)
-    USE_GUIDED_MUTATION = False  # CONTROL GROUP: Random mutations
     evolution_engine = EvolutionaryEngine(use_guided_mutation=USE_GUIDED_MUTATION)
 
     print(f"   Mode: {'EXPERIMENTAL (guided evolution)' if USE_GUIDED_MUTATION else 'CONTROL (random mutations)'}")
 
     # Simulate transactions
     NUM_TRANSACTIONS = 200  # Full experiment
-    print(f"\n[Simulation] Running {NUM_TRANSACTIONS} transactions...")
+    remaining = NUM_TRANSACTIONS - start_tx
+    print(f"\n[Simulation] Running {remaining} remaining transactions ({start_tx}/{NUM_TRANSACTIONS} done)...")
     print("-" * 60)
 
-    for i in range(NUM_TRANSACTIONS):
+    for i in range(start_tx, NUM_TRANSACTIONS):
         # Generate and process request
-        request = marketplace.generate_request()
-        transaction = marketplace.process_request(request)
+        try:
+            request = marketplace.generate_request()
+            transaction = marketplace.process_request(request)
+        except Exception as e:
+            print(f"[Tx {i+1:2d}] ERROR: {e} — skipping")
+            continue
 
         # Update database
         db.save_transaction(transaction)
@@ -75,22 +94,25 @@ def main():
 
         # Evolve every 10 transactions
         if (i + 1) % 10 == 0:
-            new_agent = evolution_engine.evolve_generation(agents, db)
-            agents.append(new_agent)
-            marketplace.agents = agents  # Update marketplace
+            try:
+                new_agent = evolution_engine.evolve_generation(agents, db)
+                agents.append(new_agent)
+                marketplace.agents = agents  # Update marketplace
 
-            print()
-            print(">> EVOLUTION: New agent created!")
-            print(f"   ID: {new_agent.config.agent_id}")
-            print(f"   Generation: {new_agent.config.generation}")
-            print(f"   Parent: {new_agent.config.parent_id}")
-            print(f"   Prompt (first 80 chars): {new_agent.config.system_prompt[:80]}...")
+                print()
+                print(">> EVOLUTION: New agent created!")
+                print(f"   ID: {new_agent.config.agent_id}")
+                print(f"   Generation: {new_agent.config.generation}")
+                print(f"   Parent: {new_agent.config.parent_id}")
+                print(f"   Prompt (first 80 chars): {new_agent.config.system_prompt[:80]}...")
 
-            # Retire old agents
-            current_generation = max(a.config.generation for a in agents)
-            retired = marketplace.retire_old_agents(current_generation)
-            if retired:
-                print(f"   >> RETIRED {len(retired)} agents: {[a.config.agent_id for a in retired]}")
+                # Retire old agents
+                current_generation = max(a.config.generation for a in agents)
+                retired = marketplace.retire_old_agents(current_generation)
+                if retired:
+                    print(f"   >> RETIRED {len(retired)} agents: {[a.config.agent_id for a in retired]}")
+            except Exception as e:
+                print(f"   >> EVOLUTION ERROR: {e} — continuing without evolution")
 
             print("-" * 60)
 

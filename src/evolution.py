@@ -1,16 +1,17 @@
 """
 Evolutionary engine module for Célula Madre MVP.
 Handles agent selection, mutation, and evolution.
+Supports Anthropic Claude and Google Gemini as backends.
 """
 
+import os
 from dotenv import load_dotenv
 load_dotenv()
 
 import random
 from typing import List
-from anthropic import Anthropic
 
-from src.agent import SimpleAgent
+from src.agent import SimpleAgent, PROVIDER
 from src.database import AgentConfig, Database
 
 
@@ -19,14 +20,51 @@ class EvolutionaryEngine:
 
     def __init__(self, use_guided_mutation: bool = True):
         """
-        Initialize evolutionary engine with Claude client.
+        Initialize evolutionary engine.
 
         Args:
-            use_guided_mutation: If True, use Claude to evolve prompts based on performance.
+            use_guided_mutation: If True, use LLM to evolve prompts based on performance.
                                  If False, use random mutations (control group).
         """
-        self.client = Anthropic()
         self.use_guided_mutation = use_guided_mutation
+        self.provider = PROVIDER
+
+        if self.provider == "local":
+            from openai import OpenAI
+            from src.agent import LOCAL_BASE_URL, LOCAL_MODEL
+            self.client = OpenAI(base_url=LOCAL_BASE_URL, api_key="lm-studio")
+            self.local_model = LOCAL_MODEL
+        elif self.provider == "anthropic":
+            from anthropic import Anthropic
+            self.client = Anthropic()
+        else:
+            from google import genai
+            api_key = os.environ.get("GOOGLE_API_KEY")
+            self.client = genai.Client(api_key=api_key)
+
+    def _llm_generate(self, prompt: str) -> str:
+        """Generate text using the configured LLM provider."""
+        if self.provider == "local":
+            response = self.client.chat.completions.create(
+                model=self.local_model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=512,
+                temperature=0.7
+            )
+            return response.choices[0].message.content.strip()
+        elif self.provider == "anthropic":
+            response = self.client.messages.create(
+                model="claude-3-5-haiku-20241022",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=512
+            )
+            return response.content[0].text.strip()
+        else:
+            response = self.client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt
+            )
+            return response.text.strip()
 
     def select_parent(self, agents: List[SimpleAgent], db: Database) -> SimpleAgent:
         """
@@ -36,10 +74,6 @@ class EvolutionaryEngine:
         - 80% probability: Select best agent by LINEAGE revenue (CMP)
         - 20% probability: Select random agent (exploration)
 
-        CMP measures the success of an agent's entire family tree,
-        not just individual performance. This identifies "good seeds"
-        that produce successful descendants.
-
         Args:
             agents: List of available agents
             db: Database to query lineage information
@@ -48,21 +82,17 @@ class EvolutionaryEngine:
             Selected parent agent
         """
         if random.random() < 0.8:
-            # CMP: Best by lineage revenue (agent + all descendants)
             lineage_scores = {
                 agent: db.get_lineage_revenue(agent.config.agent_id)
                 for agent in agents
             }
             return max(lineage_scores, key=lineage_scores.get)
         else:
-            # Exploration: Random
             return random.choice(agents)
 
     def mutate_prompt_random(self, parent_prompt: str) -> str:
         """
         Generate random mutation of prompt (control group).
-
-        Applies simple random text transformations without using performance data.
 
         Args:
             parent_prompt: Current agent's system prompt
@@ -80,16 +110,12 @@ class EvolutionaryEngine:
             lambda p: " ".join(p.split()[:10]) + " and write excellent code.",
         ]
 
-        # Apply random mutation
         mutation = random.choice(mutations)
         return mutation(parent_prompt)
 
     def mutate_prompt(self, parent_prompt: str, performance_data: dict) -> str:
         """
         Generate improved prompt based on parent and performance data.
-
-        Uses Claude to evolve the system prompt based on market feedback,
-        or applies random mutations if in control mode.
 
         Args:
             parent_prompt: Current agent's system prompt
@@ -98,11 +124,9 @@ class EvolutionaryEngine:
         Returns:
             New evolved system prompt
         """
-        # Control group: random mutations
         if not self.use_guided_mutation:
             return self.mutate_prompt_random(parent_prompt)
 
-        # Experimental group: guided evolution
         mutation_instruction = f"""You are optimizing a coding agent's system prompt based on market feedback.
 
 Current prompt:
@@ -121,22 +145,11 @@ Consider what clients valued (brevity, documentation, tests, simplicity).
 
 Return ONLY the new prompt, no explanation."""
 
-        response = self.client.messages.create(
-            model="claude-3-5-haiku-20241022",
-            messages=[{"role": "user", "content": mutation_instruction}],
-            max_tokens=512
-        )
-
-        return response.content[0].text.strip()
+        return self._llm_generate(mutation_instruction)
 
     def evolve_generation(self, agents: List[SimpleAgent], db: Database) -> SimpleAgent:
         """
         Create new agent variant from population.
-
-        Process:
-        1. Select parent (CMP + epsilon)
-        2. Mutate parent's prompt
-        3. Create new agent with evolved prompt
 
         Args:
             agents: Current agent population
@@ -145,13 +158,10 @@ Return ONLY the new prompt, no explanation."""
         Returns:
             Newly created agent
         """
-        # Select parent using CMP
         parent = self.select_parent(agents, db)
 
-        # Get feedback from recent transactions
         feedback = db.get_recent_feedback(parent.config.agent_id, limit=5)
 
-        # Prepare performance data
         performance_data = {
             'total_revenue': parent.config.total_revenue,
             'transaction_count': parent.config.transaction_count,
@@ -159,10 +169,8 @@ Return ONLY the new prompt, no explanation."""
             'feedback_samples': '\n'.join([f"- {f}" for f in feedback]) if feedback else "- No feedback yet"
         }
 
-        # Mutate prompt
         new_prompt = self.mutate_prompt(parent.config.system_prompt, performance_data)
 
-        # Create new agent
         new_config = AgentConfig(
             agent_id=f"agent_gen{parent.config.generation + 1}_{random.randint(1000, 9999)}",
             generation=parent.config.generation + 1,
@@ -171,8 +179,6 @@ Return ONLY the new prompt, no explanation."""
         )
 
         new_agent = SimpleAgent(new_config)
-
-        # Save to DB
         db.save_agent(new_config)
 
         return new_agent

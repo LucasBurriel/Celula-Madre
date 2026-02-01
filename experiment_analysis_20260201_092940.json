@@ -1,0 +1,100 @@
+{
+  "analysis_date": "2026-02-01T09:29:40.417594",
+  "analyzed_databases": 4,
+  "individual_results": [
+    {
+      "experiment_name": "Latest Experiment",
+      "database_path": "/home/ubuntu/.openclaw/workspace/Celula-Madre/celula_madre.db",
+      "total_transactions": 1,
+      "total_agents": 3,
+      "gen0_stats": {
+        "count": 3,
+        "total_revenue": 18.0,
+        "total_transactions": 1,
+        "total_costs": 0.0,
+        "avg_revenue": 6.0,
+        "avg_price_per_tx": 18.0,
+        "max_generation": 0
+      },
+      "evolved_stats": null,
+      "improvement_pct": 0,
+      "tx_by_generation": {
+        "0": 1
+      },
+      "analysis_timestamp": "2026-02-01T09:29:40.416764"
+    },
+    {
+      "experiment_name": "Guided Evolution",
+      "database_path": "/home/ubuntu/.openclaw/workspace/Celula-Madre/control_experiment_guided_evolution.db",
+      "total_transactions": 1,
+      "total_agents": 3,
+      "gen0_stats": {
+        "count": 3,
+        "total_revenue": 7.0,
+        "total_transactions": 1,
+        "total_costs": 0.0,
+        "avg_revenue": 2.3333333333333335,
+        "avg_price_per_tx": 7.0,
+        "max_generation": 0
+      },
+      "evolved_stats": null,
+      "improvement_pct": 0,
+      "tx_by_generation": {
+        "0": 1
+      },
+      "analysis_timestamp": "2026-02-01T09:29:40.416999"
+    },
+    {
+      "experiment_name": "MVP2 Backup",
+      "database_path": "/home/ubuntu/.openclaw/workspace/Celula-Madre/celula_madre_mvp2_backup.db",
+      "total_transactions": 306,
+      "total_agents": 35,
+      "gen0_stats": {
+        "count": 3,
+        "total_revenue": 950.0,
+        "total_transactions": 79,
+        "total_costs": 0.0,
+        "avg_revenue": 316.6666666666667,
+        "avg_price_per_tx": 10.79621095750128,
+        "max_generation": 0
+      },
+      "evolved_stats": {
+        "count": 32,
+        "total_revenue": 2819.0,
+        "total_transactions": 227,
+        "total_costs": 0.0,
+        "avg_revenue": 88.09375,
+        "avg_price_per_tx": 7.869877273344894,
+        "max_generation": 3
+      },
+      "improvement_pct": -27.10519177214808,
+      "tx_by_generation": {
+        "0": 79,
+        "1": 175,
+        "2": 49,
+        "3": 3
+      },
+      "analysis_timestamp": "2026-02-01T09:29:40.417364"
+    },
+    {
+      "experiment_name": "Pre-Control",
+      "database_path": "/home/ubuntu/.openclaw/workspace/Celula-Madre/celula_madre_pre_control.db",
+      "total_transactions": 0,
+      "total_agents": 3,
+      "gen0_stats": {
+        "count": 3,
+        "total_revenue": 0.0,
+        "total_transactions": 0,
+        "total_costs": 0.0,
+        "avg_revenue": 0.0,
+        "avg_price_per_tx": 0,
+        "max_generation": 0
+      },
+      "evolved_stats": null,
+      "improvement_pct": 0,
+      "tx_by_generation": {},
+      "analysis_timestamp": "2026-02-01T09:29:40.417577"
+    }
+  ],
+  "summary": "Control group analysis of C\u00e9lula Madre evolution experiments"
+}
