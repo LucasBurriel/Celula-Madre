@@ -29,6 +29,7 @@ def main():
     parser.add_argument("--lookback", type=int, default=30, help="Days of history per example")
     parser.add_argument("--no-merge", action="store_true", help="Disable structural merge")
     parser.add_argument("--output", type=str, default=None, help="Output JSON file")
+    parser.add_argument("--resume", type=str, default=None, help="Resume from checkpoint JSON file")
     args = parser.parse_args()
     
     # Load data
@@ -72,11 +73,24 @@ def main():
     def log_callback(msg):
         with open(log_file, "a") as f:
             f.write(f"[{time.strftime('%H:%M:%S')}] {msg}\n")
+            f.flush()
     
     print(f"\nLog: {log_file}")
     print(f"Config: pop={config.population_size}, gens={config.max_generations}, "
           f"mut={config.mutation_rate}, merge={'on' if config.enable_merge else 'off'}")
     print(f"LLM: {args.model} @ {args.base_url}")
+    
+    # Checkpoint directory
+    checkpoint_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "checkpoints")
+    
+    # Resume from checkpoint if specified
+    resume_checkpoint = None
+    if args.resume:
+        if os.path.exists(args.resume):
+            resume_checkpoint = EvolutionEngine.load_checkpoint(args.resume)
+            print(f"Resuming from: {args.resume} (gen {resume_checkpoint['generation']})")
+        else:
+            print(f"Warning: checkpoint {args.resume} not found, starting fresh")
     
     # Run evolution
     engine = EvolutionEngine(config)
@@ -88,6 +102,8 @@ def main():
         test_examples=test,
         seed_strategies=SEED_STRATEGIES[:config.population_size],
         log_callback=log_callback,
+        checkpoint_dir=checkpoint_dir,
+        resume_checkpoint=resume_checkpoint,
     )
     
     total_time = time.time() - start_time

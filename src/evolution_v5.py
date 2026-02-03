@@ -38,6 +38,7 @@ def call_llm(
                 ],
                 "temperature": temperature,
                 "max_tokens": max_tokens,
+                "no_think": True,
             },
             timeout=120,
         )
@@ -331,6 +332,88 @@ class EvolutionEngine:
         self.pareto_frontier: list[Agent] = []
         self.best_per_instance: dict[int, Agent] = {}
         self.history: list[dict] = []  # Log of every generation
+        self.checkpoint_dir = None
+    
+    def save_checkpoint(self, population: list[Agent], best_agent: Agent, best_val_accuracy: float, gen: int):
+        """Save checkpoint after each generation."""
+        if not self.checkpoint_dir:
+            return
+        
+        checkpoint = {
+            "generation": gen,
+            "agent_counter": self.agent_counter,
+            "best_val_accuracy": best_val_accuracy,
+            "best_agent_id": best_agent.id,
+            "history": self.history,
+            "population": [
+                {
+                    "id": a.id,
+                    "strategy_prompt": a.strategy_prompt,
+                    "generation": a.generation,
+                    "parents": a.parents,
+                    "dev_accuracy": a.dev_accuracy,
+                    "val_accuracy": a.val_accuracy,
+                    "val_instance_wins": list(a.val_instance_wins),
+                }
+                for a in population
+            ],
+            "pareto_frontier": [
+                {
+                    "id": a.id,
+                    "strategy_prompt": a.strategy_prompt,
+                    "generation": a.generation,
+                    "parents": a.parents,
+                    "dev_accuracy": a.dev_accuracy,
+                    "val_accuracy": a.val_accuracy,
+                    "val_instance_wins": list(a.val_instance_wins),
+                }
+                for a in self.pareto_frontier
+            ],
+        }
+        
+        filepath = os.path.join(self.checkpoint_dir, f"checkpoint_gen{gen}.json")
+        latest = os.path.join(self.checkpoint_dir, "checkpoint_latest.json")
+        
+        with open(filepath, "w") as f:
+            json.dump(checkpoint, f, indent=2, ensure_ascii=False)
+        with open(latest, "w") as f:
+            json.dump(checkpoint, f, indent=2, ensure_ascii=False)
+        
+        print(f"  💾 Checkpoint saved: {filepath}")
+    
+    @staticmethod
+    def load_checkpoint(filepath: str) -> dict:
+        """Load checkpoint from file."""
+        with open(filepath) as f:
+            return json.load(f)
+    
+    def restore_from_checkpoint(self, checkpoint: dict) -> list[Agent]:
+        """Restore engine state from checkpoint. Returns population."""
+        self.agent_counter = checkpoint["agent_counter"]
+        self.history = checkpoint["history"]
+        
+        def _dict_to_agent(d: dict) -> Agent:
+            a = Agent(
+                id=d["id"],
+                strategy_prompt=d["strategy_prompt"],
+                generation=d["generation"],
+                parents=d.get("parents", []),
+            )
+            a.dev_accuracy = d.get("dev_accuracy", 0.0)
+            a.val_accuracy = d.get("val_accuracy", 0.0)
+            a.val_instance_wins = set(d.get("val_instance_wins", []))
+            return a
+        
+        population = [_dict_to_agent(d) for d in checkpoint["population"]]
+        self.pareto_frontier = [_dict_to_agent(d) for d in checkpoint.get("pareto_frontier", [])]
+        
+        # Rebuild best_per_instance from pareto frontier
+        self.best_per_instance = {}
+        for agent in self.pareto_frontier:
+            for idx in agent.val_instance_wins:
+                self.best_per_instance[idx] = agent
+        
+        return population
     
     def _new_agent(self, strategy: str, parents: list[int] = []) -> Agent:
         agent = Agent(
@@ -383,24 +466,45 @@ class EvolutionEngine:
         test_examples: list[MarketExample],
         seed_strategies: list[str] = SEED_STRATEGIES,
         log_callback=None,
+        checkpoint_dir: str = None,
+        resume_checkpoint: dict = None,
     ) -> Agent:
         """Run the full evolution."""
         cfg = self.config
+        self.checkpoint_dir = checkpoint_dir
         
-        # Initialize population with seed strategies
-        population = []
-        for strategy in seed_strategies[:cfg.population_size]:
-            population.append(self._new_agent(strategy))
+        # Ensure checkpoint dir exists
+        if checkpoint_dir:
+            os.makedirs(checkpoint_dir, exist_ok=True)
         
-        # Fill remaining with variations
-        while len(population) < cfg.population_size:
-            base = random.choice(seed_strategies)
-            population.append(self._new_agent(base))
+        start_gen = 0
         
-        best_val_accuracy = 0.0
-        best_agent = population[0]
+        if resume_checkpoint:
+            # Resume from checkpoint
+            population = self.restore_from_checkpoint(resume_checkpoint)
+            start_gen = resume_checkpoint["generation"] + 1
+            best_val_accuracy = resume_checkpoint["best_val_accuracy"]
+            # Find best agent in population
+            best_id = resume_checkpoint["best_agent_id"]
+            best_agent = next((a for a in population if a.id == best_id), population[0])
+            print(f"  ⏩ Resuming from generation {start_gen} (best_val={best_val_accuracy:.0%})")
+            if log_callback:
+                log_callback(f"Resumed from checkpoint gen {start_gen-1} (best_val={best_val_accuracy:.0%})")
+        else:
+            # Initialize population with seed strategies
+            population = []
+            for strategy in seed_strategies[:cfg.population_size]:
+                population.append(self._new_agent(strategy))
+            
+            # Fill remaining with variations
+            while len(population) < cfg.population_size:
+                base = random.choice(seed_strategies)
+                population.append(self._new_agent(base))
+            
+            best_val_accuracy = 0.0
+            best_agent = population[0]
         
-        for gen in range(cfg.max_generations):
+        for gen in range(start_gen, cfg.max_generations):
             self.generation = gen
             gen_start = time.time()
             
@@ -468,6 +572,9 @@ class EvolutionEngine:
             print(summary)
             if log_callback:
                 log_callback(summary)
+            
+            # Save checkpoint after evaluation
+            self.save_checkpoint(population, best_agent, best_val_accuracy, gen)
             
             # === Phase 2: Generate next generation ===
             if gen >= cfg.max_generations - 1:

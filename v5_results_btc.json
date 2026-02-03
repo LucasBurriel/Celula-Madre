@@ -1,0 +1,257 @@
+{
+  "best_agent": {
+    "id": 2,
+    "generation": 0,
+    "strategy": "You are a volatility-focused BTC trading analyst.\nYour strategy: High volatility periods tend to continue in the same direction for 1-2 days, then reverse. Low volatility leads to breakouts.\nKey indicators: Calculate recent daily ranges. After 3+ days of low volatility (<1% daily), predict a breakout in the direction of the last small move. After high volatility days, predict continuation for 1 day then reversal.\nRisk rule: In extremely volatile markets (>8% moves), reduce confidence and favor the dominant trend.",
+    "val_accuracy": 0.62,
+    "test_accuracy": 0.588
+  },
+  "config": {
+    "population_size": 4,
+    "max_generations": 5,
+    "mutation_rate": 0.5
+  },
+  "history": [
+    {
+      "generation": 0,
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev_acc": 0.5,
+          "val_acc": 0.56,
+          "wins": 28,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev_acc": 0.4,
+          "val_acc": 0.6,
+          "wins": 3,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.5,
+          "val_acc": 0.64,
+          "wins": 6,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev_acc": 0.2,
+          "val_acc": 0.54,
+          "wins": 0,
+          "parents": []
+        }
+      ],
+      "best_val": 0.64,
+      "frontier_size": 3,
+      "duration_sec": 1216.1
+    },
+    {
+      "generation": 1,
+      "agents": [
+        {
+          "id": 4,
+          "gen": 0,
+          "dev_acc": 0.3,
+          "val_acc": 0.58,
+          "wins": 0,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev_acc": 0.6,
+          "val_acc": 0.54,
+          "wins": 0,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.5,
+          "val_acc": 0.64,
+          "wins": 6,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.5,
+          "val_acc": 0.64,
+          "wins": 6,
+          "parents": []
+        }
+      ],
+      "best_val": 0.64,
+      "frontier_size": 3,
+      "duration_sec": 1231.1
+    },
+    {
+      "generation": 2,
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev_acc": 0.6,
+          "val_acc": 0.56,
+          "wins": 28,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev_acc": 0.4,
+          "val_acc": 0.54,
+          "wins": 0,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.1,
+          "val_acc": 0.62,
+          "wins": 5,
+          "parents": []
+        },
+        {
+          "id": 9,
+          "gen": 1,
+          "dev_acc": 0.6,
+          "val_acc": 0.56,
+          "wins": 0,
+          "parents": [
+            0
+          ]
+        }
+      ],
+      "best_val": 0.64,
+      "frontier_size": 3,
+      "duration_sec": 1183.6
+    },
+    {
+      "generation": 3,
+      "agents": [
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.5,
+          "val_acc": 0.62,
+          "wins": 5,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev_acc": 0.8,
+          "val_acc": 0.56,
+          "wins": 28,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 2,
+          "dev_acc": 0.2,
+          "val_acc": 0.56,
+          "wins": 0,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 14,
+          "gen": 2,
+          "dev_acc": 0.3,
+          "val_acc": 0.58,
+          "wins": 0,
+          "parents": [
+            0
+          ]
+        }
+      ],
+      "best_val": 0.64,
+      "frontier_size": 3,
+      "duration_sec": 1086.7
+    },
+    {
+      "generation": 4,
+      "agents": [
+        {
+          "id": 13,
+          "gen": 2,
+          "dev_acc": 0.6,
+          "val_acc": 0.56,
+          "wins": 0,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 14,
+          "gen": 2,
+          "dev_acc": 0.4,
+          "val_acc": 0.6,
+          "wins": 0,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev_acc": 0.3,
+          "val_acc": 0.56,
+          "wins": 28,
+          "parents": []
+        },
+        {
+          "id": 18,
+          "gen": 3,
+          "dev_acc": 0.5,
+          "val_acc": 0.58,
+          "wins": 0,
+          "parents": [
+            1
+          ]
+        }
+      ],
+      "best_val": 0.64,
+      "frontier_size": 3,
+      "duration_sec": 823.3
+    }
+  ],
+  "pareto_frontier": [
+    {
+      "id": 0,
+      "generation": 0,
+      "val_accuracy": 0.56,
+      "wins": 28,
+      "strategy_preview": "You are a trend-following BTC trading analyst.\nYour strategy: Follow the prevailing trend. If BTC has been going up over the last 7-14 days, predict UP. If down, predict DOWN.\nKey indicators: Look at "
+    },
+    {
+      "id": 2,
+      "generation": 0,
+      "val_accuracy": 0.62,
+      "wins": 5,
+      "strategy_preview": "You are a volatility-focused BTC trading analyst.\nYour strategy: High volatility periods tend to continue in the same direction for 1-2 days, then reverse. Low volatility leads to breakouts.\nKey indic"
+    },
+    {
+      "id": 1,
+      "generation": 0,
+      "val_accuracy": 0.6,
+      "wins": 3,
+      "strategy_preview": "You are a mean-reversion BTC trading analyst.\nYour strategy: Prices tend to revert to the mean. After big moves up, predict DOWN. After big drops, predict UP.\nKey indicators: Compare current price to "
+    }
+  ]
+}
