@@ -1,0 +1,15 @@
+============================================================
+Célula Madre V5 — Market-Driven Prompt Evolution
+Started: 2026-02-10T07:36:18.392969
+Asset: bitcoin | Pop: 6 | Gens: 5 | Dev batch: 15
+============================================================
+
+Loading market data...
+Data: 335 total → train=134, val=100, test=101
+
+============================================================
+Generation 0/5
+============================================================
+    Agent 0: 5/15 examples (1/5 correct)
+    Agent 0: 10/15 examples (2/10 correct)
+    Agent 0: 15/15 examples (4/15 correct)

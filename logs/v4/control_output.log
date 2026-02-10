@@ -1,0 +1,459 @@
+============================================================
+CÉLULA MADRE V4 CONTROL: Random Evolution (no feedback)
+============================================================
+
+Same as V4 experimental but:
+  - Random parent selection (not fitness-based)
+  - Random mutation (no market feedback)
+  - Same market, clients, retirement, death rules
+
+[RESUME] 3 txs done, 4 agents
+[RESUME] Loaded 4 active agents
+
+[Run] 197 transactions remaining (3/200)
+------------------------------------------------------------
+[Tx   4] ctrl_gen0_pragmatist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx   5] ctrl_gen0_minimalist      | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx   6] ctrl_gen0_documenter      | $ 7.00 | MinimalistClient   | Too verbose (54 lines)
+============================================================
+CÉLULA MADRE V4 CONTROL: Random Evolution (no feedback)
+============================================================
+
+Same as V4 experimental but:
+  - Random parent selection (not fitness-based)
+  - Random mutation (no market feedback)
+  - Same market, clients, retirement, death rules
+
+[RESUME] 6 txs done, 4 agents
+[RESUME] Loaded 4 active agents
+
+[Run] 194 transactions remaining (6/200)
+------------------------------------------------------------
+[Tx   7] ctrl_gen0_minimalist      | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx   8] ctrl_gen0_pragmatist      | $12.50 | DocumenterClient   | Good documentation (score: 5/10)
+[Tx   9] ctrl_gen0_minimalist      | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  10] ctrl_gen0_minimalist      | $14.00 | PragmaticClient    | Works (score: 6/10)
+
+  🎲 BORN (RANDOM): ctrl_gen1_tx10 (Gen1)
+     Parents: ctrl_gen0_documenter + ctrl_gen0_tester
+     Prompt: Create Python functions with comprehensive docstrings including Args, Returns, a...
+
+  📊 Population: 5 active
+     ctrl_gen0_minimalist      gen0  6txs $11.93/tx
+     ctrl_gen0_pragmatist      gen0  2txs $10.95/tx
+     ctrl_gen0_documenter      gen0  2txs $10.50/tx
+     ctrl_gen0_tester          gen0  0txs $ 0.00/tx
+     ctrl_gen1_tx10            gen1  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx  11] ctrl_gen0_pragmatist      | $ 7.00 | MinimalistClient   | Too verbose (44 lines)
+[Tx  12] ctrl_gen0_minimalist      | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  13] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  14] ctrl_gen0_minimalist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx  15] ctrl_gen0_documenter      | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  16] ctrl_gen1_tx10            | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  17] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  18] ctrl_gen1_tx10            | $ 5.00 | MinimalistClient   | Too verbose (237 lines)
+[Tx  19] ctrl_gen0_minimalist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx  20] ctrl_gen0_minimalist      | $ 8.00 | DocumenterClient   | Poor documentation (score: 2/10)
+
+  🎲 BORN (RANDOM): ctrl_gen1_tx20 (Gen1)
+     Parents: ctrl_gen0_minimalist + ctrl_gen0_pragmatist
+     Prompt: Write concise Python code under 20 lines with minimal imports and no comments. U...
+
+  📊 Population: 6 active
+     ctrl_gen0_tester          gen0  2txs $20.20/tx
+     ctrl_gen1_tx10            gen1  2txs $12.50/tx
+     ctrl_gen0_documenter      gen0  3txs $11.33/tx
+     ctrl_gen0_minimalist      gen0 10txs $11.24/tx
+     ctrl_gen0_pragmatist      gen0  3txs $ 9.63/tx
+     ctrl_gen1_tx20            gen1  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx  21] ctrl_gen0_documenter      | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  22] ctrl_gen1_tx20            | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  23] ctrl_gen1_tx20            | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx  24] ctrl_gen0_minimalist      | $12.50 | DocumenterClient   | Good documentation (score: 5/10)
+[Tx  25] ctrl_gen0_documenter      | $12.50 | PragmaticClient    | Works (score: 5/10)
+[Tx  26] ctrl_gen0_documenter      | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  27] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  28] ctrl_gen0_minimalist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx  29] ctrl_gen0_documenter      | $12.50 | PragmaticClient    | Works (score: 5/10)
+[Tx  30] ctrl_gen0_minimalist      | $14.00 | MinimalistClient   | Acceptable length (25 lines)
+
+
+  📊 Population: 6 active
+     ctrl_gen0_tester          gen0  3txs $20.20/tx
+     ctrl_gen1_tx20            gen1  2txs $14.25/tx
+     ctrl_gen1_tx10            gen1  2txs $12.50/tx
+     ctrl_gen0_documenter      gen0  7txs $12.14/tx
+     ctrl_gen0_minimalist      gen0 13txs $11.41/tx
+     ctrl_gen0_pragmatist      gen0  3txs $ 9.63/tx
+------------------------------------------------------------
+[Tx  31] ctrl_gen1_tx10            | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  32] ctrl_gen0_minimalist      | $10.00 | MinimalistClient   | Acceptable length (27 lines)
+[Tx  33] ctrl_gen0_minimalist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx  34] ctrl_gen0_minimalist      | $ 4.00 | TesterClient       | No tests (score: 0/10)
+[Tx  35] ctrl_gen0_minimalist      | $ 9.50 | DocumenterClient   | Poor documentation (score: 3/10)
+[Tx  36] ctrl_gen0_minimalist      | $ 7.00 | MinimalistClient   | Too verbose (44 lines)
+[Tx  37] ctrl_gen0_minimalist      | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  38] ctrl_gen0_minimalist      | $12.50 | PragmaticClient    | Works (score: 5/10)
+[Tx  39] ctrl_gen0_minimalist      | $ 8.00 | DocumenterClient   | Poor documentation (score: 2/10)
+[Tx  40] ctrl_gen0_minimalist      | $ 9.50 | DocumenterClient   | Poor documentation (score: 3/10)
+
+  💀 LIFESPAN  : ctrl_gen0_minimalist (22txs, avg $10.55)
+
+  📊 Population: 5 active
+     ctrl_gen0_tester          gen0  3txs $20.20/tx
+     ctrl_gen1_tx10            gen1  3txs $15.00/tx
+     ctrl_gen1_tx20            gen1  2txs $14.25/tx
+     ctrl_gen0_documenter      gen0  7txs $12.14/tx
+     ctrl_gen0_pragmatist      gen0  3txs $ 9.63/tx
+------------------------------------------------------------
+[Tx  41] ctrl_gen0_documenter      | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  42] ctrl_gen1_tx10            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  43] ctrl_gen0_documenter      | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  44] ctrl_gen0_documenter      | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  45] ctrl_gen0_documenter      | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  46] ctrl_gen0_documenter      | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  47] ctrl_gen0_pragmatist      | $ 7.00 | MinimalistClient   | Too verbose (54 lines)
+[Tx  48] ctrl_gen0_documenter      | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx  49] ctrl_gen0_documenter      | $17.00 | DocumenterClient   | Excellent documentation (score: 8/10)
+[Tx  50] ctrl_gen0_documenter      | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+
+  🎲 BORN (RANDOM): ctrl_gen1_tx50 (Gen1)
+     Parents: ctrl_gen0_pragmatist + ctrl_gen0_tester
+     Prompt: Write clear Python code with comprehensive test suites that include edge case ha...
+  💀 LIFESPAN  : ctrl_gen0_documenter (15txs, avg $14.98)
+
+  📊 Population: 5 active
+     ctrl_gen0_tester          gen0  3txs $20.20/tx
+     ctrl_gen1_tx10            gen1  4txs $14.75/tx
+     ctrl_gen1_tx20            gen1  2txs $14.25/tx
+     ctrl_gen0_pragmatist      gen0  4txs $ 8.97/tx
+     ctrl_gen1_tx50            gen1  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx  51] ctrl_gen1_tx50            | $ 5.00 | MinimalistClient   | Too verbose (162 lines)
+[Tx  52] ctrl_gen1_tx50            | $ 7.00 | MinimalistClient   | Too verbose (60 lines)
+[Tx  53] ctrl_gen1_tx10            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  54] ctrl_gen0_pragmatist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx  55] ctrl_gen1_tx10            | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  56] ctrl_gen0_pragmatist      | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx  57] ctrl_gen1_tx10            | $ 5.00 | MinimalistClient   | Too verbose (180 lines)
+[Tx  58] ctrl_gen0_tester          | $12.50 | DocumenterClient   | Good documentation (score: 5/10)
+[Tx  59] ctrl_gen1_tx10            | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx  60] ctrl_gen1_tx10            | $11.00 | PragmaticClient    | Works (score: 4/10)
+
+
+  📊 Population: 5 active
+     ctrl_gen0_tester          gen0  4txs $18.27/tx
+     ctrl_gen1_tx20            gen1  2txs $14.25/tx
+     ctrl_gen1_tx10            gen1  9txs $13.36/tx
+     ctrl_gen0_pragmatist      gen0  6txs $10.13/tx
+     ctrl_gen1_tx50            gen1  2txs $ 6.00/tx
+------------------------------------------------------------
+[Tx  61] ctrl_gen0_pragmatist      | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  62] ctrl_gen0_pragmatist      | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx  63] ctrl_gen0_tester          | $12.50 | DocumenterClient   | Good documentation (score: 5/10)
+[Tx  64] ctrl_gen0_pragmatist      | $12.50 | DocumenterClient   | Good documentation (score: 5/10)
+[Tx  65] ctrl_gen0_pragmatist      | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx  66] ctrl_gen1_tx10            | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  67] ctrl_gen0_pragmatist      | $10.00 | MinimalistClient   | Acceptable length (38 lines)
+[Tx  68] ctrl_gen0_pragmatist      | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  69] ctrl_gen0_pragmatist      | $ 4.00 | TesterClient       | No tests (score: 0/10)
+[Tx  70] ctrl_gen0_pragmatist      | $ 5.00 | MinimalistClient   | Too verbose (67 lines)
+
+
+  📊 Population: 5 active
+     ctrl_gen0_tester          gen0  5txs $17.12/tx
+     ctrl_gen1_tx20            gen1  2txs $14.25/tx
+     ctrl_gen1_tx10            gen1 10txs $14.04/tx
+     ctrl_gen0_pragmatist      gen0 14txs $11.16/tx
+     ctrl_gen1_tx50            gen1  2txs $ 6.00/tx
+------------------------------------------------------------
+[Tx  71] ctrl_gen0_pragmatist      | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx  72] ctrl_gen0_pragmatist      | $11.00 | DocumenterClient   | Good documentation (score: 4/10)
+[Tx  73] ctrl_gen0_pragmatist      | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx  74] ctrl_gen0_pragmatist      | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx  75] ctrl_gen0_pragmatist      | $ 5.00 | MinimalistClient   | Too verbose (76 lines)
+[Tx  76] ctrl_gen0_tester          | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  77] ctrl_gen0_pragmatist      | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx  78] ctrl_gen0_tester          | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx  79] ctrl_gen0_pragmatist      | $11.20 | TesterClient       | Basic tests included (score: 4/10)
+[Tx  80] ctrl_gen0_pragmatist      | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+
+  🎲 BORN (RANDOM): ctrl_gen2_tx80 (Gen2)
+     Parents: ctrl_gen0_tester + ctrl_gen1_tx20
+     Prompt: Create concise Python functions under 20 lines with minimal imports and no comme...
+  💀 LIFESPAN  : ctrl_gen0_pragmatist (22txs, avg $11.72)
+
+  📊 Population: 5 active
+     ctrl_gen0_tester          gen0  7txs $16.66/tx
+     ctrl_gen1_tx20            gen1  2txs $14.25/tx
+     ctrl_gen1_tx10            gen1 10txs $14.04/tx
+     ctrl_gen1_tx50            gen1  2txs $ 6.00/tx
+     ctrl_gen2_tx80            gen2  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx  81] ctrl_gen2_tx80            | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  82] ctrl_gen2_tx80            | $ 5.00 | MinimalistClient   | Too verbose (88 lines)
+[Tx  83] ctrl_gen1_tx10            | $20.00 | DocumenterClient   | Excellent documentation (score: 10/10)
+[Tx  84] ctrl_gen0_tester          | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx  85] ctrl_gen1_tx10            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  86] ctrl_gen1_tx10            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx  87] ctrl_gen1_tx20            | $ 7.00 | MinimalistClient   | Too verbose (42 lines)
+[Tx  88] ctrl_gen1_tx10            | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx  89] ctrl_gen1_tx10            | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx  90] ctrl_gen2_tx80            | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+
+  💀 LIFESPAN  : ctrl_gen1_tx10 (15txs, avg $14.03)
+
+  📊 Population: 4 active
+     ctrl_gen0_tester          gen0  8txs $16.20/tx
+     ctrl_gen1_tx20            gen1  3txs $11.83/tx
+     ctrl_gen2_tx80            gen2  3txs $11.17/tx
+     ctrl_gen1_tx50            gen1  2txs $ 6.00/tx
+------------------------------------------------------------
+[Tx  91] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  92] ctrl_gen0_tester          | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx  93] ctrl_gen0_tester          | $ 5.00 | MinimalistClient   | Too verbose (73 lines)
+[Tx  94] ctrl_gen0_tester          | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx  95] ctrl_gen0_tester          | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx  96] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx  97] ctrl_gen1_tx50            | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx  98] ctrl_gen1_tx20            | $ 7.00 | MinimalistClient   | Too verbose (60 lines)
+[Tx  99] ctrl_gen2_tx80            | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 100] ctrl_gen1_tx20            | $11.00 | DocumenterClient   | Good documentation (score: 4/10)
+
+  🎲 BORN (RANDOM): ctrl_gen2_tx100 (Gen2)
+     Parents: ctrl_gen1_tx20 + ctrl_gen0_tester
+     Prompt: Write concise Python functions under 20 lines with minimal imports and no commen...
+
+  📊 Population: 5 active
+     ctrl_gen0_tester          gen0 14txs $15.93/tx
+     ctrl_gen2_tx80            gen2  4txs $12.25/tx
+     ctrl_gen1_tx20            gen1  5txs $10.70/tx
+     ctrl_gen1_tx50            gen1  3txs $ 9.17/tx
+     ctrl_gen2_tx100           gen2  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx 101] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 102] ctrl_gen0_tester          | $11.00 | PragmaticClient    | Works (score: 4/10)
+[Tx 103] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 104] ctrl_gen0_tester          | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 105] ctrl_gen1_tx20            | $10.00 | MinimalistClient   | Acceptable length (27 lines)
+[Tx 106] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 107] ctrl_gen1_tx20            | $10.00 | MinimalistClient   | Acceptable length (40 lines)
+[Tx 108] ctrl_gen2_tx100           | $ 5.00 | MinimalistClient   | Too verbose (88 lines)
+[Tx 109] ctrl_gen0_tester          | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 110] ctrl_gen0_tester          | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+
+  💀 LIFESPAN  : ctrl_gen0_tester (19txs, avg $16.39)
+
+  📊 Population: 4 active
+     ctrl_gen2_tx100           gen2  3txs $15.13/tx
+     ctrl_gen2_tx80            gen2  4txs $12.25/tx
+     ctrl_gen1_tx20            gen1  7txs $10.50/tx
+     ctrl_gen1_tx50            gen1  3txs $ 9.17/tx
+------------------------------------------------------------
+[Tx 111] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 112] ctrl_gen1_tx20            | $10.00 | MinimalistClient   | Acceptable length (39 lines)
+[Tx 113] ctrl_gen2_tx80            | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+[Tx 114] ctrl_gen1_tx20            | $11.00 | DocumenterClient   | Good documentation (score: 4/10)
+[Tx 115] ctrl_gen1_tx20            | $ 7.00 | MinimalistClient   | Too verbose (57 lines)
+[Tx 116] ctrl_gen1_tx20            | $ 7.00 | MinimalistClient   | Too verbose (56 lines)
+[Tx 117] ctrl_gen2_tx100           | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 118] ctrl_gen1_tx20            | $10.00 | MinimalistClient   | Acceptable length (34 lines)
+[Tx 119] ctrl_gen1_tx20            | $ 7.00 | MinimalistClient   | Too verbose (58 lines)
+[Tx 120] ctrl_gen1_tx20            | $17.00 | PragmaticClient    | Simple and works (score: 8/10)
+
+
+  📊 Population: 4 active
+     ctrl_gen2_tx100           gen2  5txs $16.22/tx
+     ctrl_gen2_tx80            gen2  5txs $11.68/tx
+     ctrl_gen1_tx20            gen1 14txs $10.18/tx
+     ctrl_gen1_tx50            gen1  3txs $ 9.17/tx
+------------------------------------------------------------
+[Tx 121] ctrl_gen2_tx80            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 122] ctrl_gen1_tx20            | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 123] ctrl_gen1_tx20            | $11.00 | DocumenterClient   | Good documentation (score: 4/10)
+[Tx 124] ctrl_gen2_tx100           | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 125] ctrl_gen1_tx20            | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 126] ctrl_gen1_tx20            | $10.00 | MinimalistClient   | Acceptable length (32 lines)
+[Tx 127] ctrl_gen1_tx20            | $17.00 | PragmaticClient    | Simple and works (score: 8/10)
+[Tx 128] ctrl_gen1_tx20            | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 129] ctrl_gen1_tx20            | $14.00 | DocumenterClient   | Good documentation (score: 6/10)
+[Tx 130] ctrl_gen1_tx20            | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+
+  💀 LIFESPAN  : ctrl_gen1_tx20 (22txs, avg $11.32)
+
+  📊 Population: 3 active
+     ctrl_gen2_tx100           gen2  6txs $16.60/tx
+     ctrl_gen2_tx80            gen2  6txs $12.07/tx
+     ctrl_gen1_tx50            gen1  3txs $ 9.17/tx
+------------------------------------------------------------
+[Tx 131] ctrl_gen2_tx80            | $ 5.00 | MinimalistClient   | Too verbose (79 lines)
+[Tx 132] ctrl_gen2_tx80            | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 133] ctrl_gen1_tx50            | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx 134] ctrl_gen1_tx50            | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 135] ctrl_gen1_tx50            | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 136] ctrl_gen1_tx50            | $ 5.00 | MinimalistClient   | Too verbose (81 lines)
+[Tx 137] ctrl_gen1_tx50            | $ 5.00 | MinimalistClient   | Too verbose (67 lines)
+[Tx 138] ctrl_gen2_tx100           | $ 5.00 | MinimalistClient   | Too verbose (100 lines)
+[Tx 139] ctrl_gen2_tx80            | $ 7.00 | MinimalistClient   | Too verbose (48 lines)
+[Tx 140] ctrl_gen2_tx80            | $ 5.00 | MinimalistClient   | Too verbose (65 lines)
+
+
+  📊 Population: 3 active
+     ctrl_gen2_tx100           gen2  7txs $14.94/tx
+     ctrl_gen1_tx50            gen1  8txs $11.46/tx
+     ctrl_gen2_tx80            gen2 10txs $10.49/tx
+------------------------------------------------------------
+[Tx 141] ctrl_gen1_tx50            | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx 142] ctrl_gen2_tx80            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 143] ctrl_gen2_tx80            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 144] ctrl_gen1_tx50            | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 145] ctrl_gen2_tx100           | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 146] ctrl_gen2_tx80            | $10.00 | MinimalistClient   | Acceptable length (30 lines)
+[Tx 147] ctrl_gen1_tx50            | $16.60 | TesterClient       | Comprehensive tests (score: 7/10)
+[Tx 148] ctrl_gen2_tx80            | $ 7.00 | MinimalistClient   | Too verbose (59 lines)
+[Tx 149] ctrl_gen2_tx80            | $ 7.00 | MinimalistClient   | Too verbose (48 lines)
+[Tx 150] ctrl_gen1_tx50            | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+
+  🎲 BORN (RANDOM): ctrl_gen3_tx150 (Gen3)
+     Parents: ctrl_gen1_tx50 + ctrl_gen2_tx100
+     Prompt: Write clean Python code with clear function names and minimal imports, focusing ...
+  💀 LIFESPAN  : ctrl_gen2_tx80 (15txs, avg $10.46)
+
+  📊 Population: 3 active
+     ctrl_gen2_tx100           gen2  8txs $14.82/tx
+     ctrl_gen1_tx50            gen1 12txs $13.54/tx
+     ctrl_gen3_tx150           gen3  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx 151] ctrl_gen3_tx150           | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 152] ctrl_gen3_tx150           | $ 5.00 | MinimalistClient   | Too verbose (108 lines)
+[Tx 153] ctrl_gen1_tx50            | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 154] ctrl_gen1_tx50            | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx 155] ctrl_gen1_tx50            | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 156] ctrl_gen1_tx50            | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 157] ctrl_gen1_tx50            | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 158] ctrl_gen1_tx50            | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 159] ctrl_gen3_tx150           | $16.60 | TesterClient       | Comprehensive tests (score: 7/10)
+[Tx 160] ctrl_gen3_tx150           | $14.00 | PragmaticClient    | Works (score: 6/10)
+
+  🎲 BORN (RANDOM): ctrl_gen4_tx160 (Gen4)
+     Parents: ctrl_gen3_tx150 + ctrl_gen2_tx100
+     Prompt: Create clean Python functions under 20 lines with minimal imports and no comment...
+  💀 LIFESPAN  : ctrl_gen1_tx50 (18txs, avg $14.44)
+
+  📊 Population: 3 active
+     ctrl_gen2_tx100           gen2  8txs $14.82/tx
+     ctrl_gen3_tx150           gen3  4txs $12.15/tx
+     ctrl_gen4_tx160           gen4  0txs $ 0.00/tx
+------------------------------------------------------------
+[Tx 161] ctrl_gen4_tx160           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 162] ctrl_gen3_tx150           | $10.00 | MinimalistClient   | Acceptable length (39 lines)
+[Tx 163] ctrl_gen4_tx160           | $ 5.00 | MinimalistClient   | Too verbose (63 lines)
+[Tx 164] ctrl_gen4_tx160           | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 165] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 166] ctrl_gen2_tx100           | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 167] ctrl_gen2_tx100           | $ 2.00 | PragmaticClient    | Broken code
+[Tx 168] ctrl_gen3_tx150           | $ 7.00 | MinimalistClient   | Too verbose (45 lines)
+[Tx 169] ctrl_gen2_tx100           | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 170] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+
+
+  📊 Population: 3 active
+     ctrl_gen2_tx100           gen2 13txs $14.54/tx
+     ctrl_gen4_tx160           gen4  3txs $13.07/tx
+     ctrl_gen3_tx150           gen3  6txs $10.93/tx
+------------------------------------------------------------
+[Tx 171] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 172] ctrl_gen4_tx160           | $ 7.00 | MinimalistClient   | Too verbose (41 lines)
+[Tx 173] ctrl_gen2_tx100           | $14.00 | DocumenterClient   | Good documentation (score: 6/10)
+[Tx 174] ctrl_gen2_tx100           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 175] ctrl_gen4_tx160           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 176] ctrl_gen4_tx160           | $ 5.00 | MinimalistClient   | Too verbose (62 lines)
+[Tx 177] ctrl_gen3_tx150           | $ 5.00 | MinimalistClient   | Too verbose (69 lines)
+[Tx 178] ctrl_gen4_tx160           | $ 7.00 | MinimalistClient   | Too verbose (51 lines)
+[Tx 179] ctrl_gen2_tx100           | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 180] ctrl_gen4_tx160           | $ 5.00 | MinimalistClient   | Too verbose (66 lines)
+
+  💀 LIFESPAN  : ctrl_gen2_tx100 (17txs, avg $15.14)
+
+  📊 Population: 2 active
+     ctrl_gen4_tx160           gen4  8txs $10.43/tx
+     ctrl_gen3_tx150           gen3  7txs $10.09/tx
+------------------------------------------------------------
+[Tx 181] ctrl_gen3_tx150           | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 182] ctrl_gen3_tx150           | $12.50 | PragmaticClient    | Works (score: 5/10)
+[Tx 183] ctrl_gen3_tx150           | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 184] ctrl_gen4_tx160           | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 185] ctrl_gen3_tx150           | $15.50 | DocumenterClient   | Excellent documentation (score: 7/10)
+[Tx 186] ctrl_gen3_tx150           | $ 5.00 | MinimalistClient   | Too verbose (109 lines)
+[Tx 187] ctrl_gen3_tx150           | $15.50 | PragmaticClient    | Simple and works (score: 7/10)
+[Tx 188] ctrl_gen3_tx150           | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 189] ctrl_gen3_tx150           | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 190] ctrl_gen4_tx160           | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+
+  💀 LIFESPAN  : ctrl_gen3_tx150 (15txs, avg $12.14)
+
+  📊 Population: 1 active
+     ctrl_gen4_tx160           gen4 10txs $11.49/tx
+------------------------------------------------------------
+[Tx 191] ctrl_gen4_tx160           | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 192] ctrl_gen4_tx160           | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 193] ctrl_gen4_tx160           | $18.50 | DocumenterClient   | Excellent documentation (score: 9/10)
+[Tx 194] ctrl_gen4_tx160           | $16.60 | TesterClient       | Comprehensive tests (score: 7/10)
+[Tx 195] ctrl_gen4_tx160           | $13.00 | TesterClient       | Basic tests included (score: 5/10)
+[Tx 196] ctrl_gen4_tx160           | $14.00 | PragmaticClient    | Works (score: 6/10)
+[Tx 197] ctrl_gen4_tx160           | $12.50 | DocumenterClient   | Good documentation (score: 5/10)
+[Tx 198] ctrl_gen4_tx160           | $10.00 | MinimalistClient   | Acceptable length (37 lines)
+[Tx 199] ctrl_gen4_tx160           | $20.20 | TesterClient       | Comprehensive tests (score: 9/10)
+[Tx 200] ctrl_gen4_tx160           | $ 9.40 | TesterClient       | Basic tests included (score: 3/10)
+
+  💀 LIFESPAN  : ctrl_gen4_tx160 (20txs, avg $13.03)
+
+  📊 Population: 0 active
+------------------------------------------------------------
+
+============================================================
+CONTROL GROUP RESULTS
+============================================================
+
+Gen 0: 4 agents, 78 txs, avg $13.16/tx, profit $242.75/agent
+  ✗ ctrl_gen0_tester          19txs $16.39/tx | For every function, write at least 3 test functions using as...
+  ✗ ctrl_gen0_pragmatist      22txs $11.72/tx | Write simple, working Python. Use try/except for error handl...
+  ✗ ctrl_gen0_minimalist      22txs $10.55/tx | Write Python in under 20 lines. No comments, no docstrings, ...
+  ✗ ctrl_gen0_documenter      15txs $14.98/tx | Every function gets a docstring with Args/Returns/Example. E...
+
+Gen 1: 3 agents, 55 txs, avg $13.08/tx, profit $221.52/agent
+  ✗ ctrl_gen1_tx50            18txs $14.44/tx | Write clear Python code with comprehensive test suites that ...
+  ✗ ctrl_gen1_tx20            22txs $11.32/tx | Write concise Python code under 20 lines with minimal import...
+  ✗ ctrl_gen1_tx10            15txs $14.03/tx | Create Python functions with comprehensive docstrings includ...
+
+Gen 2: 2 agents, 32 txs, avg $12.95/tx, profit $194.09/agent
+  ✗ ctrl_gen2_tx100           17txs $15.14/tx | Write concise Python functions under 20 lines with minimal i...
+  ✗ ctrl_gen2_tx80            15txs $10.46/tx | Create concise Python functions under 20 lines with minimal ...
+
+Gen 3: 1 agents, 15 txs, avg $12.14/tx, profit $168.25/agent
+  ✗ ctrl_gen3_tx150           15txs $12.14/tx | Write clean Python code with clear function names and minima...
+
+Gen 4: 1 agents, 20 txs, avg $13.03/tx, profit $246.94/agent
+  ✗ ctrl_gen4_tx160           20txs $13.03/tx | Create clean Python functions under 20 lines with minimal im...
+
+========================================
+CONTROL GROUP (Random Evolution):
+Gen 0 avg:     $13.16/tx
+Evolved avg:   $12.92/tx
+Delta:         -1.8%
+
+📊 Neutral — random evolution didn't help or hurt
+
+Transaction Distribution:
+  Gen 0:  78 txs (39.0%) ███████████████████
+  Gen 1:  55 txs (27.5%) █████████████
+  Gen 2:  32 txs (16.0%) ████████
+  Gen 3:  15 txs ( 7.5%) ███
+  Gen 4:  20 txs (10.0%) █████
+
+============================================================
+Control group complete!
+Compare with V4 experimental (celula_madre_v4_results.db)
+============================================================

@@ -1,0 +1,13 @@
+[05:57:06] 
+============================================================
+Generation 0/10
+============================================================
+[06:01:02]   Agent 0 (gen0): dev=40% val=56% wins=28
+[06:05:27]   Agent 1 (gen0): dev=45% val=60% wins=3
+[06:08:48]   Agent 2 (gen0): dev=65% val=62% wins=5
+[06:11:58]   Agent 3 (gen0): dev=65% val=52% wins=0
+[06:14:50]   Agent 4 (gen0): dev=45% val=52% wins=0
+[06:18:09]   Agent 5 (gen0): dev=55% val=58% wins=0
+[06:22:29]   Agent 6 (gen0): dev=60% val=60% wins=0
+[06:26:32]   Agent 7 (gen0): dev=40% val=60% wins=0
+[06:26:32]   Gen 0 summary: best_val=62%, frontier=3, time=1765.9s

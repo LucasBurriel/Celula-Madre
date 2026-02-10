@@ -1,0 +1,631 @@
+============================================================
+CÉLULA MADRE MVP: Price-Driven Agent Evolution
+============================================================
+
+[Setup] Initializing database...
+[Setup] Creating initial agent population...
+  Created: agent_gen0_0
+  Created: agent_gen0_1
+  Created: agent_gen0_2
+
+[Setup] Initializing marketplace and evolution engine...
+   Mode: CONTROL (random mutations)
+
+[Simulation] Running 200 remaining transactions (0/200 done)...
+------------------------------------------------------------
+[Tx  1] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx  2] Agent: agent_gen0_0    | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+[Tx  3] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx  4] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx  5] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx  6] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx  7] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx  8] Agent: agent_gen0_0    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx  9] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 10] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_2645
+   Generation: 1
+   Parent: agent_gen0_0
+   Prompt (first 80 chars): You are a helpful Python coding assistant. Generate clean, working programs....
+------------------------------------------------------------
+[Tx 11] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 12] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 13] Agent: agent_gen1_2645 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 14] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 15] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 16] Agent: agent_gen0_0    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 17] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 18] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 19] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 20] Agent: agent_gen0_0    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_9872
+   Generation: 1
+   Parent: agent_gen0_0
+   Prompt (first 80 chars): You are a helpful Python programming coding assistant. Generate clean, working c...
+------------------------------------------------------------
+[Tx 21] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 22] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 23] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 24] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 25] Agent: agent_gen1_9872 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 26] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 27] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 28] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 29] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 30] Agent: agent_gen0_0    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_8051
+   Generation: 1
+   Parent: agent_gen0_0
+   Prompt (first 80 chars): You are a helpful Python coding assistant. Generate clean, working code. Be conc...
+------------------------------------------------------------
+[Tx 31] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 32] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 33] Agent: agent_gen1_8051 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 34] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 35] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 36] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 37] Agent: agent_gen0_2    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 38] Agent: agent_gen0_0    | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+[Tx 39] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 40] Agent: agent_gen0_2    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_8490
+   Generation: 1
+   Parent: agent_gen0_1
+   Prompt (first 80 chars): You are a minimalist coder. Prefer brevity and simplicity. and write excellent c...
+------------------------------------------------------------
+[Tx 41] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 42] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 43] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 44] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 45] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 46] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 47] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 48] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 49] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 50] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_9749
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+------------------------------------------------------------
+[Tx 51] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 52] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 53] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 54] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 55] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 56] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 57] Agent: agent_gen1_8490 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 58] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 59] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 60] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_2293
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+------------------------------------------------------------
+[Tx 61] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 62] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 63] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 64] Agent: agent_gen1_9749 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 65] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 66] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 67] Agent: agent_gen1_2293 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 68] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 69] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 70] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_6719
+   Generation: 1
+   Parent: agent_gen0_0
+   Prompt (first 80 chars): You're a helpful Python coding assistant. Generate clean, working code....
+------------------------------------------------------------
+[Tx 71] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 72] Agent: agent_gen1_6719 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 73] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 74] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 75] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 76] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 77] Agent: agent_gen0_0    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 78] Agent: agent_gen0_0    | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 79] Agent: agent_gen0_0    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 80] Agent: agent_gen0_2    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen2_7657
+   Generation: 2
+   Parent: agent_gen1_9872
+   Prompt (first 80 chars): You are a helpful Python programming coding assistant. Generate clean, working c...
+   >> RETIRED 1 agents: ['agent_gen0_0']
+------------------------------------------------------------
+[Tx 81] Agent: agent_gen2_7657 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 82] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 83] Agent: agent_gen1_9749 | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+[Tx 84] Agent: agent_gen0_2    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 85] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 86] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 87] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 88] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 89] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 90] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_5595
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 1 agents: ['agent_gen0_0']
+------------------------------------------------------------
+[Tx 91] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 92] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 93] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 94] Agent: agent_gen1_5595 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 95] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 96] Agent: agent_gen1_9749 | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+[Tx 97] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 98] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 99] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 100] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_6901
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 1 agents: ['agent_gen0_0']
+------------------------------------------------------------
+[Tx 101] Agent: agent_gen1_6901 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 102] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 103] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 104] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 105] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 106] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 107] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 108] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 109] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 110] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_1554
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 1 agents: ['agent_gen0_0']
+------------------------------------------------------------
+[Tx 111] Agent: agent_gen1_1554 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 112] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 113] Agent: agent_gen0_2    | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 114] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 115] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 116] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 117] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 118] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 119] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 120] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_9027
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 2 agents: ['agent_gen0_0', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 121] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 122] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 123] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 124] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 125] Agent: agent_gen1_9027 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 126] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 127] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 128] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 129] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 130] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen2_1883
+   Generation: 2
+   Parent: agent_gen1_6901
+   Prompt (first 80 chars): You're a documentation-focused developer. Always include comprehensive docstring...
+   >> RETIRED 2 agents: ['agent_gen0_0', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 131] Agent: agent_gen2_1883 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 132] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 133] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 134] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 135] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 136] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 137] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 138] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 139] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 140] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_3415
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 2 agents: ['agent_gen0_0', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 141] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 142] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 143] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 144] Agent: agent_gen1_3415 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 145] Agent: agent_gen0_1    | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 146] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 147] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 148] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 149] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 150] Agent: agent_gen1_9749 | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_9005
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 2 agents: ['agent_gen0_0', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 151] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 152] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 153] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 154] Agent: agent_gen1_9005 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 155] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 156] Agent: agent_gen1_9749 | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+[Tx 157] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 158] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 159] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 160] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_9283
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 2 agents: ['agent_gen0_0', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 161] Agent: agent_gen1_9283 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 162] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 163] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 164] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 165] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 166] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 167] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 168] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 169] Agent: agent_gen0_1    | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 170] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_5966
+   Generation: 1
+   Parent: agent_gen0_0
+   Prompt (first 80 chars): You're a helpful Python coding assistant. Generate clean, working code....
+   >> RETIRED 3 agents: ['agent_gen0_0', 'agent_gen0_1', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 171] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 172] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 173] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 174] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 175] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 176] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 177] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 178] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 179] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 180] Agent: agent_gen1_9749 | Price: $20.00 | Client: TesterClient       | Feedback: Comprehensive tests
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_6194
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 3 agents: ['agent_gen0_0', 'agent_gen0_1', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 181] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 182] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 183] Agent: agent_gen1_5966 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 184] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 185] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 186] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 187] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 188] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 189] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 190] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_8678
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 3 agents: ['agent_gen0_0', 'agent_gen0_1', 'agent_gen0_2']
+------------------------------------------------------------
+[Tx 191] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 192] Agent: agent_gen1_6194 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 193] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 194] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 195] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+[Tx 196] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 197] Agent: agent_gen1_8678 | Price: $ 7.00 | Client: MinimalistClient   | Feedback: Too verbose
+[Tx 198] Agent: agent_gen1_9749 | Price: $13.00 | Client: TesterClient       | Feedback: Basic tests included
+[Tx 199] Agent: agent_gen1_2645 | Price: $10.00 | Client: PragmaticClient    | Feedback: Works
+[Tx 200] Agent: agent_gen1_9027 | Price: $18.00 | Client: DocumenterClient   | Feedback: Excellent documentation
+
+>> EVOLUTION: New agent created!
+   ID: agent_gen1_2409
+   Generation: 1
+   Parent: agent_gen0_2
+   Prompt (first 80 chars): You are a documentation-focused developer. Always include comprehensive docstrin...
+   >> RETIRED 3 agents: ['agent_gen0_0', 'agent_gen0_1', 'agent_gen0_2']
+------------------------------------------------------------
+
+============================================================
+FINAL RESULTS
+============================================================
+
+Agent: agent_gen0_2 [RETIRED]
+  Generation: 0
+  Parent: None (initial)
+  Total Revenue: $676.00
+  Total Costs: $0.00
+  Net Profit: $658.00
+  Transactions: 40
+  Avg Price: $16.90
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+Agent: agent_gen0_0 [RETIRED]
+  Generation: 0
+  Parent: None (initial)
+  Total Revenue: $504.00
+  Total Costs: $0.00
+  Net Profit: $497.00
+  Transactions: 43
+  Avg Price: $11.72
+  Prompt: You are a helpful Python coding assistant. Generate clean, working code....
+
+Agent: agent_gen1_9027 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $421.00
+  Total Costs: $0.00
+  Net Profit: $403.00
+  Transactions: 24
+  Avg Price: $17.54
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+Agent: agent_gen1_9749 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $393.00
+  Total Costs: $0.00
+  Net Profit: $380.00
+  Transactions: 28
+  Avg Price: $14.04
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+Agent: agent_gen0_1 [RETIRED]
+  Generation: 0
+  Parent: None (initial)
+  Total Revenue: $371.00
+  Total Costs: $0.00
+  Net Profit: $361.00
+  Transactions: 41
+  Avg Price: $9.05
+  Prompt: You are a minimalist coder. Prefer brevity and simplicity....
+
+Agent: agent_gen1_2645 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_0
+  Total Revenue: $77.00
+  Total Costs: $0.00
+  Net Profit: $67.00
+  Transactions: 8
+  Avg Price: $9.62
+  Prompt: You are a helpful Python coding assistant. Generate clean, working programs....
+
+Agent: agent_gen1_9872 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_0
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a helpful Python programming coding assistant. Generate clean, working code....
+
+Agent: agent_gen1_8051 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_0
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a helpful Python coding assistant. Generate clean, working code. Be concise....
+
+Agent: agent_gen1_8490 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_1
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a minimalist coder. Prefer brevity and simplicity. and write excellent code....
+
+Agent: agent_gen1_2293 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+Agent: agent_gen1_6719 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_0
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You're a helpful Python coding assistant. Generate clean, working code....
+
+Agent: agent_gen2_7657 [ACTIVE]
+  Generation: 2
+  Parent: agent_gen1_9872
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a helpful Python programming coding assistant. Generate clean, working code. Prioritize clar...
+
+Agent: agent_gen1_5595 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments. Pri...
+
+Agent: agent_gen1_6901 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments. Alw...
+
+Agent: agent_gen1_1554 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments. Alw...
+
+Agent: agent_gen2_1883 [ACTIVE]
+  Generation: 2
+  Parent: agent_gen1_6901
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You're a documentation-focused developer. Always include comprehensive docstrings and comments. Alwa...
+
+Agent: agent_gen1_3415 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments. Alw...
+
+Agent: agent_gen1_9005 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+Agent: agent_gen1_9283 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+Agent: agent_gen1_5966 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_0
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You're a helpful Python coding assistant. Generate clean, working code....
+
+Agent: agent_gen1_6194 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and and write exc...
+
+Agent: agent_gen1_8678 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $7.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 1
+  Avg Price: $7.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and and write exc...
+
+Agent: agent_gen1_2409 [ACTIVE]
+  Generation: 1
+  Parent: agent_gen0_2
+  Total Revenue: $0.00
+  Total Costs: $0.00
+  Net Profit: $0.00
+  Transactions: 0
+  Avg Price: $0.00
+  Prompt: You are a documentation-focused developer. Always include comprehensive docstrings and comments....
+
+============================================================
+SUMMARY STATISTICS
+============================================================
+Total Agents: 23 (Active: 20, Retired: 3)
+Generations: 0-2
+
+Generation 0 (baseline):
+  Avg Revenue: $517.00
+  Avg Cost: $0.00
+  Avg Net Profit: $505.33
+  Avg Price per Transaction: $12.56
+
+Evolved Agents (gen > 0):
+  Avg Revenue: $50.15
+  Avg Cost: $0.00
+  Avg Net Profit: $42.50
+  Avg Price per Transaction: $7.66
+
+[WARNING] No clear improvement yet (more transactions needed)
+
+Transaction Distribution by Generation:
+  Gen 0: 124 txs (62.0%)
+  Gen 1: 74 txs (37.0%)
+  Gen 2: 2 txs (1.0%)
+
+============================================================
+Experiment complete! Check celula_madre.db for full data.
+============================================================

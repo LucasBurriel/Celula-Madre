@@ -1,0 +1,21 @@
+============================================================
+Célula Madre V5 — Seed Strategy Evaluation on Test Set
+Started: 2026-02-10T07:37:52.793325
+============================================================
+
+Test set: 101 examples, 42 UP (41.6%), 59 DOWN (58.4%)
+
+--- Naive Baselines ---
+Always UP:  41.6%
+Always DOWN: 58.4%
+Random 50/50: ~50.0% (95% CI: [40.6%, 59.4%])
+
+To beat 50% random at p<0.05: need >= 60/101 = 59.4%
+To beat always-DOWN (58.4%) at p<0.05: need >= 68/101 = 67.3%
+
+--- Seed Strategy Results ---
+
+Evaluating Trend Follower (Agent 0)...
+    Agent 0: 5/101 examples (3/5 correct)
+    Agent 0: 10/101 examples (5/10 correct)
+    Agent 0: 15/101 examples (9/15 correct)

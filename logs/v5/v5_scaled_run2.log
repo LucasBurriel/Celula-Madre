@@ -1,0 +1,137 @@
+============================================================
+Célula Madre V5 — Market-Driven Prompt Evolution
+Started: 2026-02-10T08:21:23.962602
+Asset: bitcoin | Pop: 6 | Gens: 5 | Dev batch: 20
+============================================================
+
+Loading market data...
+Data: 335 total → train=134, val=100, test=101
+
+============================================================
+Generation 0/5
+============================================================
+    Agent 0: 5/20 examples (2/5 correct)
+    Agent 0: 10/20 examples (5/10 correct)
+    Agent 0: 15/20 examples (7/15 correct)
+    Agent 0: 20/20 examples (10/20 correct)
+    Agent 0: 5/20 examples (4/5 correct)
+    Agent 0: 10/20 examples (6/10 correct)
+    Agent 0: 15/20 examples (10/15 correct)
+    Agent 0: 20/20 examples (15/20 correct)
+  Agent 0 (gen0): dev=50% val=75% wins=15
+    Agent 1: 5/20 examples (1/5 correct)
+    Agent 1: 10/20 examples (1/10 correct)
+    Agent 1: 15/20 examples (3/15 correct)
+    Agent 1: 20/20 examples (6/20 correct)
+    Agent 1: 5/20 examples (3/5 correct)
+    Agent 1: 10/20 examples (7/10 correct)
+    Agent 1: 15/20 examples (10/15 correct)
+    Agent 1: 20/20 examples (12/20 correct)
+  Agent 1 (gen0): dev=30% val=60% wins=3
+    Agent 2: 5/20 examples (3/5 correct)
+    Agent 2: 10/20 examples (4/10 correct)
+    Agent 2: 15/20 examples (7/15 correct)
+    Agent 2: 20/20 examples (9/20 correct)
+    Agent 2: 5/20 examples (2/5 correct)
+    Agent 2: 10/20 examples (6/10 correct)
+    Agent 2: 15/20 examples (9/15 correct)
+    Agent 2: 20/20 examples (13/20 correct)
+  Agent 2 (gen0): dev=45% val=65% wins=1
+    Agent 3: 5/20 examples (1/5 correct)
+    Agent 3: 10/20 examples (3/10 correct)
+    Agent 3: 15/20 examples (5/15 correct)
+    Agent 3: 20/20 examples (8/20 correct)
+    Agent 3: 5/20 examples (0/5 correct)
+    Agent 3: 10/20 examples (4/10 correct)
+    Agent 3: 15/20 examples (8/15 correct)
+    Agent 3: 20/20 examples (11/20 correct)
+  Agent 3 (gen0): dev=40% val=55% wins=1
+    Agent 4: 5/20 examples (3/5 correct)
+    Agent 4: 10/20 examples (5/10 correct)
+    Agent 4: 15/20 examples (7/15 correct)
+    Agent 4: 20/20 examples (10/20 correct)
+    Agent 4: 5/20 examples (3/5 correct)
+    Agent 4: 10/20 examples (5/10 correct)
+    Agent 4: 15/20 examples (6/15 correct)
+    Agent 4: 20/20 examples (8/20 correct)
+  Agent 4 (gen0): dev=50% val=40% wins=0
+    Agent 5: 5/20 examples (1/5 correct)
+    Agent 5: 10/20 examples (4/10 correct)
+    Agent 5: 15/20 examples (6/15 correct)
+    Agent 5: 20/20 examples (10/20 correct)
+    Agent 5: 5/20 examples (0/5 correct)
+    Agent 5: 10/20 examples (4/10 correct)
+    Agent 5: 15/20 examples (7/15 correct)
+    Agent 5: 20/20 examples (9/20 correct)
+  Agent 5 (gen0): dev=50% val=45% wins=0
+  Gen 0 summary: best_val=75%, frontier=4, time=782.5s
+  💾 Checkpoint saved: results/v5_bitcoin_20260210_082123/checkpoint_gen0.json
+  👑 Elite preserved: Agent 0 (val=75%)
+  👑 Elite preserved: Agent 2 (val=65%)
+    Agent 6: 5/20 examples (1/5 correct)
+    Agent 6: 10/20 examples (2/10 correct)
+    Agent 6: 15/20 examples (5/15 correct)
+    Agent 6: 20/20 examples (6/20 correct)
+  ✗ Mutation rejected: 0 (50%) → 6 (30%)
+    Agent 7: 5/20 examples (2/5 correct)
+    Agent 7: 10/20 examples (5/10 correct)
+    Agent 7: 15/20 examples (7/15 correct)
+    Agent 7: 20/20 examples (10/20 correct)
+  ✓ Mutation accepted: 1 (30%) → 7 (50%)
+  🌱 Fresh agent injected: Agent 8
+  🌱 Fresh agent injected: Agent 9
+    Agent 10: 5/100 examples (2/5 correct)
+    Agent 10: 10/100 examples (6/10 correct)
+    Agent 10: 15/100 examples (8/15 correct)
+    Agent 10: 20/100 examples (10/20 correct)
+    Agent 10: 25/100 examples (12/25 correct)
+    Agent 10: 30/100 examples (14/30 correct)
+    Agent 10: 35/100 examples (17/35 correct)
+    Agent 10: 40/100 examples (19/40 correct)
+    Agent 10: 45/100 examples (22/45 correct)
+    Agent 10: 50/100 examples (25/50 correct)
+    Agent 10: 55/100 examples (26/55 correct)
+    Agent 10: 60/100 examples (28/60 correct)
+    Agent 10: 65/100 examples (31/65 correct)
+    Agent 10: 70/100 examples (33/70 correct)
+    Agent 10: 75/100 examples (37/75 correct)
+    Agent 10: 80/100 examples (39/80 correct)
+    Agent 10: 85/100 examples (44/85 correct)
+    Agent 10: 90/100 examples (45/90 correct)
+    Agent 10: 95/100 examples (48/95 correct)
+    Agent 10: 100/100 examples (52/100 correct)
+  ✗ Merge rejected: 3+2 → 10 (val=52% < 57%)
+    Agent 11: 5/100 examples (3/5 correct)
+    Agent 11: 10/100 examples (7/10 correct)
+    Agent 11: 15/100 examples (9/15 correct)
+    Agent 11: 20/100 examples (11/20 correct)
+    Agent 11: 25/100 examples (13/25 correct)
+    Agent 11: 30/100 examples (16/30 correct)
+    Agent 11: 35/100 examples (19/35 correct)
+    Agent 11: 40/100 examples (22/40 correct)
+    Agent 11: 45/100 examples (25/45 correct)
+    Agent 11: 50/100 examples (27/50 correct)
+    Agent 11: 55/100 examples (29/55 correct)
+    Agent 11: 60/100 examples (32/60 correct)
+    Agent 11: 65/100 examples (34/65 correct)
+    Agent 11: 70/100 examples (36/70 correct)
+    Agent 11: 75/100 examples (40/75 correct)
+    Agent 11: 80/100 examples (42/80 correct)
+    Agent 11: 85/100 examples (46/85 correct)
+    Agent 11: 90/100 examples (47/90 correct)
+    Agent 11: 95/100 examples (50/95 correct)
+    Agent 11: 100/100 examples (52/100 correct)
+  ✗ Merge rejected: 3+0 → 11 (val=52% < 62%)
+
+============================================================
+Generation 1/5
+============================================================
+    Agent 0: 5/20 examples (1/5 correct)
+    Agent 0: 10/20 examples (4/10 correct)
+    Agent 0: 15/20 examples (8/15 correct)
+    Agent 0: 20/20 examples (12/20 correct)
+    Agent 0: 5/20 examples (1/5 correct)
+    Agent 0: 10/20 examples (2/10 correct)
+    Agent 0: 15/20 examples (4/15 correct)
+    Agent 0: 20/20 examples (6/20 correct)
+  Agent 0 (gen0): dev=60% val=30% wins=6
