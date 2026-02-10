@@ -27,25 +27,30 @@ def call_llm(
     max_tokens: int = 512,
 ) -> str:
     """Call LLM via OpenAI-compatible API."""
-    try:
-        r = requests.post(
-            f"{base_url}/v1/chat/completions",
-            json={
-                "model": model,
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-                "temperature": temperature,
-                "max_tokens": max_tokens,
-                "no_think": True,
-            },
-            timeout=120,
-        )
-        r.raise_for_status()
-        return r.json()["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        return f"ERROR: {e}"
+    for attempt in range(3):
+        try:
+            r = requests.post(
+                f"{base_url}/v1/chat/completions",
+                json={
+                    "model": model,
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                    "no_think": True,
+                },
+                timeout=30,
+            )
+            r.raise_for_status()
+            return r.json()["choices"][0]["message"]["content"].strip()
+        except requests.exceptions.Timeout:
+            print(f"  ⚠️ LLM timeout (attempt {attempt+1}/3)", flush=True)
+            time.sleep(2)
+        except Exception as e:
+            return f"ERROR: {e}"
+    return "ERROR: LLM timeout after 3 attempts"
 
 
 # === Agent ===
@@ -121,11 +126,13 @@ def evaluate_batch(
     predictions = []
     correct = 0
     
-    for ex in examples:
+    for i, ex in enumerate(examples):
         pred = predict(agent, ex, llm_kwargs)
         predictions.append(pred)
         if pred["correct"]:
             correct += 1
+        if (i + 1) % 5 == 0:
+            print(f"    Agent {agent.id}: {i+1}/{len(examples)} examples ({correct}/{i+1} correct)", flush=True)
     
     accuracy = correct / len(examples) if examples else 0.0
     return accuracy, predictions
@@ -317,9 +324,14 @@ class EvolutionConfig:
     max_generations: int = 10
     mutation_rate: float = 0.5
     dev_batch_size: int = 30  # Days to evaluate on dev
+    val_batch_size: int = 0  # 0 = use all val examples
     enable_merge: bool = True
     max_merges_per_gen: int = 2
+    elitism_count: int = 2  # Top N survive unchanged
+    fresh_injection: int = 2  # New random agents per gen
     llm_kwargs: dict = field(default_factory=dict)
+    eval_model: str = ""  # If set, use this model for predictions (faster); mutation uses default model
+    mutation_model: str = ""  # If set, use this model for mutation/merge (smarter)
 
 
 class EvolutionEngine:
@@ -504,6 +516,14 @@ class EvolutionEngine:
             best_val_accuracy = 0.0
             best_agent = population[0]
         
+        # Build separate kwargs for eval vs mutation
+        eval_kwargs = dict(cfg.llm_kwargs)
+        mutation_kwargs = dict(cfg.llm_kwargs)
+        if cfg.eval_model:
+            eval_kwargs["model"] = cfg.eval_model
+        if cfg.mutation_model:
+            mutation_kwargs["model"] = cfg.mutation_model
+        
         for gen in range(start_gen, cfg.max_generations):
             self.generation = gen
             gen_start = time.time()
@@ -518,13 +538,16 @@ class EvolutionEngine:
                 # Dev evaluation (for reflection)
                 dev_batch = random.sample(train_examples, min(cfg.dev_batch_size, len(train_examples)))
                 agent.dev_accuracy, dev_preds = evaluate_batch(
-                    agent, dev_batch, cfg.llm_kwargs, capture_trajectories=True
+                    agent, dev_batch, eval_kwargs, capture_trajectories=True
                 )
                 agent.dev_trajectories = dev_preds
                 
                 # Val evaluation (for selection)
+                val_batch = val_examples
+                if cfg.val_batch_size > 0:
+                    val_batch = random.sample(val_examples, min(cfg.val_batch_size, len(val_examples)))
                 agent.val_accuracy, val_preds = evaluate_batch(
-                    agent, val_examples, cfg.llm_kwargs
+                    agent, val_batch, eval_kwargs
                 )
                 agent.val_predictions = val_preds
                 self._update_pareto(agent, val_preds)
@@ -582,61 +605,76 @@ class EvolutionEngine:
             
             new_population = []
             
-            # Reflective mutation
-            while len(new_population) < cfg.population_size:
-                if random.random() < cfg.mutation_rate and self.pareto_frontier:
-                    parent = self._weighted_choice(self.pareto_frontier)
-                    
-                    # Skip mutation if parent is already very good
-                    if parent.dev_accuracy >= 0.9:
-                        new_population.append(parent)
-                        continue
-                    
-                    # Reflect and mutate
-                    new_strategy = reflect_and_mutate(
-                        parent,
-                        parent.dev_trajectories,
-                        parent.dev_accuracy,
-                        cfg.llm_kwargs,
-                    )
-                    
-                    child = self._new_agent(new_strategy, parents=[parent.id])
-                    
-                    # Gate: evaluate child on same dev batch
-                    dev_batch = random.sample(train_examples, min(cfg.dev_batch_size, len(train_examples)))
-                    child.dev_accuracy, _ = evaluate_batch(child, dev_batch, cfg.llm_kwargs)
-                    
-                    # Accept if not worse than parent
-                    if child.dev_accuracy >= parent.dev_accuracy:
-                        new_population.append(child)
-                        print(f"  ✓ Mutation accepted: {parent.id} ({parent.dev_accuracy:.0%}) → {child.id} ({child.dev_accuracy:.0%})")
-                    else:
-                        print(f"  ✗ Mutation rejected: {parent.id} ({parent.dev_accuracy:.0%}) → {child.id} ({child.dev_accuracy:.0%})")
-                        new_population.append(parent)  # Keep parent
-                else:
-                    # Carry forward from current population
-                    new_population.append(random.choice(population))
+            # Sort by val accuracy for elitism
+            ranked = sorted(population, key=lambda a: a.val_accuracy, reverse=True)
             
-            # Structural merge
+            # (1) Elitism: top 2 survive unchanged
+            elite = ranked[:cfg.elitism_count]
+            for a in elite:
+                new_population.append(a)
+                print(f"  👑 Elite preserved: Agent {a.id} (val={a.val_accuracy:.0%})")
+            
+            # (2) Reflective mutation: mutate from Pareto frontier or top agents
+            mutation_slots = cfg.population_size - cfg.elitism_count - cfg.fresh_injection
+            mutation_pool = self.pareto_frontier if self.pareto_frontier else ranked
+            
+            for _ in range(mutation_slots):
+                parent = self._weighted_choice(mutation_pool)
+                
+                new_strategy = reflect_and_mutate(
+                    parent,
+                    parent.dev_trajectories,
+                    parent.dev_accuracy,
+                    mutation_kwargs,
+                )
+                
+                child = self._new_agent(new_strategy, parents=[parent.id])
+                
+                # Gate: evaluate child on dev batch
+                dev_batch = random.sample(train_examples, min(cfg.dev_batch_size, len(train_examples)))
+                child.dev_accuracy, _ = evaluate_batch(child, dev_batch, eval_kwargs)
+                
+                # Accept if not worse than parent
+                if child.dev_accuracy >= parent.dev_accuracy:
+                    new_population.append(child)
+                    print(f"  ✓ Mutation accepted: {parent.id} ({parent.dev_accuracy:.0%}) → {child.id} ({child.dev_accuracy:.0%})")
+                else:
+                    print(f"  ✗ Mutation rejected: {parent.id} ({parent.dev_accuracy:.0%}) → {child.id} ({child.dev_accuracy:.0%})")
+                    new_population.append(parent)  # Keep parent
+            
+            # (3) Fresh injection: new random agents for diversity
+            for _ in range(cfg.fresh_injection):
+                fresh_strategy = random.choice(seed_strategies)
+                fresh = self._new_agent(fresh_strategy)
+                new_population.append(fresh)
+                print(f"  🌱 Fresh agent injected: Agent {fresh.id}")
+            
+            # Structural merge (replaces worst if successful)
             if cfg.enable_merge and len(self.pareto_frontier) >= 2:
                 for _ in range(cfg.max_merges_per_gen):
                     if len(self.pareto_frontier) < 2:
                         break
                     
                     a, b = random.sample(self.pareto_frontier[:4], 2)
-                    merged_strategy = merge_strategies(a, b, cfg.llm_kwargs)
+                    merged_strategy = merge_strategies(a, b, mutation_kwargs)
                     merged = self._new_agent(merged_strategy, parents=[a.id, b.id])
                     
                     # Gate on val
                     merged.val_accuracy, val_preds = evaluate_batch(
-                        merged, val_examples, cfg.llm_kwargs
+                        merged, val_examples, eval_kwargs
                     )
                     
                     parent_avg = (a.val_accuracy + b.val_accuracy) / 2
                     if merged.val_accuracy >= parent_avg * 0.95:
                         self._update_pareto(merged, val_preds)
-                        new_population.append(merged)
-                        print(f"  ⚡ Merge accepted: {a.id}+{b.id} → {merged.id} (val={merged.val_accuracy:.0%})")
+                        # Replace worst non-elite agent
+                        worst_idx = min(
+                            range(cfg.elitism_count, len(new_population)),
+                            key=lambda i: new_population[i].dev_accuracy,
+                        )
+                        replaced = new_population[worst_idx]
+                        new_population[worst_idx] = merged
+                        print(f"  ⚡ Merge accepted: {a.id}+{b.id} → {merged.id} (val={merged.val_accuracy:.0%}), replaced Agent {replaced.id}")
                     else:
                         print(f"  ✗ Merge rejected: {a.id}+{b.id} → {merged.id} (val={merged.val_accuracy:.0%} < {parent_avg*0.95:.0%})")
             
@@ -644,7 +682,7 @@ class EvolutionEngine:
         
         # === Final: Test best agent ===
         print(f"\n{'='*60}\nFinal Test\n{'='*60}")
-        test_accuracy, test_preds = evaluate_batch(best_agent, test_examples, cfg.llm_kwargs)
+        test_accuracy, test_preds = evaluate_batch(best_agent, test_examples, eval_kwargs)
         print(f"Best agent {best_agent.id} (gen{best_agent.generation}):")
         print(f"  Val accuracy: {best_val_accuracy:.0%}")
         print(f"  Test accuracy: {test_accuracy:.0%}")

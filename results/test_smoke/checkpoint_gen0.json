@@ -1,0 +1,69 @@
+{
+  "generation": 0,
+  "agent_counter": 2,
+  "best_val_accuracy": 0.4,
+  "best_agent_id": 0,
+  "history": [
+    {
+      "generation": 0,
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev_acc": 1.0,
+          "val_acc": 0.4,
+          "wins": 2,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev_acc": 0.333,
+          "val_acc": 0.4,
+          "wins": 0,
+          "parents": []
+        }
+      ],
+      "best_val": 0.4,
+      "frontier_size": 1,
+      "duration_sec": 66.5
+    }
+  ],
+  "population": [
+    {
+      "id": 0,
+      "strategy_prompt": "You are a trend-following BTC trading analyst.\nYour strategy: Follow the prevailing trend. If BTC has been going up over the last 7-14 days, predict UP. If down, predict DOWN.\nKey indicators: Look at the last 7 and 14 day trends. Momentum matters more than single-day moves.\nRisk rule: If volatility is extremely high (>5% daily swings), be cautious and favor the longer-term trend.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 1.0,
+      "val_accuracy": 0.4,
+      "val_instance_wins": [
+        0,
+        4
+      ]
+    },
+    {
+      "id": 1,
+      "strategy_prompt": "You are a mean-reversion BTC trading analyst.\nYour strategy: Prices tend to revert to the mean. After big moves up, predict DOWN. After big drops, predict UP.\nKey indicators: Compare current price to the 30-day average. If >5% above average, predict DOWN. If >5% below, predict UP.\nRisk rule: Don't fight strong trends — only apply mean reversion after 3+ days of strong movement.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.3333333333333333,
+      "val_accuracy": 0.4,
+      "val_instance_wins": []
+    }
+  ],
+  "pareto_frontier": [
+    {
+      "id": 0,
+      "strategy_prompt": "You are a trend-following BTC trading analyst.\nYour strategy: Follow the prevailing trend. If BTC has been going up over the last 7-14 days, predict UP. If down, predict DOWN.\nKey indicators: Look at the last 7 and 14 day trends. Momentum matters more than single-day moves.\nRisk rule: If volatility is extremely high (>5% daily swings), be cautious and favor the longer-term trend.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 1.0,
+      "val_accuracy": 0.4,
+      "val_instance_wins": [
+        0,
+        4
+      ]
+    }
+  ]
+}

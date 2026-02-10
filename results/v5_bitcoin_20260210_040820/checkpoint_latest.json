@@ -1,0 +1,217 @@
+{
+  "generation": 2,
+  "agent_counter": 12,
+  "best_val_accuracy": 0.7,
+  "best_agent_id": 1,
+  "history": [
+    {
+      "generation": 0,
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev_acc": 0.3,
+          "val_acc": 0.4,
+          "wins": 3,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev_acc": 0.4,
+          "val_acc": 0.7,
+          "wins": 6,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.4,
+          "val_acc": 0.6,
+          "wins": 1,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev_acc": 0.2,
+          "val_acc": 0.5,
+          "wins": 0,
+          "parents": []
+        }
+      ],
+      "best_val": 0.7,
+      "frontier_size": 3,
+      "duration_sec": 256.3
+    },
+    {
+      "generation": 1,
+      "agents": [
+        {
+          "id": 1,
+          "gen": 0,
+          "dev_acc": 0.3,
+          "val_acc": 0.7,
+          "wins": 5,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.2,
+          "val_acc": 0.6,
+          "wins": 1,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev_acc": 0.6,
+          "val_acc": 0.4,
+          "wins": 0,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev_acc": 0.3,
+          "val_acc": 0.6,
+          "wins": 0,
+          "parents": []
+        }
+      ],
+      "best_val": 0.7,
+      "frontier_size": 3,
+      "duration_sec": 289.0
+    },
+    {
+      "generation": 2,
+      "agents": [
+        {
+          "id": 1,
+          "gen": 0,
+          "dev_acc": 0.3,
+          "val_acc": 0.3,
+          "wins": 3,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev_acc": 0.5,
+          "val_acc": 0.5,
+          "wins": 1,
+          "parents": []
+        },
+        {
+          "id": 10,
+          "gen": 1,
+          "dev_acc": 0.5,
+          "val_acc": 0.7,
+          "wins": 0,
+          "parents": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 1,
+          "dev_acc": 0.5,
+          "val_acc": 0.4,
+          "wins": 0,
+          "parents": []
+        }
+      ],
+      "best_val": 0.7,
+      "frontier_size": 3,
+      "duration_sec": 293.2
+    }
+  ],
+  "population": [
+    {
+      "id": 1,
+      "strategy_prompt": "You are a mean-reversion BTC trading analyst.\nYour strategy: Prices tend to revert to the mean. After big moves up, predict DOWN. After big drops, predict UP.\nKey indicators: Compare current price to the 30-day average. If >5% above average, predict DOWN. If >5% below, predict UP.\nRisk rule: Don't fight strong trends — only apply mean reversion after 3+ days of strong movement.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.3,
+      "val_accuracy": 0.3,
+      "val_instance_wins": [
+        9,
+        2,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "strategy_prompt": "You are a volatility-focused BTC trading analyst.\nYour strategy: High volatility periods tend to continue in the same direction for 1-2 days, then reverse. Low volatility leads to breakouts.\nKey indicators: Calculate recent daily ranges. After 3+ days of low volatility (<1% daily), predict a breakout in the direction of the last small move. After high volatility days, predict continuation for 1 day then reversal.\nRisk rule: In extremely volatile markets (>8% moves), reduce confidence and favor the dominant trend.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.5,
+      "val_accuracy": 0.5,
+      "val_instance_wins": [
+        4
+      ]
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are a hybrid BTC trading analyst combining volatility and trend-following approaches.\n\nYour merged strategy: \n1. **Trend Confirmation**: First check 7-14 day trends - if clear uptrend/downward trend exists, follow it as primary signal\n2. **Volatility Filtering**: Calculate recent daily ranges to identify volatility regimes:\n   - High volatility periods (>5% daily) = continuation pattern (1-2 days)\n   - Low volatility periods (<1% daily for 3+ days) = breakout opportunity in direction of last small move\n3. **Risk Management**: \n   - In extremely volatile markets (>8% moves), reduce confidence and favor dominant trend over short-term signals  \n   - If both trend and volatility patterns conflict, prioritize the longer-term trend (7-14 day)\n4. **Signal Priority**: Trend signal overrides volatility signal when they conflict, but use volatility to refine timing of trend entries\n\nKey indicators: 7-day and 14-day trend analysis + daily range calculations for volatility detection\nRisk rule: Extremely high volatility (>8%) reduces confidence in all signals and favors dominant trend over short-term patterns",
+      "generation": 1,
+      "parents": [
+        2,
+        0
+      ],
+      "dev_accuracy": 0.5,
+      "val_accuracy": 0.7,
+      "val_instance_wins": []
+    },
+    {
+      "id": 9,
+      "strategy_prompt": "You are a mean-reversion BTC trading analyst.\nYour strategy: Prices tend to revert to the mean. After big moves up, predict DOWN. After big drops, predict UP.\nKey indicators: Compare current price to the 30-day average. If >5% above average, predict DOWN. If >5% below, predict UP.\nRisk rule: Don't fight strong trends — only apply mean reversion after 3+ days of strong movement.",
+      "generation": 1,
+      "parents": [],
+      "dev_accuracy": 0.5,
+      "val_accuracy": 0.4,
+      "val_instance_wins": []
+    }
+  ],
+  "pareto_frontier": [
+    {
+      "id": 0,
+      "strategy_prompt": "You are a trend-following BTC trading analyst.\nYour strategy: Follow the prevailing trend. If BTC has been going up over the last 7-14 days, predict UP. If down, predict DOWN.\nKey indicators: Look at the last 7 and 14 day trends. Momentum matters more than single-day moves.\nRisk rule: If volatility is extremely high (>5% daily swings), be cautious and favor the longer-term trend.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.3,
+      "val_accuracy": 0.4,
+      "val_instance_wins": [
+        1,
+        3,
+        6
+      ]
+    },
+    {
+      "id": 1,
+      "strategy_prompt": "You are a mean-reversion BTC trading analyst.\nYour strategy: Prices tend to revert to the mean. After big moves up, predict DOWN. After big drops, predict UP.\nKey indicators: Compare current price to the 30-day average. If >5% above average, predict DOWN. If >5% below, predict UP.\nRisk rule: Don't fight strong trends — only apply mean reversion after 3+ days of strong movement.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.3,
+      "val_accuracy": 0.3,
+      "val_instance_wins": [
+        9,
+        2,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "strategy_prompt": "You are a volatility-focused BTC trading analyst.\nYour strategy: High volatility periods tend to continue in the same direction for 1-2 days, then reverse. Low volatility leads to breakouts.\nKey indicators: Calculate recent daily ranges. After 3+ days of low volatility (<1% daily), predict a breakout in the direction of the last small move. After high volatility days, predict continuation for 1 day then reversal.\nRisk rule: In extremely volatile markets (>8% moves), reduce confidence and favor the dominant trend.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.5,
+      "val_accuracy": 0.5,
+      "val_instance_wins": [
+        4
+      ]
+    }
+  ]
+}
