@@ -129,8 +129,8 @@ def create_examples(
 
 def split_examples(
     examples: list[MarketExample],
-    train_ratio: float = 0.7,
-    val_ratio: float = 0.15,
+    train_ratio: float = 0.4,
+    val_ratio: float = 0.3,
 ) -> tuple[list[MarketExample], list[MarketExample], list[MarketExample]]:
     """Split examples chronologically (no shuffle — temporal order matters).
     

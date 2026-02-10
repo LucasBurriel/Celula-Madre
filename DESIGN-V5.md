@@ -47,13 +47,22 @@ The market IS the fitness function — no simulated scores.
 - Secondary: confidence-weighted accuracy (high confidence + correct = bonus)
 - Tertiary: max drawdown avoidance (penalize wrong calls on big moves)
 
-## Evolution Parameters (from GEPA)
+## Evolution Parameters (finalized post-V4 analysis)
 - Population: 8 agents
 - Generations: 10-20
-- Mutation rate: 0.5 (50% mutate, 50% carry forward)
-- Dev/val split: 50/50
-- Merge: enabled, max 5 per generation
-- Gating: child >= parent on dev set
+- Elitism: top 2 survive unchanged each generation
+- Mutation: 4 agents undergo reflective mutation
+- Fresh injection: 2 new random agents per generation (diversity)
+- Gating: child must score >= parent on dev set to replace
+- Fitness sharing: penalize similarity to maintain diverse strategies
+- Dev/val/test split: 40/30/30 of historical data
+- Merge: enabled, max 2 per generation (conservative)
+
+### V4 Lessons Applied
+- Smaller population with more data per agent (V4 had 24 agents, too diluted)
+- Mandatory gating prevents regression (V4 had none)
+- Elitism preserves winners (V4 retired entire generations)
+- Reflective mutation on own trajectories, NOT client feedback (V4's feedback was noise)
 
 ## LLM Usage
 - Agent execution: Qwen3-30B local (free)
