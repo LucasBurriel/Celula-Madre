@@ -1,0 +1,6 @@
+{
+  "id": "graph_shortest",
+  "description": "Implement Dijkstra's shortest path algorithm. Given a weighted directed graph as adjacency list {node: [(neighbor, weight), ...]}, find shortest distances from a source node to all other nodes. Return dict {node: distance}. Unreachable nodes should have distance float('inf').",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

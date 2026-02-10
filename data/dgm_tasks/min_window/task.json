@@ -1,0 +1,6 @@
+{
+  "id": "min_window",
+  "description": "Minimum window substring of s containing all chars of t.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "lis",
+  "description": "Return length of longest strictly increasing subsequence. Must be O(n log n).",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

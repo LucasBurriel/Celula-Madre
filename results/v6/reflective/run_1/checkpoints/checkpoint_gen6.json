@@ -1,0 +1,618 @@
+{
+  "generation": 6,
+  "agent_counter": 44,
+  "config_mode": "reflective",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.91,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.9,
+          "val": 0.91,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.91,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.9,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.89,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.89,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.88,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.88,
+          "parents": []
+        }
+      ],
+      "best_val": 0.91,
+      "mean_val": 0.8962,
+      "duration_sec": 1097.5
+    },
+    {
+      "generation": 1,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.93,
+          "parents": [
+            6
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.92,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.91,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.91,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.9,
+          "parents": []
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.9,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.89,
+          "parents": []
+        }
+      ],
+      "best_val": 0.94,
+      "mean_val": 0.9125,
+      "duration_sec": 1158.8
+    },
+    {
+      "generation": 2,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.94,
+          "parents": [
+            6
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 16,
+          "gen": 1,
+          "dev": 0.92,
+          "val": 0.93,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 17,
+          "gen": 1,
+          "dev": 0.94,
+          "val": 0.93,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.9,
+          "val": 0.92,
+          "parents": []
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.91,
+          "val": 0.91,
+          "parents": []
+        }
+      ],
+      "best_val": 0.94,
+      "mean_val": 0.9313,
+      "duration_sec": 1152.6
+    },
+    {
+      "generation": 3,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.94,
+          "parents": [
+            6
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.86,
+          "val": 0.89,
+          "parents": []
+        }
+      ],
+      "best_val": 0.94,
+      "mean_val": 0.9337,
+      "duration_sec": 1131.9
+    },
+    {
+      "generation": 4,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.94,
+          "parents": [
+            6
+          ]
+        },
+        {
+          "id": 26,
+          "gen": 3,
+          "dev": 0.9,
+          "val": 0.94,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 27,
+          "gen": 3,
+          "dev": 0.9,
+          "val": 0.94,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 28,
+          "gen": 3,
+          "dev": 0.91,
+          "val": 0.94,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 31,
+          "gen": 3,
+          "dev": 0.86,
+          "val": 0.89,
+          "parents": []
+        }
+      ],
+      "best_val": 0.94,
+      "mean_val": 0.9337,
+      "duration_sec": 1166.0
+    },
+    {
+      "generation": 5,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 36,
+          "gen": 4,
+          "dev": 0.92,
+          "val": 0.95,
+          "parents": [
+            26
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.94,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 34,
+          "gen": 4,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 26,
+          "gen": 3,
+          "dev": 0.9,
+          "val": 0.94,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 37,
+          "gen": 4,
+          "dev": 0.89,
+          "val": 0.94,
+          "parents": []
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.93,
+          "parents": [
+            6
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.93,
+          "parents": [
+            6
+          ]
+        }
+      ],
+      "best_val": 0.95,
+      "mean_val": 0.9387,
+      "duration_sec": 1189.2
+    },
+    {
+      "generation": 6,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 36,
+          "gen": 4,
+          "dev": 0.92,
+          "val": 0.95,
+          "parents": [
+            26
+          ]
+        },
+        {
+          "id": 36,
+          "gen": 4,
+          "dev": 0.92,
+          "val": 0.95,
+          "parents": [
+            26
+          ]
+        },
+        {
+          "id": 41,
+          "gen": 5,
+          "dev": 0.93,
+          "val": 0.94,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 42,
+          "gen": 5,
+          "dev": 0.88,
+          "val": 0.94,
+          "parents": [
+            26
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.89,
+          "val": 0.93,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 39,
+          "gen": 5,
+          "dev": 0.88,
+          "val": 0.93,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 40,
+          "gen": 5,
+          "dev": 0.9,
+          "val": 0.93,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 43,
+          "gen": 5,
+          "dev": 0.88,
+          "val": 0.91,
+          "parents": []
+        }
+      ],
+      "best_val": 0.95,
+      "mean_val": 0.935,
+      "duration_sec": 1237.7
+    }
+  ],
+  "population": [
+    {
+      "id": 36,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance). Focus on the core domain of the article. When a company's primary focus is technological rather than financial, classify as Sci/Tech even if it mentions CFOs, earnings, or financial metrics.\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, general business operations, market movements, or regulatory impacts on commercial activities. This includes any article focused primarily on financial markets, economics, business strategy, or commercial activities - regardless of whether they mention technology, sports, or other fields. When the primary focus is corporate financial activity, regulatory impact on commerce, or economic policy rather than technical content, classify as Business.\n\n**Critical distinction rules:**\n- **Sci/Tech vs Business**: If an article primarily discusses a company that's fundamentally about technology development and innovation (e.g., CRM, MicroStrategy, Veritas, Novell, Yahoo) regardless of financial metrics, classify as Sci/Tech. When the focus is on corporate earnings, stock prices, or financial strategy rather than technical content, classify as Business.\n- **Business vs World**: If an article focuses primarily on economic policy, regulatory impacts on business operations, trade disputes, or international commerce - even if it mentions foreign countries or international relations - classify as Business. When the focus is specifically on diplomatic relations, government actions, geopolitical events, or cross-border policy matters without significant commercial/financial implications, classify as World.\n- **World vs Business**: If an article discusses international affairs with primary focus on diplomacy, government policies, political events, or international organizations without substantial business/financial content, classify as World. When it involves international trade disputes, economic policy issues, or regulatory matters affecting global commerce, classify as Business.\n\n**Pay special attention to:**\n1. Technology-focused companies (CRM, MicroStrategy, Veritas, Novell, Yahoo) - classify as Sci/Tech even if they mention financials\n2. Corporate reorganizations and acquisitions in tech sectors - classify as Sci/Tech \n3. Government/regulatory agency decisions affecting technology or business operations - consider the domain of the regulation's primary focus (if primarily about business/commerce operations, it's Business; if primarily about technical/innovation domains, it's Sci/Tech)\n4. International trade disputes and global policy issues - classify as Business if they're fundamentally about commercial/economic policy implications\n5. Financial market movements and corporate earnings that are specifically about technology companies' business models or innovation rather than general financial",
+      "generation": 4,
+      "parents": [
+        26
+      ],
+      "dev_accuracy": 0.92,
+      "val_accuracy": 0.95
+    },
+    {
+      "id": 11,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance)\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, or general business operations\n- **World**: International news, diplomatic relations, foreign government actions, global political events, international organizations, or cross-border affairs\n- **Sports**: Athletic competitions, games, tournaments, player transfers, sports organizations, or sporting events\n\nPay special attention to:\n1. Technology-focused companies (CRM, MicroStrategy, Veritas, Novell, Yahoo) - classify as Sci/Tech even if they mention financials\n2. Corporate reorganizations and acquisitions in tech sectors - classify as Sci/Tech \n3. Government/ regulatory agency decisions affecting technology or business - consider the domain\n4. International trade disputes and global policy issues - classify as World\n\nRespond with ONLY the category name, nothing else.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.89,
+      "val_accuracy": 0.93
+    },
+    {
+      "id": 36,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance). Focus on the core domain of the article. When a company's primary focus is technological rather than financial, classify as Sci/Tech even if it mentions CFOs, earnings, or financial metrics.\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, general business operations, market movements, or regulatory impacts on commercial activities. This includes any article focused primarily on financial markets, economics, business strategy, or commercial activities - regardless of whether they mention technology, sports, or other fields. When the primary focus is corporate financial activity, regulatory impact on commerce, or economic policy rather than technical content, classify as Business.\n\n**Critical distinction rules:**\n- **Sci/Tech vs Business**: If an article primarily discusses a company that's fundamentally about technology development and innovation (e.g., CRM, MicroStrategy, Veritas, Novell, Yahoo) regardless of financial metrics, classify as Sci/Tech. When the focus is on corporate earnings, stock prices, or financial strategy rather than technical content, classify as Business.\n- **Business vs World**: If an article focuses primarily on economic policy, regulatory impacts on business operations, trade disputes, or international commerce - even if it mentions foreign countries or international relations - classify as Business. When the focus is specifically on diplomatic relations, government actions, geopolitical events, or cross-border policy matters without significant commercial/financial implications, classify as World.\n- **World vs Business**: If an article discusses international affairs with primary focus on diplomacy, government policies, political events, or international organizations without substantial business/financial content, classify as World. When it involves international trade disputes, economic policy issues, or regulatory matters affecting global commerce, classify as Business.\n\n**Pay special attention to:**\n1. Technology-focused companies (CRM, MicroStrategy, Veritas, Novell, Yahoo) - classify as Sci/Tech even if they mention financials\n2. Corporate reorganizations and acquisitions in tech sectors - classify as Sci/Tech \n3. Government/regulatory agency decisions affecting technology or business operations - consider the domain of the regulation's primary focus (if primarily about business/commerce operations, it's Business; if primarily about technical/innovation domains, it's Sci/Tech)\n4. International trade disputes and global policy issues - classify as Business if they're fundamentally about commercial/economic policy implications\n5. Financial market movements and corporate earnings that are specifically about technology companies' business models or innovation rather than general financial",
+      "generation": 4,
+      "parents": [
+        26
+      ],
+      "dev_accuracy": 0.92,
+      "val_accuracy": 0.95
+    },
+    {
+      "id": 39,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance)\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, general business operations, or industry-specific commercial activities\n- **World**: International news, diplomatic relations, foreign government actions, global political events, international organizations, cross-border affairs, or geopolitical issues (even if they involve business/finance)\n- **Sports**: Athletic competitions, games, tournaments, player transfers, sports organizations, or sporting events\n\n**Critical distinctions to avoid common errors:**\n\n1. **Tech vs Business confusion:** \n   - If an article focuses on a technology company's operations, products, or technical capabilities (even if mentioning financials), classify as Sci/Tech\n   - If an article focuses on corporate financial performance, earnings reports, stock prices, mergers & acquisitions, or general business strategy regardless of tech involvement, classify as Business\n\n2. **International vs Domestic focus:**\n   - If the main subject involves international affairs (foreign governments, cross-border issues, international organizations), classify as World\n   - If the article primarily addresses domestic policies, companies, or commercial activities within a single country, even if they have some international elements, classify as Business\n\n3. **Specific indicators:**\n   - Technology-focused companies like MicroStrategy, Veritas, Novell, Yahoo, CRM should be classified as Sci/Tech\n   - Government/regulatory actions affecting technology sectors are usually Sci/Tech (FCC fiber-to-curb rules)\n   - International trade disputes and global policy issues involving nations/organizations = World \n   - Corporate reorganizations, acquisitions in tech sectors = Sci/Tech\n   - Articles about company financial performance, stock prices, earnings, or investment decisions = Business\n\nPay special attention to:\n- Government/ regulatory agency decisions affecting technology or business domains\n- International trade disputes and global policy issues (World)\n- Technology-focused companies with financial reporting (Sci/Tech)\n- Corporate financial activities regardless of tech involvement (Business)\n\nRespond with ONLY the category name, nothing else.",
+      "generation": 5,
+      "parents": [
+        11
+      ],
+      "dev_accuracy": 0.88,
+      "val_accuracy": 0.93
+    },
+    {
+      "id": 40,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance). Also classify as Sci/Tech when:\n  - Technology-focused companies are mentioned (CRM, MicroStrategy, Veritas, Novell, Yahoo, GenCorp, etc.) even if discussing financials\n  - Corporate reorganizations and acquisitions in tech sectors\n  - Government/regulatory decisions affecting technology or business domains with technical focus\n\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, general business operations, or market analysis. Also classify as Business when:\n  - Company financial news and stock movements (even if involving tech companies)\n  - Corporate strategy discussions\n  - Economic policies affecting businesses\n  - International trade disputes with business impact\n  - Business operations and strategic decisions\n\n- **World**: International news, diplomatic relations, foreign government actions, global political events, international organizations, cross-border affairs, or geopolitical issues. Also classify as World when:\n  - Articles focus on international relationships or political affairs between countries\n  - Involves international trade disputes with broader global policy implications\n  - Cross-border business transactions involving foreign entities\n\n- **Sports**: Athletic competitions, games, tournaments, player transfers, sports organizations, or sporting events.\n\n**Critical rules for classification:**\n1. When a technology company (like MicroStrategy, GenCorp) is mentioned in a financial context, classify as Sci/Tech\n2. When an article discusses corporate financial performance, stock movements, or economic policy regardless of industry, classify as Business\n3. When the focus is on international relations, foreign governments, global political events, or cross-border affairs, classify as World\n\nPay special attention to:\n- Technology-focused companies (CRM, MicroStrategy, Veritas, Novell, Yahoo, GenCorp) - classify as Sci/Tech even if they mention financials\n- Corporate reorganizations and acquisitions in tech sectors - classify as Sci/Tech \n- Government/regulatory agency decisions affecting technology or business domains - consider the primary subject matter\n- International trade disputes and global policy issues - focus on whether it's about international relations vs. business operations\n\nRespond with ONLY the category name, nothing else.",
+      "generation": 5,
+      "parents": [
+        11
+      ],
+      "dev_accuracy": 0.9,
+      "val_accuracy": 0.93
+    },
+    {
+      "id": 41,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance). Focus on the core domain expertise.\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, general business operations, or market activities. When a story is fundamentally about commerce, finance, or enterprise operations regardless of technological content.\n\n**Critical distinctions for ambiguous cases:**\n- **World**: International news involving foreign governments, diplomatic relations, international organizations, global political events, cross-border affairs, or geopolitical issues\n- **Business vs Sci/Tech**: \n  - If the article focuses on corporate financials (earnings, stock prices, mergers, acquisitions) but mentions technology only incidentally as a business tool, classify as Business\n  - If the article centers on technological innovation, software products, IT infrastructure, or technical solutions regardless of financial context, classify as Sci/Tech\n\n**Pay special attention to:**\n1. Technology-focused companies (CRM, MicroStrategy, Veritas, Novell, Yahoo) - classify as Sci/Tech even if they mention financials\n2. Corporate reorganizations and acquisitions in tech sectors - classify as Sci/Tech \n3. Government/regulatory agency decisions affecting technology or business operations - consider the primary domain of the decision's impact (tech vs commerce)\n4. International trade disputes, global policy issues, cross-border economic agreements, diplomatic relations involving international organizations - classify as World\n5. Company financial performance and stock market movements (even when mentioning tech companies) - classify as Business\n\n**Specific ambiguous case rules:**\n- \"FCC exempts fiber-to-curb from sharing requirements\" → Business (regulatory policy affecting telecommunications business operations)\n- \"Alstom to sign 1 billion Euro in contracts with China\" → World (international business deal between French and Chinese companies)\n- \"WTO backs Korea in shipbuilding dispute with EU\" → Business (trade dispute involving economic policy, not international politics)\n\nRespond with ONLY the category name, nothing else.",
+      "generation": 5,
+      "parents": [
+        11
+      ],
+      "dev_accuracy": 0.93,
+      "val_accuracy": 0.94
+    },
+    {
+      "id": 42,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text carefully\n2. Identify the primary subject and domain focus\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n\n**Key guidance for ambiguous cases:**\n\n- **Sci/Tech**: Articles about technology companies, software, hardware, IT services, telecommunications, scientific research, tech products, software development, or technical business solutions (even if they mention finance). Focus on the core domain of the article. This includes articles mentioning financials but primarily focused on technical/innovation aspects such as:\n  - Technology company operations, product launches, or R&D activities\n  - Software platforms, cloud computing services, data management systems\n  - Hardware developments, network infrastructure, cybersecurity solutions  \n  - Tech industry trends and technical business models\n\n- **Business**: Articles about corporate financial performance, mergers & acquisitions, stock prices, company earnings, economic policy, trade disputes, general business operations, or market movements. This includes any article focused primarily on financial markets, economics, business strategy, or commercial activities regardless of other fields mentioned. Special attention to:\n  - Corporate financial reporting and earnings announcements\n  - Mergers, acquisitions, stock transactions, corporate restructurings\n  - Company leadership changes that are primarily about business operations (not technical)\n  - Economic policy analysis affecting business sectors\n  - International trade disputes that focus on economic impacts or policy implications rather than geopolitical aspects\n\n- **World**: International news, diplomatic relations, foreign government actions, global political events, international organizations, or cross-border affairs. Focus on geopolitical, governmental and international policy matters. Consider when:\n  - The article centers around international diplomacy, foreign relations, or government policies that transcend national boundaries\n  - It discusses countries' official positions or actions in the context of global governance (including WTO, UN, etc.)\n  - It involves direct comparisons between nations' economic policies or political systems\n\n- **Sports**: Athletic competitions, games, tournaments, player transfers, sports organizations, or sporting events.\n\nPay special attention to:\n1. Technology-focused companies (CRM, MicroStrategy, Veritas, Novell, Yahoo) - classify as Sci/Tech even if they mention financials\n2. Corporate reorganizations and acquisitions in tech sectors - classify as Sci/Tech \n3. Government/ regulatory agency decisions affecting technology or business - consider the domain of the regulation's primary focus\n4. International trade disputes and global policy issues that are primarily economic rather than political\n\n**Critical distinction rules:**\n- If an article discusses company operations, technical products, software platforms, hardware developments, IT services, telecommunications infrastructure, scientific research outcomes, or technology sector trends (regardless of financial implications), classify as **Sci/Tech**, not Business\n- If the primary focus is on corporate financial performance, stock movements, earnings reports, business strategy, mergers and acquisitions, or market analysis, classify as **",
+      "generation": 5,
+      "parents": [
+        26
+      ],
+      "dev_accuracy": 0.88,
+      "val_accuracy": 0.94
+    },
+    {
+      "id": 43,
+      "strategy_prompt": "News classifier. Categories: World, Sports, Business, Sci/Tech.\nRead → classify → output category name only.",
+      "generation": 5,
+      "parents": [],
+      "dev_accuracy": 0.88,
+      "val_accuracy": 0.91
+    }
+  ]
+}

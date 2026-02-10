@@ -1,0 +1,6 @@
+{
+  "id": "linked_list",
+  "description": "Implement a singly linked list with append, prepend, delete (first occurrence, return bool), find (return bool), and to_list methods.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

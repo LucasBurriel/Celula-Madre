@@ -1,0 +1,6 @@
+{
+  "id": "tree_serde",
+  "description": "Implement serialize(root) and deserialize(data) for binary tree.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

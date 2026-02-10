@@ -1,0 +1,6 @@
+{
+  "id": "regex_match",
+  "description": "Implement regex_match(text, pattern) supporting . and * with full string matching.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "consistent_hash",
+  "description": "Consistent hashing ring with add_node, remove_node, get_node.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

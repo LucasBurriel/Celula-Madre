@@ -1,0 +1,6 @@
+{
+  "id": "calculator",
+  "description": "Implement a calculator that evaluates math expressions with +, -, *, / and parentheses. Follow operator precedence. Return float.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "interval_merge",
+  "description": "merge_intervals(intervals) and query_point(merged, point)",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

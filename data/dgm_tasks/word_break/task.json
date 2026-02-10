@@ -1,0 +1,6 @@
+{
+  "id": "word_break",
+  "description": "can_break(s, word_dict) and break_sentence(s, word_dict)",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

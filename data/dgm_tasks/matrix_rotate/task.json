@@ -1,0 +1,6 @@
+{
+  "id": "matrix_rotate",
+  "description": "Implement a function to rotate a square matrix 90 degrees clockwise in-place. Return the matrix.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

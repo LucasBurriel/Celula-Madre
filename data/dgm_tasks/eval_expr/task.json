@@ -1,0 +1,6 @@
+{
+  "id": "eval_expr",
+  "description": "Evaluate math expression string with +,-,*,/ (int div), parens, unary minus. No eval().",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

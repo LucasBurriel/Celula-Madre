@@ -1,0 +1,6 @@
+{
+  "id": "json_parser",
+  "description": "Implement a JSON parser from scratch (no json module). Support: strings (with escape sequences \\n \\t \\\\ \\\"), numbers (int and float), booleans (true/false), null, arrays, and nested objects. Return Python equivalents.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

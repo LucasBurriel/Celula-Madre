@@ -1,0 +1,6 @@
+{
+  "id": "task_scheduler",
+  "description": "Implement a task scheduler. Given a list of tasks (chars) and a cooldown period n, find the minimum number of intervals needed to execute all tasks. Same tasks must be separated by at least n intervals. Idle intervals count. Tasks can be executed in any order.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

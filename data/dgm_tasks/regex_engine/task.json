@@ -1,0 +1,6 @@
+{
+  "id": "regex_engine",
+  "description": "Implement a simple regex engine that supports: literal chars, '.' (any char), '*' (zero or more of previous), '+' (one or more of previous), '?' (zero or one of previous), and character classes [abc]. The match function should check if the FULL string matches the pattern.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

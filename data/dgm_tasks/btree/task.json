@@ -1,0 +1,6 @@
+{
+  "id": "btree",
+  "description": "Implement a self-balancing Binary Search Tree (AVL tree) with insert, search, delete, and in_order traversal. Each operation must maintain the AVL balance property.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "trie",
+  "description": "Trie with insert, search, starts_with, autocomplete(prefix, limit=5)",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "topo_sort",
+  "description": "Topological sort with cycle detection. Return ordering or [] if cycle.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}
