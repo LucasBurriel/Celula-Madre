@@ -10,3 +10,85 @@ Data: dev=32, val=32, test=200
 ==================================================
   Agent 0 (gen0): dev=87.5%
   Agent 1 (gen0): dev=90.6%
+  Agent 2 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 4 (gen0): dev=84.4%
+  Agent 5 (gen0): dev=87.5%
+  Gen 0 best: Agent 3 val=96.9% dev=87.5%
+  💾 Checkpoint: /home/ubuntu/.openclaw/workspace/Celula-Madre/results/v6/quick_reflective/run_1/checkpoints/checkpoint_gen0.json
+  👑 Elite: Agent 3 (val=96.9%)
+  👑 Elite: Agent 5 (val=93.8%)
+  ✗ Rejected: 3→6 (96.9%→90.6%)
+  ✗ Rejected: 5→7 (93.8%→90.6%)
+  ✗ Rejected: 0→8 (90.6%→87.5%)
+  🌱 Fresh: Agent 9
+
+==================================================
+[REFLECTIVE] Generation 1/5
+==================================================
+  Agent 3 (gen0): dev=87.5%
+  Agent 5 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 5 (gen0): dev=87.5%
+  Agent 0 (gen0): dev=87.5%
+  Agent 9 (gen0): dev=90.6%
+  Gen 1 best: Agent 3 val=93.8% dev=87.5%
+  💾 Checkpoint: /home/ubuntu/.openclaw/workspace/Celula-Madre/results/v6/quick_reflective/run_1/checkpoints/checkpoint_gen1.json
+  👑 Elite: Agent 3 (val=93.8%)
+  👑 Elite: Agent 3 (val=93.8%)
+  ✓ Mutation: 5→10 (90.6%→90.6%)
+  ✗ Rejected: 3→11 (93.8%→90.6%)
+  ✗ Rejected: 3→12 (93.8%→87.5%)
+  🌱 Fresh: Agent 13
+
+==================================================
+[REFLECTIVE] Generation 2/5
+==================================================
+  Agent 3 (gen0): dev=90.6%
+  Agent 3 (gen0): dev=90.6%
+  Agent 10 (gen1): dev=87.5%
+  Agent 3 (gen0): dev=90.6%
+  Agent 3 (gen0): dev=90.6%
+  Agent 13 (gen1): dev=90.6%
+  Gen 2 best: Agent 3 val=93.8% dev=90.6%
+  💾 Checkpoint: /home/ubuntu/.openclaw/workspace/Celula-Madre/results/v6/quick_reflective/run_1/checkpoints/checkpoint_gen2.json
+  👑 Elite: Agent 3 (val=93.8%)
+  👑 Elite: Agent 3 (val=93.8%)
+  ✗ Rejected: 3→14 (93.8%→90.6%)
+  ✗ Rejected: 3→15 (93.8%→87.5%)
+  ✗ Rejected: 3→16 (93.8%→90.6%)
+  🌱 Fresh: Agent 17
+
+==================================================
+[REFLECTIVE] Generation 3/5
+==================================================
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 17 (gen2): dev=90.6%
+  Gen 3 best: Agent 3 val=96.9% dev=87.5%
+  💾 Checkpoint: /home/ubuntu/.openclaw/workspace/Celula-Madre/results/v6/quick_reflective/run_1/checkpoints/checkpoint_gen3.json
+  👑 Elite: Agent 3 (val=96.9%)
+  👑 Elite: Agent 3 (val=96.9%)
+  ✗ Rejected: 3→18 (96.9%→87.5%)
+  ✗ Rejected: 3→19 (96.9%→87.5%)
+  ✗ Rejected: 3→20 (96.9%→87.5%)
+  🌱 Fresh: Agent 21
+
+==================================================
+[REFLECTIVE] Generation 4/5
+==================================================
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 3 (gen0): dev=87.5%
+  Agent 21 (gen3): dev=87.5%
+  Gen 4 best: Agent 3 val=96.9% dev=87.5%
+  💾 Checkpoint: /home/ubuntu/.openclaw/workspace/Celula-Madre/results/v6/quick_reflective/run_1/checkpoints/checkpoint_gen4.json
+
+==================================================
+Final Test (reflective)
+==================================================

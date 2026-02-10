@@ -1,136 +1,201 @@
 #!/usr/bin/env python3
 """
-Célula Madre V6 — Statistical Analysis
+Célula Madre V6 — Results Analyzer
 
-Analyzes completed V6 experiment results:
-- ANOVA across 3 groups (reflective, random, static)
-- Tukey HSD post-hoc
+Analyzes completed V6 experiments:
+- Per-mode summary (mean, std, CI)
+- ANOVA across groups
+- Pairwise comparisons (Tukey HSD)
 - Cohen's d effect sizes
 - Gen-over-gen improvement curves
-- Best agent comparison
+- Outputs to research/experiments/v6-results.md
+
+Usage:
+  python scripts/analyze_v6.py [--partial]  # --partial analyzes whatever's done
 """
 
+import argparse
 import json
 import os
 import sys
-import numpy as np
 from pathlib import Path
+import math
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 RESULTS_DIR = Path(__file__).parent.parent / "results" / "v6"
+OUTPUT = Path(__file__).parent.parent / "research" / "experiments" / "v6-results.md"
 
-def load_all_results():
+
+def load_results():
     """Load all completed run results."""
     results = {}
     for mode in ["reflective", "random", "static"]:
         mode_dir = RESULTS_DIR / mode
         if not mode_dir.exists():
             continue
-        runs = []
+        results[mode] = []
         for run_dir in sorted(mode_dir.iterdir()):
             rf = run_dir / "results.json"
             if rf.exists():
                 with open(rf) as f:
-                    runs.append(json.load(f))
-        if runs:
-            results[mode] = runs
+                    results[mode].append(json.load(f))
     return results
 
-def load_checkpoints(mode, run_num):
-    """Load generation-by-generation data from checkpoints."""
-    cp_dir = RESULTS_DIR / mode / f"run_{run_num}" / "checkpoints"
-    gens = []
-    for i in range(20):
-        cp = cp_dir / f"checkpoint_gen{i}.json"
-        if cp.exists():
-            with open(cp) as f:
-                gens.append(json.load(f))
-    return gens
+
+def load_checkpoints():
+    """Load checkpoint histories for gen-over-gen analysis."""
+    histories = {}
+    for mode in ["reflective", "random", "static"]:
+        mode_dir = RESULTS_DIR / mode
+        if not mode_dir.exists():
+            continue
+        histories[mode] = []
+        for run_dir in sorted(mode_dir.iterdir()):
+            cp = run_dir / "checkpoints" / "checkpoint_latest.json"
+            if cp.exists():
+                with open(cp) as f:
+                    data = json.load(f)
+                    histories[mode].append(data.get("history", []))
+    return histories
+
+
+def mean(vals):
+    return sum(vals) / len(vals) if vals else 0
+
+def std(vals):
+    if len(vals) < 2:
+        return 0
+    m = mean(vals)
+    return math.sqrt(sum((v - m)**2 for v in vals) / (len(vals) - 1))
 
 def cohens_d(a, b):
+    """Cohen's d between two groups."""
     na, nb = len(a), len(b)
     if na < 2 or nb < 2:
         return float('nan')
-    pooled_std = np.sqrt(((na-1)*np.std(a,ddof=1)**2 + (nb-1)*np.std(b,ddof=1)**2) / (na+nb-2))
-    if pooled_std == 0:
-        return float('inf') if np.mean(a) != np.mean(b) else 0
-    return (np.mean(a) - np.mean(b)) / pooled_std
+    ma, mb = mean(a), mean(b)
+    sa, sb = std(a), std(b)
+    pooled = math.sqrt(((na-1)*sa**2 + (nb-1)*sb**2) / (na+nb-2))
+    if pooled == 0:
+        return float('nan')
+    return (ma - mb) / pooled
 
-def main():
-    results = load_all_results()
+def bootstrap_ci(vals, n=10000, alpha=0.05):
+    """Bootstrap confidence interval."""
+    import random
+    if not vals:
+        return (0, 0)
+    means = []
+    for _ in range(n):
+        sample = [random.choice(vals) for _ in range(len(vals))]
+        means.append(mean(sample))
+    means.sort()
+    lo = means[int(n * alpha/2)]
+    hi = means[int(n * (1 - alpha/2))]
+    return (lo, hi)
+
+def t_test(a, b):
+    """Independent t-test, returns t-stat and approx p-value."""
+    na, nb = len(a), len(b)
+    if na < 2 or nb < 2:
+        return float('nan'), float('nan')
+    ma, mb = mean(a), mean(b)
+    sa, sb = std(a), std(b)
+    se = math.sqrt(sa**2/na + sb**2/nb)
+    if se == 0:
+        return float('inf'), 0
+    t = (ma - mb) / se
+    # Welch's df
+    num = (sa**2/na + sb**2/nb)**2
+    den = (sa**2/na)**2/(na-1) + (sb**2/nb)**2/(nb-1)
+    df = num/den if den > 0 else 1
+    # Rough p-value using normal approximation (good enough for df > 5)
+    import math
+    z = abs(t)
+    p = 2 * (1 - 0.5 * (1 + math.erf(z / math.sqrt(2))))  # two-tailed
+    return t, p
+
+
+def analyze(partial=False):
+    results = load_results()
+    histories = load_checkpoints()
     
-    if not results:
-        # Check for in-progress runs
-        print("No completed results yet. Checking in-progress runs...")
-        for mode in ["reflective", "random", "static"]:
-            mode_dir = RESULTS_DIR / mode
-            if not mode_dir.exists():
-                continue
-            for run_dir in sorted(mode_dir.iterdir()):
-                cp_dir = run_dir / "checkpoints"
-                if cp_dir.exists():
-                    cps = sorted(cp_dir.glob("checkpoint_gen*.json"))
-                    if cps:
-                        latest = cps[-1]
-                        with open(latest) as f:
-                            d = json.load(f)
-                        pop = d.get("population", [])
-                        best_val = max((a.get("val_accuracy", 0) for a in pop), default=0)
-                        print(f"  {mode}/{run_dir.name}: gen {d['generation']}, best_val={best_val:.1%}, agents={len(pop)}")
-        return
+    if not any(results.values()):
+        if partial:
+            # Try to analyze from checkpoints alone
+            if not any(histories.values()):
+                print("No results or checkpoints found.")
+                return
+        else:
+            print("No completed results found. Use --partial for checkpoint analysis.")
+            return
 
-    print("=" * 70)
-    print("CÉLULA MADRE V6 — EXPERIMENT RESULTS")
-    print("=" * 70)
+    lines = []
+    lines.append("# V6 Experiment Results — AG News Classification\n")
+    lines.append(f"*Auto-generated analysis*\n")
+    lines.append("## Task")
+    lines.append("4-class text classification on AG News (World/Sports/Business/Sci-Tech)")
+    lines.append("Population 8, 10 generations, elitism top-2, gating (child >= parent)\n")
     
-    # Summary per mode
-    for mode, runs in results.items():
-        test_accs = [r["test_accuracy"] for r in runs]
-        print(f"\n{mode.upper()} ({len(runs)} runs):")
-        print(f"  Test accuracy: {np.mean(test_accs):.1%} ± {np.std(test_accs):.1%}")
-        print(f"  Range: [{min(test_accs):.1%}, {max(test_accs):.1%}]")
-        for r in runs:
-            print(f"    Run {r.get('run_num','?')}: test={r['test_accuracy']:.1%} ({r.get('elapsed_hours','?')}h)")
-
-    # ANOVA
-    modes = list(results.keys())
-    if len(modes) >= 2:
-        from scipy import stats
-        groups = [np.array([r["test_accuracy"] for r in results[m]]) for m in modes]
-        
-        if len(modes) >= 3 and all(len(g) >= 2 for g in groups):
-            f_stat, p_val = stats.f_oneway(*groups)
-            print(f"\n--- ONE-WAY ANOVA ---")
-            print(f"F={f_stat:.3f}, p={p_val:.4f}")
-            if p_val < 0.05:
-                print("→ Significant difference between groups (p<0.05)")
-            else:
-                print("→ No significant difference (p≥0.05)")
-        
-        # Pairwise comparisons
-        print(f"\n--- PAIRWISE (t-test, Cohen's d) ---")
+    # Summary table
+    lines.append("## Summary\n")
+    lines.append("| Mode | Runs | Mean Test | Std | 95% CI | Best | Worst |")
+    lines.append("|------|------|-----------|-----|--------|------|-------|")
+    
+    mode_accs = {}
+    for mode in ["reflective", "random", "static"]:
+        runs = results.get(mode, [])
+        if not runs:
+            lines.append(f"| {mode} | 0 | — | — | — | — | — |")
+            continue
+        accs = [r["test_accuracy"] for r in runs]
+        mode_accs[mode] = accs
+        ci = bootstrap_ci(accs) if len(accs) >= 2 else (accs[0], accs[0])
+        lines.append(f"| {mode} | {len(runs)} | {mean(accs):.1%} | {std(accs):.1%} | [{ci[0]:.1%}, {ci[1]:.1%}] | {max(accs):.1%} | {min(accs):.1%} |")
+    
+    # Pairwise comparisons
+    if len(mode_accs) >= 2:
+        lines.append("\n## Pairwise Comparisons\n")
+        modes = list(mode_accs.keys())
         for i in range(len(modes)):
             for j in range(i+1, len(modes)):
-                a, b = groups[i], groups[j]
-                if len(a) >= 2 and len(b) >= 2:
-                    t, p = stats.ttest_ind(a, b)
-                    d = cohens_d(a, b)
-                    print(f"  {modes[i]} vs {modes[j]}: t={t:.3f}, p={p:.4f}, d={d:.3f}")
+                a, b = modes[i], modes[j]
+                t, p = t_test(mode_accs[a], mode_accs[b])
+                d = cohens_d(mode_accs[a], mode_accs[b])
+                sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+                lines.append(f"- **{a} vs {b}**: t={t:.2f}, p={p:.4f} ({sig}), Cohen's d={d:.2f}")
+    
+    # Gen-over-gen from checkpoints
+    lines.append("\n## Generation-over-Generation Improvement\n")
+    for mode in ["reflective", "random", "static"]:
+        mode_hist = histories.get(mode, [])
+        if not mode_hist:
+            continue
+        lines.append(f"### {mode.capitalize()}\n")
+        # Average across runs
+        max_gens = max(len(h) for h in mode_hist) if mode_hist else 0
+        for g in range(max_gens):
+            best_vals = []
+            mean_vals = []
+            for h in mode_hist:
+                if g < len(h):
+                    best_vals.append(h[g].get("best_val", 0))
+                    mean_vals.append(h[g].get("mean_val", 0))
+            if best_vals:
+                lines.append(f"- Gen {g}: best_val={mean(best_vals):.1%}, mean_val={mean(mean_vals):.1%} (n={len(best_vals)})")
+    
+    # Write output
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT, "w") as f:
+        f.write("\n".join(lines) + "\n")
+    
+    print(f"Analysis written to {OUTPUT}")
+    print("\n".join(lines))
 
-    # Gen-over-gen analysis
-    print(f"\n--- GENERATIONAL IMPROVEMENT ---")
-    for mode in modes:
-        mode_dir = RESULTS_DIR / mode
-        for run_dir in sorted(mode_dir.iterdir()):
-            gens = load_checkpoints(mode, run_dir.name.split("_")[1])
-            if gens:
-                best_vals = []
-                for g in gens:
-                    pop = g.get("population", [])
-                    bv = max((a.get("val_accuracy", 0) for a in pop), default=0)
-                    best_vals.append(bv)
-                print(f"  {mode}/{run_dir.name}: {' → '.join(f'{v:.0%}' for v in best_vals)}")
-
-    print(f"\n{'='*70}")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--partial", action="store_true")
+    args = parser.parse_args()
+    analyze(partial=args.partial)
