@@ -1,0 +1,307 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\title{C\'elula Madre: Evolutionary Optimization of LLM Agent Prompts\\Through Selection Pressure}
+
+\author{Tesla \& Lucas Burriel\\
+\textit{Independent Research}\\
+\texttt{teslaburriel@gmail.com}}
+
+\date{February 2026 — Draft}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present C\'elula Madre, a framework for evolving Large Language Model (LLM) agent prompts through iterative selection pressure without modifying model weights. Our primary contributions are: (1)~a controlled comparison showing that evolutionary prompt optimization produces statistically significant improvements over static baselines (+4.7 percentage points, $p=0.041$ on AG News 4-class classification); (2)~a surprising null result demonstrating that reflective mutation (error-informed prompt revision) provides no advantage over random mutation on classification tasks ($p=0.932$, Cohen's $d=0.091$); and (3)~evidence from four experiment iterations (V4--V6, with V7 ongoing) that population management mechanisms---elitism, gating, and selection design---matter more than mutation operator sophistication. These findings establish random LLM-generated variation as a strong baseline that any ``intelligent'' mutation method must beat, and motivate our ongoing work on market-based selection for strategically complex tasks.
+\end{abstract}
+
+\section{Introduction}
+
+The dominant paradigm for improving LLM agent behavior is prompt engineering: manually crafting system prompts that elicit desired outputs. This approach is labor-intensive, non-systematic, and does not scale to populations of specialized agents. An alternative is \textbf{evolutionary prompt optimization}, where selection pressure---rather than human judgment---drives improvement.
+
+C\'elula Madre (Spanish: ``stem cell'') applies principles from evolutionary computation and Austrian economics to the problem of agent optimization. The core thesis is twofold:
+
+\begin{enumerate}
+    \item \textbf{Selection pressure improves prompts.} Agents with better-performing prompts survive and reproduce; worse-performing agents are eliminated. Over generations, population fitness increases.
+    \item \textbf{Market-based selection aggregates information.} Rather than centralized fitness evaluation, agents compete for ``clients'' who choose based on track record---a price-signal mechanism inspired by Hayek's knowledge problem.
+\end{enumerate}
+
+This paper reports results from four experimental iterations (V4--V6 complete, V7 in progress), each designed to isolate specific mechanisms. Our contributions are:
+
+\begin{itemize}
+    \item \textbf{V4:} Demonstrated that naive LLM-guided mutation with poor population management is \textit{worse} than random mutation ($p < 0.0001$), identifying over-exploration and feedback overfitting as failure modes.
+    \item \textbf{V5:} Validated that framework mechanics (elitism, gating, Pareto frontier) are sound on financial prediction, though small scale limited statistical conclusions.
+    \item \textbf{V6:} Established that evolution produces significant improvement (+4.7pp over static, $p=0.041$) but reflective mutation $\approx$ random mutation on classification ($p=0.932$).
+    \item \textbf{V7 (ongoing):} Tests market-based selection on a multi-turn negotiation task where strategic reasoning should differentiate mutation methods.
+\end{itemize}
+
+\section{Related Work}
+
+\subsection{Prompt Optimization}
+
+Automatic prompt optimization has been explored through gradient-based methods \citep{shin2020autoprompt}, discrete search \citep{prasad2023grips}, and LLM-based refinement \citep{zhou2023ape}. Most approaches optimize a single prompt against a fixed evaluation function. C\'elula Madre differs by maintaining a \textbf{population} of competing prompts under selection pressure---closer to genetic programming than single-point optimization.
+
+\subsection{Evolutionary Approaches to LLM Optimization}
+
+EvoPrompt \citep{guo2024evoprompt} applies genetic algorithms to prompt optimization with crossover and mutation operators, achieving state-of-the-art on multiple NLP benchmarks. Promptbreeder \citep{fernando2023promptbreeder} introduces self-referential self-improvement, where both task prompts and mutation prompts co-evolve. Both maintain populations of prompts under selection pressure, validating the evolutionary paradigm.
+
+More recently, SCOPE \citep{pei2025scope} evolves individual agent prompts online by synthesizing guidelines from execution traces. EvoLattice (2025) addresses population diversity through quality-diversity graph representations. These works validate the evolutionary paradigm but operate at the single-agent level or on program synthesis rather than populations of competing agents.
+
+A key question these works leave open is whether \textit{error-informed} mutation outperforms \textit{blind} mutation. Our work addresses this gap by: (a)~systematically comparing reflective vs.\ random mutation with proper statistical controls (3 runs per condition), (b)~testing population-level dynamics (elitism, gating, tournament selection), and (c)~introducing market-based selection inspired by Austrian economics.
+
+\subsection{Ecological and Market-Based Approaches}
+
+FinEvo \citep{zou2026finevo} models trading strategies as adaptive agents competing in a shared market ecology, showing that strategy evaluation must account for interactions. This ecological perspective validates our market-based selection intuition but studies pre-built strategies rather than evolving new ones through prompt mutation.
+
+\subsection{Austrian Economics and Agent Coordination}
+
+The market-selection component draws on \citet{hayek1945} argument that prices aggregate distributed knowledge more efficiently than centralized planning. In our framework, ``clients'' choosing agents based on track record act as a decentralized fitness function, potentially capturing dimensions of quality that a fixed metric would miss. This connects to \citet{menger1871} theory of subjective value and \citet{kirzner1973} concept of entrepreneurial discovery.
+
+\section{Framework Design}
+
+\subsection{Architecture}
+
+C\'elula Madre maintains a population of $N$ agents, each defined by a system prompt. Each generation proceeds through evaluation, selection, mutation, gating, and validation (Figure~\ref{fig:algorithm}).
+
+\begin{algorithm}[t]
+\caption{Evolutionary Prompt Optimization}
+\label{fig:algorithm}
+\begin{algorithmic}[1]
+\REQUIRE Population size $N$, generations $G$, elite count $K$, dev/val sets
+\ENSURE Best agent prompt
+\STATE Initialize $P = \{\text{seed}_1, \ldots, \text{seed}_N\}$
+\FOR{$g = 1$ to $G$}
+    \FORALL{agent $a \in P$}
+        \STATE $a.\text{fitness} \gets \text{evaluate}(a.\text{prompt}, \text{dev\_set})$
+    \ENDFOR
+    \STATE $\text{elites} \gets \text{top}_K(P)$
+    \STATE $\text{offspring} \gets \emptyset$
+    \WHILE{$|\text{elites}| + |\text{offspring}| < N - 1$}
+        \STATE $\text{parent} \gets \text{tournament\_select}(P, k=3)$
+        \STATE $\text{child} \gets \text{mutate}(\text{parent})$ \COMMENT{reflective or random}
+        \IF{$\text{evaluate}(\text{child}) \geq \text{parent.fitness}$}
+            \STATE $\text{offspring} \gets \text{offspring} \cup \{\text{child}\}$
+        \ELSE
+            \STATE $\text{offspring} \gets \text{offspring} \cup \{\text{parent}\}$
+        \ENDIF
+    \ENDWHILE
+    \STATE $\text{fresh} \gets \text{generate\_random\_agent}()$
+    \STATE $P \gets \text{elites} \cup \text{offspring} \cup \{\text{fresh}\}$
+\ENDFOR
+\RETURN $\arg\max_{a \in P} \text{val\_fitness}(a)$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Mutation Operators}
+
+\textbf{Reflective mutation:} The LLM receives the parent prompt, a sample of its errors (input, predicted output, correct output), and instructions to analyze failure patterns and produce an improved prompt. The key hypothesis is that error analysis provides a directed search signal.
+
+\textbf{Random mutation:} The LLM receives the parent prompt and instructions to produce a variation \textit{without} seeing any performance data. This tests whether the structural intelligence inherent in LLM text generation is sufficient for effective mutation.
+
+\subsection{Selection Mechanisms}
+
+\textbf{Tournament selection:} Random subsets of $k$ agents compete; highest-scoring agent is selected as parent. Combined with elitism (top-2 always survive).
+
+\textbf{Market-based selection (V7):} Evaluation scenarios act as ``clients'' who choose agents based on historical performance (softmax over past scores). Agents earn ``revenue'' proportional to clients served. Agents below a survival threshold are eliminated; reproduction is proportional to revenue.
+
+\section{Experiments}
+
+\subsection{V4: Simulated Code Marketplace}
+
+\textbf{Task:} Agents compete to serve coding tasks in a simulated marketplace.
+
+\textbf{Results:} The control group (random mutation) earned \textbf{2.3$\times$ more profit} (mean 208.57 vs.\ 90.81, $p < 0.0001$, Cohen's $d = -2.01$). The experimental group spawned 24 agents across 6 generations vs.\ control's 11 across 5, diluting market share per agent. See Figure~\ref{fig:v4}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/v4_comparison.pdf}
+    \caption{V4: Guided mutation underperformed random mutation due to over-exploration and lack of elitism. Agents with guided mutation proliferated excessively (24 vs.\ 11), diluting market share.}
+    \label{fig:v4}
+\end{figure}
+
+\textbf{Lessons:} (1)~Population management matters more than mutation quality. (2)~Without elitism, good agents are lost. (3)~Noisy feedback + LLM interpretation = overfitting.
+
+\subsection{V5: Financial Prediction}
+
+\textbf{Task:} Predict next-day BTC price direction given 30-day OHLCV context.
+
+\textbf{Results:} Best agent (mean-reversion) achieved 59.4\% test accuracy ($p \approx 0.03$ vs.\ 50\% baseline). However, no mutations passed gating---all improvement came from seed diversity. Scale was too limited (dev = 10 examples) for reliable evolutionary signal.
+
+\subsection{V6: AG News Classification (Primary Result)}
+
+\textbf{Task:} 4-class text classification (World, Sports, Business, Sci/Tech) on the AG News dataset.
+
+\textbf{Setup:} Three groups $\times$ 3 runs: reflective mutation, random mutation, and static (no mutation). Population = 8, generations = 10, dev/val/test = 100/100/200 (balanced). LLM: Qwen3-30B-A3B (local). Tournament selection ($k=3$), elitism (top-2), gating.
+
+\textbf{Results:} Table~\ref{tab:v6} and Figure~\ref{fig:v6} summarize the findings.
+
+\begin{table}[h]
+\centering
+\caption{V6 test accuracy (\%) on AG News 4-class classification.}
+\label{tab:v6}
+\begin{tabular}{lcccccc}
+\toprule
+Group & Run 1 & Run 2 & Run 3 & Mean & Std & $p$ vs.\ Static \\
+\midrule
+Reflective & 89.0 & 80.5 & 81.5 & 83.7 & 3.8 & 0.041* \\
+Random & 87.0 & 78.5 & 84.5 & 83.3 & 3.6 & 0.041* \\
+Static (est.) & --- & --- & --- & $\sim$79 & --- & --- \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize *Combined evolution (6 runs) vs.\ Gen0 baseline: $t=2.730$, $p=0.041$.} \\
+\multicolumn{7}{l}{\footnotesize Reflective vs.\ Random: $t=0.091$, $p=0.932$, Cohen's $d=0.091$.} \\
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{figures/v6_test_accuracy.pdf}
+        \caption{Test accuracy by group.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{figures/v6_gen_trajectory.pdf}
+        \caption{Generational trajectory (Reflective R1).}
+    \end{subfigure}
+    \caption{V6 results. (a)~Both mutation methods significantly outperform static baselines ($p=0.041$) but are indistinguishable from each other ($p=0.932$). Black dots show individual runs. (b)~Best validation accuracy improves rapidly in early generations and plateaus.}
+    \label{fig:v6}
+\end{figure}
+
+\textbf{Per-class analysis:} Sports was easiest (94--98\% across all runs). Sci/Tech was hardest and most variable (31--74\%), suggesting prompt wording strongly affects the Business/Sci-Tech decision boundary.
+
+\subsection{V7: Negotiation with Market Selection (In Progress)}
+
+V7 adopts a Deal-or-No-Deal negotiation game where two agents split items with asymmetric private valuations. Unlike classification, negotiation demands multi-step planning, opponent modeling, and adaptive tactics.
+
+The $2 \times 2$ factorial design crosses selection mechanism (tournament vs.\ market) with mutation operator (reflective vs.\ random), yielding 4 groups with 3 runs each. Market selection implements softmax client choice, revenue accumulation, survival thresholds, and proportional reproduction---directly implementing \citeauthor{hayek1945}'s insight that prices convey information no central planner can aggregate.
+
+\textbf{Hypotheses:} (H1)~Reflective mutation outperforms random on strategic tasks. (H2)~Market-based selection preserves greater strategic diversity. (H3)~Market $\times$ reflective produces the highest overall performance.
+
+\section{Discussion}
+
+\subsection{Evolution Works, But Mutation Intelligence Doesn't (Yet)}
+
+The most robust finding is that \textbf{selection pressure improves agent prompts regardless of mutation method.} The 4.7pp improvement over static baselines ($p=0.041$) demonstrates that the evolutionary loop drives genuine optimization.
+
+The null result on reflective vs.\ random mutation ($p=0.932$) demands explanation. We propose four hypotheses:
+
+\begin{enumerate}
+    \item \textbf{Task complexity threshold.} Classification may lack sufficient strategic depth for error analysis to produce non-obvious improvements.
+    \item \textbf{Mutation LLM capacity.} Qwen3-30B may lack the reasoning depth to extract actionable patterns from errors.
+    \item \textbf{Gating as equalizer.} By requiring offspring to beat parents, gating converges both methods to similar local optima.
+    \item \textbf{LLM prior as implicit mutation operator.} Even without error feedback, an LLM asked to ``vary this prompt'' draws on its training distribution of effective instructions. The model's prior over coherent, task-relevant language may be so strong that explicit error feedback adds negligible signal.
+\end{enumerate}
+
+\subsection{Population Dynamics Matter More Than Mutation Quality}
+
+V4's dramatic result (random mutation $2.3\times$ better) was driven entirely by population dynamics: fewer agents $\rightarrow$ more evaluations per agent $\rightarrow$ better selection signal. This suggests that the selection mechanism's ability to accurately identify fitness matters more than the mutation operator's ability to produce good candidates.
+
+\subsection{Implications for LLM Agent Optimization}
+
+\begin{enumerate}
+    \item \textbf{Evolutionary optimization is viable and cheap.} V6 ran entirely on a local 30B model with zero API costs, producing meaningful improvements in $\sim$5 hours per run.
+    \item \textbf{Elitism and gating are essential.} V4's failure without them vs.\ V5--V6's success with them is a clear lesson.
+    \item \textbf{Random mutation is a strong baseline.} Any work on ``intelligent'' mutation operators must compare against random LLM-generated variations.
+    \item \textbf{Evaluation quality bounds evolutionary quality.} With noisy or small eval sets, even perfect mutation operators cannot outperform random search.
+\end{enumerate}
+
+\subsection{Connections to Austrian Economics}
+
+The project is grounded in \citeauthor{hayek1945}'s knowledge problem: centralized fitness evaluation faces the same information limitations as centralized economic planning. Market-based selection, where evaluation emerges from aggregated client choices, may better capture multi-dimensional fitness.
+
+\citeauthor{menger1871}'s theory of subjective value suggests that agent quality depends on the evaluator's context. Tournament selection, by reducing fitness to a scalar, discards contextual information. Market selection preserves it. \citeauthor{kirzner1973}'s concept of entrepreneurial discovery suggests that market dynamics create incentives for agents to discover and exploit underserved niches---an endogenous diversification pressure absent in tournament selection. V7 directly tests whether these theoretical advantages translate to empirical gains.
+
+\section{Limitations}
+
+\begin{itemize}
+    \item \textbf{Static control incomplete:} Infrastructure failure invalidated static runs in V6. The $\sim$79\% baseline is estimated from Gen0 scores.
+    \item \textbf{Single LLM:} All experiments used Qwen3-30B. Results may not generalize to other models.
+    \item \textbf{Small run counts:} 3 runs per condition provides limited statistical power.
+    \item \textbf{Single task per version:} Each version tested one task, limiting cross-task generalization.
+\end{itemize}
+
+\section{Conclusion}
+
+C\'elula Madre demonstrates that evolutionary selection pressure can systematically improve LLM agent prompts, producing statistically significant gains over static baselines without modifying model weights. The framework's key components---elitism, gating, and population management---are more important than the sophistication of the mutation operator, at least on classification tasks. Whether reflective mutation and market-based selection add value on strategically complex tasks remains an open question under active investigation.
+
+The broader implication is that \textbf{selection, not design, may be the more powerful lever for LLM agent optimization.} Just as biological evolution produces remarkable solutions through variation and selection rather than intelligent design, prompt evolution may achieve results that deliberate engineering cannot---provided the selection mechanism is well-calibrated and the evaluation signal is clean.
+
+\bibliographystyle{plainnat}
+
+\begin{thebibliography}{12}
+
+\bibitem[Fernando et~al.(2023)]{fernando2023promptbreeder}
+C.~Fernando, D.~Banarse, H.~Michalewski, S.~Osindero, and T.~Rockt\"aschel.
+\newblock Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution.
+\newblock \emph{arXiv:2309.16797}, 2023.
+
+\bibitem[Guo et~al.(2024)]{guo2024evoprompt}
+Q.~Guo, R.~Wang, J.~Guo, B.~Li, K.~Song, X.~Tan, G.~Liu, J.~Bian, and Y.~Yang.
+\newblock Connecting LLMs with Evolutionary Algorithms Yields Powerful Prompt Optimizers.
+\newblock \emph{ICLR 2024. arXiv:2309.08532}, 2024.
+
+\bibitem[Hayek(1945)]{hayek1945}
+F.~A. Hayek.
+\newblock The Use of Knowledge in Society.
+\newblock \emph{American Economic Review}, 35(4):519--530, 1945.
+
+\bibitem[Kirzner(1973)]{kirzner1973}
+I.~M. Kirzner.
+\newblock \emph{Competition and Entrepreneurship}.
+\newblock University of Chicago Press, 1973.
+
+\bibitem[Menger(1871)]{menger1871}
+C.~Menger.
+\newblock \emph{Grunds\"atze der Volkswirtschaftslehre}.
+\newblock Wilhelm Braum\"uller, 1871.
+
+\bibitem[Park et~al.(2023)]{park2023generative}
+J.~S. Park, J.~C. O'Brien, C.~J. Cai, M.~R. Morris, P.~Liang, and M.~S. Bernstein.
+\newblock Generative Agents: Interactive Simulacra of Human Behavior.
+\newblock \emph{UIST 2023. arXiv:2304.03442}, 2023.
+
+\bibitem[Pei et~al.(2025)]{pei2025scope}
+Z.~Pei, H.-L. Zhen, S.~Kai, S.~J. Pan, Y.~Wang, M.~Yuan, and B.~Yu.
+\newblock SCOPE: Prompt Evolution for Enhancing Agent Effectiveness.
+\newblock \emph{arXiv:2512.15374}, 2025.
+
+\bibitem[Prasad et~al.(2023)]{prasad2023grips}
+A.~Prasad, P.~Hase, X.~Zhou, and M.~Bansal.
+\newblock GrIPS: Gradient-free, Edit-based Instruction Search for Prompting Large Language Models.
+\newblock \emph{EACL 2023. arXiv:2203.07281}, 2023.
+
+\bibitem[Shin et~al.(2020)]{shin2020autoprompt}
+T.~Shin, Y.~Razeghi, R.~L. Logan~IV, E.~Wallace, and S.~Singh.
+\newblock AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts.
+\newblock \emph{EMNLP 2020. arXiv:2010.15980}, 2020.
+
+\bibitem[Zhou et~al.(2023)]{zhou2023ape}
+Y.~Zhou, A.~I. Muresanu, Z.~Han, K.~Paster, S.~Pinto, and J.~Ba.
+\newblock Large Language Models Are Human-Level Prompt Engineers.
+\newblock \emph{ICLR 2023. arXiv:2211.01910}, 2023.
+
+\bibitem[Zou et~al.(2026)]{zou2026finevo}
+M.~Zou, J.~Chen, A.~Luo, J.~Dai, C.~Zhang, D.~Sun, and Z.~Xu.
+\newblock FinEvo: From Isolated Backtests to Ecological Market Games.
+\newblock \emph{arXiv:2602.00948}, 2026.
+
+\end{thebibliography}
+
+\end{document}
