@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from .llm import create_client
+from .llm import create_client, AGENT_MODEL, DIAGNOSE_MODEL
 from .selection import score_child_prop, random_selection
 from .diagnose import diagnose_failure, implement_improvement
 from .benchmark import load_task, setup_task_workspace, evaluate_task, get_task_ids
@@ -37,7 +37,7 @@ class Archive:
         with open(self._state_file, "w") as f:
             json.dump({"entries": self.entries}, f, indent=2)
     
-    def add(self, entry_id, code, score, parent_id=None, metadata=None):
+    def add(self, entry_id, prompt, score, parent_id=None, metadata=None):
         entry = {
             "id": entry_id,
             "score": score,
@@ -45,11 +45,12 @@ class Archive:
             "children_count": 0,
             "created_at": datetime.now().isoformat(),
             "metadata": metadata or {},
+            "prompt": prompt,
         }
-        # Save code to file
-        code_file = self.output_dir / f"{entry_id}_agent.py"
-        code_file.write_text(code)
-        entry["code_file"] = str(code_file)
+        # Save prompt to file
+        prompt_file = self.output_dir / f"{entry_id}_prompt.txt"
+        prompt_file.write_text(prompt)
+        entry["prompt_file"] = str(prompt_file)
         
         self.entries.append(entry)
         
@@ -63,13 +64,11 @@ class Archive:
         self._save()
         return entry
     
-    def get_code(self, entry_id):
+    def get_prompt(self, entry_id):
         for e in self.entries:
             if e["id"] == entry_id:
-                code_file = e.get("code_file")
-                if code_file and os.path.exists(code_file):
-                    return Path(code_file).read_text()
-        return None
+                return e.get("prompt", "")
+        return ""
     
     def get_best(self):
         if not self.entries:
@@ -97,20 +96,23 @@ class DGMLoop:
     6. If better → add to archive
     """
     
-    def __init__(self, output_dir, task_ids=None, endpoint=None, model=None,
+    def __init__(self, output_dir, task_ids=None, endpoint=None, 
+                 agent_model=None, diagnose_model=None,
                  selection_method="score_child_prop", max_generations=20,
                  attempts_per_generation=2):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.task_ids = task_ids or get_task_ids()
         self.endpoint = endpoint
-        self.model = model
+        self.agent_model = agent_model or AGENT_MODEL
+        self.diagnose_model = diagnose_model or DIAGNOSE_MODEL
         self.selection_method = selection_method
         self.max_generations = max_generations
         self.attempts_per_generation = attempts_per_generation
         
         self.archive = Archive(self.output_dir / "archive")
-        self.client, self.model_name = create_client(endpoint=endpoint, model=model)
+        # Diagnosis client (strong model)
+        self.client, self.model_name = create_client(endpoint=endpoint, model=self.diagnose_model)
         
         # Log file
         self.log_file = self.output_dir / "dgm_log.jsonl"
@@ -121,8 +123,8 @@ class DGMLoop:
             f.write(json.dumps(event) + "\n")
         print(f"[DGM] {event.get('type', 'unknown')}: {event.get('message', '')}")
     
-    def _evaluate_agent_code(self, agent_code):
-        """Evaluate agent code on all tasks. Returns {task_id: result}, overall_score."""
+    def _evaluate_agent(self, system_prompt):
+        """Evaluate agent with given system prompt on all tasks. Returns {task_id: result}, overall_score."""
         results = {}
         total_score = 0.0
         
@@ -133,22 +135,17 @@ class DGMLoop:
                 workspace = Path(tmpdir)
                 setup_task_workspace(task, workspace)
                 
-                # Create agent from code
                 try:
                     agent = CodingAgent(
-                        system_prompt=self._extract_system_prompt(agent_code),
+                        system_prompt=system_prompt,
                         endpoint=self.endpoint,
-                        model=self.model,
+                        model=self.agent_model,
                     )
                     
-                    # Run agent on task
                     agent.forward(task["description"], str(workspace), task.get("test_file", "test_solution.py"))
-                    
-                    # Evaluate
                     result = evaluate_task(workspace, task)
                     result["agent_log"] = agent.get_log_text()
                     
-                    # Read agent's solution
                     sol_file = workspace / task.get("code_file", "solution.py")
                     result["agent_solution"] = sol_file.read_text() if sol_file.exists() else ""
                     
@@ -164,21 +161,6 @@ class DGMLoop:
         
         overall_score = total_score / len(self.task_ids) if self.task_ids else 0.0
         return results, overall_score
-    
-    def _extract_system_prompt(self, agent_code):
-        """Extract AGENT_SYSTEM_PROMPT from agent code."""
-        # Find the system prompt string in the code
-        import re
-        # Look for AGENT_SYSTEM_PROMPT = """..."""
-        match = re.search(r'AGENT_SYSTEM_PROMPT\s*=\s*"""(.*?)"""', agent_code, re.DOTALL)
-        if match:
-            return match.group(1)
-        match = re.search(r"AGENT_SYSTEM_PROMPT\s*=\s*'''(.*?)'''", agent_code, re.DOTALL)
-        if match:
-            return match.group(1)
-        # Fallback to default
-        from .coding_agent import AGENT_SYSTEM_PROMPT
-        return AGENT_SYSTEM_PROMPT
     
     def _find_failed_task(self, results):
         """Find a task the agent failed on (for diagnosis)."""
@@ -201,10 +183,11 @@ class DGMLoop:
         
         self._log({"type": "init", "message": "Evaluating initial agent..."})
         
-        initial_code = get_default_agent_code()
-        results, score = self._evaluate_agent_code(initial_code)
+        from .coding_agent import DIRECT_SYSTEM_PROMPT
+        initial_prompt = DIRECT_SYSTEM_PROMPT
+        results, score = self._evaluate_agent(initial_prompt)
         
-        self.archive.add("initial", initial_code, score, metadata={
+        self.archive.add("initial", initial_prompt, score, metadata={
             "results": {k: {"score": v["score"], "passed": v["passed"], "total": v["total"]} 
                        for k, v in results.items()},
         })
@@ -234,12 +217,12 @@ class DGMLoop:
                 parent_ids = random_selection(archive_for_selection, k=1)
             
             parent_id = parent_ids[0]
-            parent_code = self.archive.get_code(parent_id)
+            parent_prompt = self.archive.get_prompt(parent_id)
             
             self._log({"type": "parent_selected", "message": f"Parent: {parent_id}"})
             
             # 2. Evaluate parent to find failed tasks
-            results, parent_score = self._evaluate_agent_code(parent_code)
+            results, parent_score = self._evaluate_agent(parent_prompt)
             
             # 3. Find a failed task
             failed_task_id, failed_result = self._find_failed_task(results)
@@ -251,14 +234,15 @@ class DGMLoop:
             
             self._log({"type": "diagnosing", "message": f"Diagnosing failure on {failed_task_id}"})
             
-            # 4. Diagnose the failure
+            # 4. Diagnose the failure (pass prompt as agent_code for diagnosis)
+            from .coding_agent import get_default_agent_code
             diagnosis = diagnose_failure(
                 self.client, self.model_name,
-                agent_code=parent_code,
+                agent_code=f'DIRECT_SYSTEM_PROMPT = """{parent_prompt}"""',
                 task_description=task["description"],
                 agent_log=failed_result.get("agent_log", "No log"),
-                test_results=failed_result.get("output", "No output"),
-                agent_solution=failed_result.get("agent_solution", "No solution"),
+                test_results=failed_result.get("output", "No output")[:2000],
+                agent_solution=failed_result.get("agent_solution", "No solution")[:1000],
             )
             
             if not diagnosis:
@@ -270,22 +254,22 @@ class DGMLoop:
                 "message": diagnosis.get("chosen_improvement", "?")[:200],
             })
             
-            # 5. Implement the improvement
-            new_code = implement_improvement(
+            # 5. Implement the improvement (generates new system prompt)
+            new_prompt = implement_improvement(
                 self.client, self.model_name,
-                agent_code=parent_code,
+                agent_code=f'DIRECT_SYSTEM_PROMPT = """{parent_prompt}"""',
                 improvement_description=diagnosis.get("chosen_improvement", ""),
                 implementation_plan=diagnosis.get("implementation_plan", ""),
             )
             
-            if not new_code:
+            if not new_prompt:
                 self._log({"type": "impl_failed", "message": "Failed to implement improvement"})
                 continue
             
-            self._log({"type": "impl_done", "message": f"New agent code: {len(new_code)} chars"})
+            self._log({"type": "impl_done", "message": f"New prompt: {len(new_prompt)} chars"})
             
             # 6. Evaluate new agent
-            new_results, new_score = self._evaluate_agent_code(new_code)
+            new_results, new_score = self._evaluate_agent(new_prompt)
             
             self._log({
                 "type": "eval_done",
@@ -294,10 +278,9 @@ class DGMLoop:
                 "parent_score": parent_score,
             })
             
-            # 7. Gating: add to archive if it compiles and runs
-            # DGM uses keep_all by default, so we add everything that compiles
+            # 7. Add to archive (keep_all strategy)
             entry_id = f"gen{gen_num}_{attempt}"
-            self.archive.add(entry_id, new_code, new_score, parent_id=parent_id, metadata={
+            self.archive.add(entry_id, new_prompt, new_score, parent_id=parent_id, metadata={
                 "diagnosis": diagnosis,
                 "parent_score": parent_score,
                 "results": {k: {"score": v["score"], "passed": v["passed"], "total": v["total"]}

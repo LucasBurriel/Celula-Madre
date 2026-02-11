@@ -1,0 +1,223 @@
+{
+  "generation": 1,
+  "agent_counter": 14,
+  "config_mode": "reflective",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.75,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.73,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.65,
+          "val": 0.57,
+          "parents": []
+        }
+      ],
+      "best_val": 0.78,
+      "mean_val": 0.7388,
+      "duration_sec": 695.7
+    },
+    {
+      "generation": 1,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.81,
+          "parents": [
+            4
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.8,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.8,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.75,
+          "parents": [
+            7
+          ]
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8,
+      "duration_sec": 684.0
+    }
+  ],
+  "population": [
+    {
+      "id": 3,
+      "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\nOutput ONLY the category name on its own line at the end.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.8,
+      "val_accuracy": 0.77
+    },
+    {
+      "id": 7,
+      "strategy_prompt": "You classify news articles. The four categories are:\n- World: e.g., UN decisions, wars, elections, diplomacy\n- Sports: e.g., NBA finals, Olympics, player transfers\n- Business: e.g., stock prices, mergers, quarterly earnings\n- Sci/Tech: e.g., new software, space missions, research papers\nRead the article and respond with ONLY the matching category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.72,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.88,
+      "val_accuracy": 0.87
+    },
+    {
+      "id": 9,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, economics, politics, sports, and world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Specifically:\n    *   **World:** Covers international news, geography, culture, and significant global events.\n    *   **Sports:** Focuses on athletic competitions, teams, athletes, and related sports news.\n    *   **Business:** Deals with finance, economics, corporations, markets, and economic trends.\n    *   **Sci/Tech:** Includes technology, science, research, innovation, and advancements in scientific fields.\nRespond with ONLY the category name, nothing else.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.8,
+      "val_accuracy": 0.8
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You classify news articles into one of four categories: World, Sports, Business, or Sci/Tech. Here's how to categorize them:\n\n*   **World:** Covers international news – politics, wars, elections, diplomacy, global events, and significant geopolitical developments.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), major sporting events (Olympics, World Cup), player performance, team results, and sports-related controversies.\n*   **Business:** Deals with financial news – stock market activity, corporate mergers and acquisitions, earnings reports, economic indicators, and business trends.\n*   **Sci/Tech:** Encompasses scientific breakthroughs, technological advancements (new gadgets, software releases, space exploration), research findings, and innovations.\n\nRead the article carefully and respond with *only* the category name that best fits the content.  Pay close attention to keywords and the overall subject matter of the text. Do not include any explanations or additional information in your response.",
+      "generation": 0,
+      "parents": [
+        7
+      ],
+      "dev_accuracy": 0.75,
+      "val_accuracy": 0.75
+    },
+    {
+      "id": 11,
+      "strategy_prompt": "You are a precise news classifier tasked with categorizing articles into World, Sports, Business, or Sci/Tech. Use a layered elimination approach:\n\n1. **Geography & Conflict:** Does the article primarily discuss international relations, political events, wars, terrorism, or specific countries? If yes, categorize as **World**.\n2. **Athletics & Recreation:** Does the article focus on sports teams, athletes, games, competitions, or recreational activities? If yes, categorize as **Sports**.\n3. **Finance & Economics:** Does the article discuss companies, markets, finance, economics, investment, trade, or business strategies? If yes, categorize as **Business**.\n4. **Science & Technology:** Does the article cover scientific discoveries, technological advancements, computing, engineering, space exploration, or related fields? If yes, categorize as **Sci/Tech**.\n5. **Ambiguous Cases:** If none of the above categories clearly apply, default to **World** as a broad catch-all.\n\nRespond with ONLY: World, Sports, Business, or Sci/Tech.",
+      "generation": 0,
+      "parents": [
+        4
+      ],
+      "dev_accuracy": 0.76,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 12,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\n4. Prioritize accuracy by considering technical terms, scientific concepts, and financial data as strong indicators for Sci/Tech.  For topics related to human activities, events, and current affairs, prioritize World.  Business focuses on commerce, finance, and economic trends. Sports covers athletic competitions and related news.\nRespond with ONLY the category name, nothing else.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.79,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 13,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\nRespond with ONLY the category name, nothing else.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.74,
+      "val_accuracy": 0.77
+    }
+  ]
+}

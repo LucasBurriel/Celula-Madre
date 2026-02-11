@@ -1,0 +1,6 @@
+{
+  "id": "mini_interpreter",
+  "description": "Implement an interpreter for a mini language. Supports: variable assignment (x = 5), arithmetic (+,-,*,/,%), if/else blocks, while loops, print statements, and nested scopes. Execute a program string, return list of printed outputs.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

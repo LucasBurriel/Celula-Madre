@@ -1,0 +1,27 @@
+{"type": "start", "message": "Starting DGM with 10 tasks, 5 generations", "timestamp": "2026-02-10T17:20:20.140040"}
+{"type": "init", "message": "Evaluating initial agent...", "timestamp": "2026-02-10T17:20:20.140255"}
+{"type": "init_done", "message": "Initial agent score: 1.000", "score": 1.0, "task_results": {"fizzbuzz": 1.0, "matrix_rotate": 1.0, "linked_list": 1.0, "lru_cache": 1.0, "calculator": 1.0, "regex_engine": 1.0, "json_parser": 1.0, "graph_shortest": 1.0, "btree": 1.0, "task_scheduler": 1.0}, "timestamp": "2026-02-10T17:28:23.230296"}
+{"type": "gen_start", "message": "Generation 0", "timestamp": "2026-02-10T17:28:23.230341"}
+{"type": "attempt_start", "message": "Attempt gen0_attempt0", "timestamp": "2026-02-10T17:28:23.230359"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T17:28:23.230440"}
+{"type": "skip", "message": "Parent passes all tasks!", "timestamp": "2026-02-10T17:36:17.288229"}
+{"type": "attempt_start", "message": "Attempt gen0_attempt1", "timestamp": "2026-02-10T17:36:17.288319"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T17:36:17.288438"}
+{"type": "skip", "message": "Parent passes all tasks!", "timestamp": "2026-02-10T17:46:30.662696"}
+{"type": "gen_done", "message": "Gen 0 done. Archive size: 1. Best: 1.000", "archive_size": 1, "best_score": 1.0, "new_entries": [], "timestamp": "2026-02-10T17:46:30.662790"}
+{"type": "gen_start", "message": "Generation 1", "timestamp": "2026-02-10T17:46:30.662822"}
+{"type": "attempt_start", "message": "Attempt gen1_attempt0", "timestamp": "2026-02-10T17:46:30.662843"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T17:46:30.662927"}
+{"type": "skip", "message": "Parent passes all tasks!", "timestamp": "2026-02-10T17:55:38.236009"}
+{"type": "attempt_start", "message": "Attempt gen1_attempt1", "timestamp": "2026-02-10T17:55:38.236086"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T17:55:38.236189"}
+{"type": "skip", "message": "Parent passes all tasks!", "timestamp": "2026-02-10T18:01:26.664952"}
+{"type": "gen_done", "message": "Gen 1 done. Archive size: 1. Best: 1.000", "archive_size": 1, "best_score": 1.0, "new_entries": [], "timestamp": "2026-02-10T18:01:26.665058"}
+{"type": "gen_start", "message": "Generation 2", "timestamp": "2026-02-10T18:01:26.665090"}
+{"type": "attempt_start", "message": "Attempt gen2_attempt0", "timestamp": "2026-02-10T18:01:26.665107"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T18:01:26.665205"}
+{"type": "diagnosing", "message": "Diagnosing failure on regex_engine", "timestamp": "2026-02-10T18:09:51.720618"}
+{"type": "diagnosis_done", "message": "Add explicit handling for quantifier precedence and operator-specific behaviors in recursive backtracking", "timestamp": "2026-02-10T18:10:19.992157"}
+{"type": "impl_failed", "message": "Failed to implement improvement", "timestamp": "2026-02-10T18:14:28.405684"}
+{"type": "attempt_start", "message": "Attempt gen2_attempt1", "timestamp": "2026-02-10T18:14:28.405842"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T18:14:28.405997"}

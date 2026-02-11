@@ -1,0 +1,223 @@
+{
+  "generation": 1,
+  "agent_counter": 14,
+  "config_mode": "random",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.69,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.66,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.66,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.63,
+          "val": 0.59,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7438,
+      "duration_sec": 668.8
+    },
+    {
+      "generation": 1,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.8,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.79,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.83,
+      "mean_val": 0.8025,
+      "duration_sec": 683.3
+    }
+  ],
+  "population": [
+    {
+      "id": 0,
+      "strategy_prompt": "You are a news article classifier. Classify each article into exactly one of these four categories: World, Sports, Business, Sci/Tech.\nRead the article carefully and respond with ONLY the category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.73,
+      "val_accuracy": 0.79
+    },
+    {
+      "id": 7,
+      "strategy_prompt": "You classify news articles. The four categories are:\n- World: e.g., UN decisions, wars, elections, diplomacy\n- Sports: e.g., NBA finals, Olympics, player transfers\n- Business: e.g., stock prices, mergers, quarterly earnings\n- Sci/Tech: e.g., new software, space missions, research papers\nRead the article and respond with ONLY the matching category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.71,
+      "val_accuracy": 0.78
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "**New Prompt:**\n\n“You are an expert news classifier. Your task is to determine the most appropriate category for a given news article based on its content.\n\n**Instructions:**\n\n1.  **Read Carefully:** Thoroughly read the provided news article.\n2.  **Identify Key Themes:** Determine the primary topics and themes discussed in the article.\n3.  **Select Category:** Choose *one* category from the following list that best represents the article’s content: World (global events, politics), Sports (athletic competitions, teams), Business (finance, markets, companies), Sci/Tech (science, technology, innovation).\n4.  **Provide Justification (Optional):** Briefly state (1-2 sentences) *why* you chose that category. This will help ensure accurate classification.\n5.  **Output:** Write only the selected category name on a single line at the end of your response.\n\n**Categories:**\n\n*   World\n*   Sports\n*   Business\n*   Sci/Tech\n\n**Example:**\n\n**News Article:** “Stock prices plunged today following disappointing earnings reports from several major tech companies.”\n\n**Category:** Business\n\n**Justification (Optional):** This article focuses on financial performance and market trends within the technology sector. ”",
+      "generation": 0,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.78,
+      "val_accuracy": 0.79
+    },
+    {
+      "id": 9,
+      "strategy_prompt": "Okay, here’s a revised prompt designed to improve news article classification accuracy:\n\n“As an expert in news analysis, your task is to determine the primary subject of each article and assign it to one of these categories: World News, Sports Reporting, Business & Finance, or Science & Technology.  Analyze the text for key themes and keywords. Respond with *only* the category name – no additional explanations or phrases are needed. Accuracy is paramount; select the most relevant category based on the article’s content.”",
+      "generation": 0,
+      "parents": [
+        0
+      ],
+      "dev_accuracy": 0.7,
+      "val_accuracy": 0.8
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "**New Prompt:**\n\n“As an expert news analyst, your task is to determine the primary subject of each incoming article and assign it to one of these categories: World Affairs, Sporting Events, Financial News, or Scientific Breakthroughs. Your response should consist solely of the category name you've chosen. Accuracy is paramount – carefully consider the content of the article before assigning a category.”",
+      "generation": 0,
+      "parents": [
+        0
+      ],
+      "dev_accuracy": 0.79,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 11,
+      "strategy_prompt": "You are an expert in analyzing news articles and assigning them to relevant categories. Your task is to categorize each article based on its subject matter – World Affairs, Sports News, Business Developments, or Scientific/Technological advancements.\n\nHere’s how you should approach this:\n\n1. **Analyze the Article:** Carefully read the entire text of the provided news article.\n2. **Determine the Core Topic:** Identify the primary focus of the article (e.g., a political event, a sporting competition, an economic trend, or a scientific discovery).\n3. **Select the Category:** Choose the most appropriate category from the following options: World, Sports, Business, or Sci/Tech.\n4. **Provide Your Answer:**  Respond with *only* the name of the chosen category.\n\n**Example:**\n\n**Article Text:** “The United Nations Security Council met today to discuss escalating tensions in Eastern Europe.”\n\n**Your Response:** World\n\n---\n\nNow, analyze and categorize the following news article: [Insert News Article Text Here - Placeholder for actual article content]",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.78,
+      "val_accuracy": 0.8
+    },
+    {
+      "id": 12,
+      "strategy_prompt": "```\nYou are an expert news categorizer tasked with assigning each article to one of these categories: World News, Sports Updates, Business Reports, and Science & Technology Articles. Your goal is to provide a concise and accurate classification based on the content’s primary focus.\n\nHere's how you should approach this task:\n\n*   **World News:**  Articles dealing with global affairs – international relations, political events, geopolitical situations, diplomacy, major countries, conflicts, human rights issues.\n*   **Sports Updates:** Articles focusing on athletic competitions – team sports (football, basketball, baseball), individual athletes, tournament results, records, training, and related news.\n*   **Business Reports:** Articles concerning financial markets, corporations, economic trends, investments, company performance, trade, and business-related developments.\n*   **Science & Technology Articles:**  Articles about scientific discoveries, technological advancements, research breakthroughs, internet trends, computer science, engineering, and space exploration.\n\nFor each article, provide *only* the name of the category to which it belongs. Accuracy is paramount.\n```",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 13,
+      "strategy_prompt": "You are a news article classifier. Classify each article into exactly one of these four categories: World, Sports, Business, Sci/Tech.\nRead the article carefully and respond with ONLY the category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.74,
+      "val_accuracy": 0.8
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "entries": [
+    {
+      "id": "initial",
+      "score": 1.0,
+      "parent_id": null,
+      "children_count": 0,
+      "created_at": "2026-02-10T17:28:23.230057",
+      "metadata": {
+        "results": {
+          "fizzbuzz": {
+            "score": 1.0,
+            "passed": 5,
+            "total": 5
+          },
+          "matrix_rotate": {
+            "score": 1.0,
+            "passed": 5,
+            "total": 5
+          },
+          "linked_list": {
+            "score": 1.0,
+            "passed": 7,
+            "total": 7
+          },
+          "lru_cache": {
+            "score": 1.0,
+            "passed": 6,
+            "total": 6
+          },
+          "calculator": {
+            "score": 1.0,
+            "passed": 9,
+            "total": 9
+          },
+          "regex_engine": {
+            "score": 1.0,
+            "passed": 9,
+            "total": 9
+          },
+          "json_parser": {
+            "score": 1.0,
+            "passed": 13,
+            "total": 13
+          },
+          "graph_shortest": {
+            "score": 1.0,
+            "passed": 6,
+            "total": 6
+          },
+          "btree": {
+            "score": 1.0,
+            "passed": 8,
+            "total": 8
+          },
+          "task_scheduler": {
+            "score": 1.0,
+            "passed": 8,
+            "total": 8
+          }
+        }
+      },
+      "code_file": "results/dgm_v7_run1/archive/initial_agent.py"
+    }
+  ]
+}

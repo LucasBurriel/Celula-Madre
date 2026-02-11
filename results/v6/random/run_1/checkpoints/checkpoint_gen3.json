@@ -1,0 +1,379 @@
+{
+  "generation": 3,
+  "agent_counter": 26,
+  "config_mode": "random",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.63,
+          "val": 0.57,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.75,
+      "duration_sec": 672.8
+    },
+    {
+      "generation": 1,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.68,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.7888,
+      "duration_sec": 676.3
+    },
+    {
+      "generation": 2,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 17,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.78,
+          "parents": [
+            13
+          ]
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.805,
+      "duration_sec": 677.4
+    },
+    {
+      "generation": 3,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.81,
+          "val": 0.84,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 23,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.83,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 22,
+          "gen": 2,
+          "dev": 0.81,
+          "val": 0.8,
+          "parents": [
+            9
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.79,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.73,
+          "val": 0.68,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.8,
+      "duration_sec": 674.7
+    }
+  ],
+  "population": [
+    {
+      "id": 8,
+      "strategy_prompt": "Okay, here’s a revised prompt designed to improve accuracy in news classification:\n\n“You are an expert news analyst tasked with categorizing articles for efficient distribution.  Analyze each article provided and assign it to one of the following categories: World News, Sports Coverage, Business & Finance, or Science & Technology. Your primary goal is precise categorization based on the content's core focus. Consider the overall theme and key topics discussed within the article. Respond with only the category name – for example, ‘World News’ or ‘Business & Finance’.  If you are unsure of the most appropriate category, choose the one that best represents the *dominant* subject matter.”",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.75,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 9,
+      "strategy_prompt": "Here's a revised prompt:\n\n“Read the following news article and select the most appropriate category from the options below. Consider the *core subject* of the article – what is it primarily about?  Choose only one category that best represents the main topic.\n\nCategories: World, Sports, Business, Science & Technology\n\n**Article:** [Insert News Article Text Here]\n\n**Your Response:**”",
+      "generation": 0,
+      "parents": [
+        5
+      ],
+      "dev_accuracy": 0.73,
+      "val_accuracy": 0.79
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "Okay, here’s a revised prompt designed to improve accuracy in news classification:\n\n“You are an expert news analyst tasked with categorizing articles for efficient distribution.  Analyze each article provided and assign it to one of the following categories: World News, Sports Coverage, Business & Finance, or Science & Technology. Your primary goal is precise categorization based on the content's core focus. Consider the overall theme and key topics discussed within the article. Respond with only the category name – for example, ‘World News’ or ‘Business & Finance’.  If you are unsure of the most appropriate category, choose the one that best represents the *dominant* subject matter.”",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.75,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "Okay, here’s a revised prompt designed to improve accuracy in news classification:\n\n“You are an expert news analyst tasked with categorizing articles for efficient distribution.  Analyze each article provided and assign it to one of the following categories: World News, Sports Coverage, Business & Finance, or Science & Technology. Your primary goal is precise categorization based on the content's core focus. Consider the overall theme and key topics discussed within the article. Respond with only the category name – for example, ‘World News’ or ‘Business & Finance’.  If you are unsure of the most appropriate category, choose the one that best represents the *dominant* subject matter.”",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.75,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 22,
+      "strategy_prompt": "“Analyze the following news excerpt and assign it to *one* category that most closely reflects its content.  Your selection should be based on the article’s primary focus – what is it principally discussing? Select from: Global Affairs, Athletics & Recreation, Finance & Economics, or Innovation & Discovery.\n\n**News Excerpt:** [Insert News Article Text Here]\n\n**Category Selection:**”",
+      "generation": 2,
+      "parents": [
+        9
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.8
+    },
+    {
+      "id": 23,
+      "strategy_prompt": "“As a specialist in news categorization, your task is to classify each article into one of these categories: World Affairs, Sports, Business News, or Technology & Science.  Each article will present a mix of topics; identify the *primary* subject matter – the area that receives the most attention and detail. Select only ONE category below for each input. Your responses should be concise: ‘World Affairs’, ‘Sports’, ‘Business News’, or ‘Technology & Science’. When faced with articles containing elements from multiple categories, choose the category where the dominant theme is presented.”",
+      "generation": 2,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.85,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 24,
+      "strategy_prompt": "“As a seasoned journalist, your task is to swiftly categorize news stories for optimal distribution. Each article will be presented to you; assign it precisely to one of these categories: Global Affairs, Athletics, Commerce, or Innovation. Focus on the central theme – what’s the *main* story? Provide only the category name – ‘Global Affairs’, ‘Athletics’, ‘Commerce’, or ‘Innovation’. When faced with ambiguous content, select the category that most accurately reflects its primary subject matter.”",
+      "generation": 2,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.84
+    },
+    {
+      "id": 25,
+      "strategy_prompt": "You are a precise news classifier. Use elimination:\n- Is it about sports, athletes, or games? → Sports\n- Is it about technology, science, or computing? → Sci/Tech\n- Is it about companies, markets, or economy? → Business\n- Otherwise → World\nRespond with ONLY: World, Sports, Business, or Sci/Tech",
+      "generation": 2,
+      "parents": [],
+      "dev_accuracy": 0.73,
+      "val_accuracy": 0.68
+    }
+  ]
+}

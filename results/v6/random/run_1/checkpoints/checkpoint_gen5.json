@@ -1,0 +1,537 @@
+{
+  "generation": 5,
+  "agent_counter": 38,
+  "config_mode": "random",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.63,
+          "val": 0.57,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.75,
+      "duration_sec": 672.8
+    },
+    {
+      "generation": 1,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.68,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.7888,
+      "duration_sec": 676.3
+    },
+    {
+      "generation": 2,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 17,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.78,
+          "parents": [
+            13
+          ]
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.805,
+      "duration_sec": 677.4
+    },
+    {
+      "generation": 3,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.81,
+          "val": 0.84,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 23,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.83,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 22,
+          "gen": 2,
+          "dev": 0.81,
+          "val": 0.8,
+          "parents": [
+            9
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.79,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.73,
+          "val": 0.68,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.8,
+      "duration_sec": 674.7
+    },
+    {
+      "generation": 4,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 23,
+          "gen": 2,
+          "dev": 0.82,
+          "val": 0.84,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.81,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 31,
+          "gen": 3,
+          "dev": 0.79,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.8162,
+      "duration_sec": 671.7
+    },
+    {
+      "generation": 5,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 32,
+          "gen": 4,
+          "dev": 0.86,
+          "val": 0.88,
+          "parents": [
+            23
+          ]
+        },
+        {
+          "id": 33,
+          "gen": 4,
+          "dev": 0.88,
+          "val": 0.88,
+          "parents": [
+            23
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 24,
+          "gen": 2,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 23,
+          "gen": 2,
+          "dev": 0.84,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 34,
+          "gen": 4,
+          "dev": 0.81,
+          "val": 0.82,
+          "parents": [
+            24
+          ]
+        },
+        {
+          "id": 23,
+          "gen": 2,
+          "dev": 0.84,
+          "val": 0.82,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 37,
+          "gen": 4,
+          "dev": 0.76,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.88,
+      "mean_val": 0.8325,
+      "duration_sec": 668.5
+    }
+  ],
+  "population": [
+    {
+      "id": 23,
+      "strategy_prompt": "“As a specialist in news categorization, your task is to classify each article into one of these categories: World Affairs, Sports, Business News, or Technology & Science.  Each article will present a mix of topics; identify the *primary* subject matter – the area that receives the most attention and detail. Select only ONE category below for each input. Your responses should be concise: ‘World Affairs’, ‘Sports’, ‘Business News’, or ‘Technology & Science’. When faced with articles containing elements from multiple categories, choose the category where the dominant theme is presented.”",
+      "generation": 2,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.84,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 24,
+      "strategy_prompt": "“As a seasoned journalist, your task is to swiftly categorize news stories for optimal distribution. Each article will be presented to you; assign it precisely to one of these categories: Global Affairs, Athletics, Commerce, or Innovation. Focus on the central theme – what’s the *main* story? Provide only the category name – ‘Global Affairs’, ‘Athletics’, ‘Commerce’, or ‘Innovation’. When faced with ambiguous content, select the category that most accurately reflects its primary subject matter.”",
+      "generation": 2,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.82,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 32,
+      "strategy_prompt": "“You are an expert in analyzing news content and assigning it to relevant categories. Your role is to categorize incoming news articles into one of four distinct areas: Global News, Sports Reporting, Financial Updates, or Technological Innovations. Carefully assess each article’s core focus – the subject that receives the most detailed treatment. Select *one* category from the list below for each piece of information provided. Responses should be brief and direct: ‘Global News’, ‘Sports Reporting’, ‘Financial Updates’, or ‘Technological Innovations’. When an article touches upon several topics simultaneously, prioritize the area where the dominant theme is presented with the greatest depth.”",
+      "generation": 4,
+      "parents": [
+        23
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.88
+    },
+    {
+      "id": 33,
+      "strategy_prompt": "“You are an expert in analyzing and categorizing news content. Your role is to determine the most suitable category for each article based on its primary focus. Articles will cover a broad range of topics; your task is to identify the *dominant* subject matter – the area receiving the most detailed treatment within the text. Choose *one* category from the following list: Global News, Sports Reporting, Financial Updates, or Innovations & Technology. Provide only the chosen category as your response. When an article touches upon multiple themes, select the category that represents its core focus and most prominent discussion.”",
+      "generation": 4,
+      "parents": [
+        23
+      ],
+      "dev_accuracy": 0.88,
+      "val_accuracy": 0.88
+    },
+    {
+      "id": 34,
+      "strategy_prompt": "“You are an AI tasked with efficiently sorting news articles for distribution. You will receive a news story and must assign it to one of four categories: World News, Sports News, Business News, or Science & Technology News. Your sole responsibility is category assignment – simply state the relevant category. Consider the article’s core focus when making your selection; prioritize the most prominent subject matter. If an article blends topics, choose the category that represents its dominant theme.”",
+      "generation": 4,
+      "parents": [
+        24
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 23,
+      "strategy_prompt": "“As a specialist in news categorization, your task is to classify each article into one of these categories: World Affairs, Sports, Business News, or Technology & Science.  Each article will present a mix of topics; identify the *primary* subject matter – the area that receives the most attention and detail. Select only ONE category below for each input. Your responses should be concise: ‘World Affairs’, ‘Sports’, ‘Business News’, or ‘Technology & Science’. When faced with articles containing elements from multiple categories, choose the category where the dominant theme is presented.”",
+      "generation": 2,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.84,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 24,
+      "strategy_prompt": "“As a seasoned journalist, your task is to swiftly categorize news stories for optimal distribution. Each article will be presented to you; assign it precisely to one of these categories: Global Affairs, Athletics, Commerce, or Innovation. Focus on the central theme – what’s the *main* story? Provide only the category name – ‘Global Affairs’, ‘Athletics’, ‘Commerce’, or ‘Innovation’. When faced with ambiguous content, select the category that most accurately reflects its primary subject matter.”",
+      "generation": 2,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.82,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 37,
+      "strategy_prompt": "You are a news article classifier. Classify each article into exactly one of these four categories: World, Sports, Business, Sci/Tech.\nRead the article carefully and respond with ONLY the category name.",
+      "generation": 4,
+      "parents": [],
+      "dev_accuracy": 0.76,
+      "val_accuracy": 0.78
+    }
+  ]
+}

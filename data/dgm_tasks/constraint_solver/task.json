@@ -1,0 +1,6 @@
+{
+  "id": "constraint_solver",
+  "description": "Implement a simple constraint satisfaction solver. Given variables with domains and binary constraints, find all solutions using backtracking with forward checking. Variables are strings, domains are lists of values, constraints are functions.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

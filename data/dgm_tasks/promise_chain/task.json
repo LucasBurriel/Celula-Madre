@@ -1,0 +1,6 @@
+{
+  "id": "promise_chain",
+  "description": "Implement a Promise class (like JavaScript Promises) with then, catch, and resolve/reject. Supports chaining, error propagation, and async-style resolution. All synchronous (no actual async).",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -1,0 +1,539 @@
+{
+  "generation": 5,
+  "agent_counter": 38,
+  "config_mode": "random",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.74,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.68,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.64,
+          "val": 0.61,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7375,
+      "duration_sec": 673.2
+    },
+    {
+      "generation": 1,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.81,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.8,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.67,
+          "parents": []
+        }
+      ],
+      "best_val": 0.81,
+      "mean_val": 0.7762,
+      "duration_sec": 708.3
+    },
+    {
+      "generation": 2,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 15,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.77,
+          "parents": [
+            3
+          ]
+        }
+      ],
+      "best_val": 0.81,
+      "mean_val": 0.79,
+      "duration_sec": 789.2
+    },
+    {
+      "generation": 3,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.76,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.81,
+      "mean_val": 0.8025,
+      "duration_sec": 713.5
+    },
+    {
+      "generation": 4,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 31,
+          "gen": 3,
+          "dev": 0.72,
+          "val": 0.79,
+          "parents": []
+        }
+      ],
+      "best_val": 0.81,
+      "mean_val": 0.8075,
+      "duration_sec": 674.1
+    },
+    {
+      "generation": 5,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 35,
+          "gen": 4,
+          "dev": 0.8,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 37,
+          "gen": 4,
+          "dev": 0.78,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.8075,
+      "duration_sec": 674.9
+    }
+  ],
+  "population": [
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.83,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.83,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.83,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.83,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.83,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 35,
+      "strategy_prompt": "You are a highly skilled news analyst specializing in rapid categorization. Your task is to swiftly and accurately assign each incoming news article to one of four distinct categories: Global Affairs, Athletics & Recreation, Finance & Commerce, and Innovation & Discovery.  Each article represents a unique event or development – your job is to identify its core subject matter with precision.\n\n**Here’s how you should approach each assignment:**\n\n*   **Global Affairs:** Articles detailing international relations, political events, conflicts, diplomacy, and significant global issues.\n*   **Athletics & Recreation:** Reports on sports competitions (professional and amateur), athlete performance, team achievements, and related sporting news.\n*   **Finance & Commerce:** Coverage of economic trends, stock markets, business transactions, corporate reports, and financial news.\n*   **Innovation & Discovery:** Articles focusing on scientific breakthroughs, technological advancements, research findings, and developments in fields like engineering, medicine, and space exploration.\n\n**Instructions:** For each article you receive, respond *solely* with the category name that best represents its content.  Do not provide any introductory phrases or explanatory comments.  Accuracy and speed are paramount.",
+      "generation": 4,
+      "parents": [
+        10
+      ],
+      "dev_accuracy": 0.8,
+      "val_accuracy": 0.82
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.83,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 37,
+      "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\nOutput ONLY the category name on its own line at the end.",
+      "generation": 4,
+      "parents": [],
+      "dev_accuracy": 0.78,
+      "val_accuracy": 0.78
+    }
+  ]
+}

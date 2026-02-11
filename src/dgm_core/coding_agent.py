@@ -82,8 +82,9 @@ Tests that must pass:
 
 Write the complete solution.py content."""
         
-        max_attempts = 3
+        max_attempts = 1  # single shot, evolution improves the prompt
         solution = None
+        test_output = "No test output yet"
         
         for attempt in range(max_attempts):
             if attempt == 0:

@@ -1,0 +1,302 @@
+{
+  "generation": 2,
+  "agent_counter": 20,
+  "config_mode": "random",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.74,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.68,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.64,
+          "val": 0.61,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7375,
+      "duration_sec": 673.2
+    },
+    {
+      "generation": 1,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.83,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.81,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.8,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.67,
+          "parents": []
+        }
+      ],
+      "best_val": 0.81,
+      "mean_val": 0.7762,
+      "duration_sec": 708.3
+    },
+    {
+      "generation": 2,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.84,
+          "val": 0.81,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.78,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 15,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.77,
+          "parents": [
+            3
+          ]
+        }
+      ],
+      "best_val": 0.81,
+      "mean_val": 0.79,
+      "duration_sec": 789.2
+    }
+  ],
+  "population": [
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.84,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 12,
+      "strategy_prompt": "**New Prompt:**\n\nAnalyze the following news article and select the most appropriate category from the options below. Provide a brief justification for your choice.\n\n**Article:** [Insert News Article Text Here]\n\n**Categories:**\n\n*   Global Affairs: Covers international politics, diplomacy, and current events affecting nations worldwide.\n*   Sports & Recreation: Focuses on athletic competitions, teams, athletes, and related activities.\n*   Financial Markets: Deals with economic news, stock market trends, company performance, and investment strategies.\n*   Science & Technology: Reports on technological advancements, scientific discoveries, innovations, and their impact.\n\n**Instructions:**\n\n1.  Read the article carefully.\n2.  Select *one* category that best represents the primary subject of the article.\n3.  In a single sentence, briefly explain why you chose that category.\n\n**Output:**\n\nCategory: [Your Chosen Category]\nJustification: [Your One-Sentence Justification]",
+      "generation": 0,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.78
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.84,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 15,
+      "strategy_prompt": "**New Prompt:**\n\n“You are an expert news classifier. Your task is to analyze news articles and assign them to one of four categories: World, Sports, Business, or Sci/Tech.\n\n**Instructions:**\n\n1.  **Read the Article:** Carefully read the provided news article text.\n2.  **Determine Key Focus:** Briefly summarize the article's main subject in a single sentence.\n3.  **Select Category:** Choose the most appropriate category from the list below:\n    *   World: International events, politics, and current affairs.\n    *   Sports: Athletic competitions, teams, and related news.\n    *   Business: Financial markets, companies, and economic developments.\n    *   Sci/Tech: Scientific discoveries, technological advancements, and innovations.\n\n4.  **Output:** Provide *only* the category name on a new line.\n\n**Example:**\n\n**Article:** “The Federal Reserve announced today it would raise interest rates by 0.25%…”\n\n**Category:** Business”",
+      "generation": 1,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.76,
+      "val_accuracy": 0.77
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are an expert news categorizer tasked with assigning each article to one of four categories: World News, Sports Updates, Business Developments, and Science & Technology breakthroughs. Carefully analyze the content of each article based on its primary focus and select the most relevant category. Respond with only the category name.\n\n*   **World News:** Covers global events including politics, international relations, diplomacy, conflicts, and major geopolitical developments.\n*   **Sports Updates:** Reports on athletic competitions, team performance, individual athlete achievements, sports news, and related events.\n*   **Business Developments:** Focuses on financial markets, corporate activities, economic trends, company announcements, and business-related news.\n*   **Science & Technology breakthroughs:** Highlights advancements in scientific research, technological innovations, computing developments, and space exploration.\n\nProvide only the category name for each article – no additional explanation is needed.",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.84,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 12,
+      "strategy_prompt": "**New Prompt:**\n\nAnalyze the following news article and select the most appropriate category from the options below. Provide a brief justification for your choice.\n\n**Article:** [Insert News Article Text Here]\n\n**Categories:**\n\n*   Global Affairs: Covers international politics, diplomacy, and current events affecting nations worldwide.\n*   Sports & Recreation: Focuses on athletic competitions, teams, athletes, and related activities.\n*   Financial Markets: Deals with economic news, stock market trends, company performance, and investment strategies.\n*   Science & Technology: Reports on technological advancements, scientific discoveries, innovations, and their impact.\n\n**Instructions:**\n\n1.  Read the article carefully.\n2.  Select *one* category that best represents the primary subject of the article.\n3.  In a single sentence, briefly explain why you chose that category.\n\n**Output:**\n\nCategory: [Your Chosen Category]\nJustification: [Your One-Sentence Justification]",
+      "generation": 0,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.78
+    },
+    {
+      "id": 12,
+      "strategy_prompt": "**New Prompt:**\n\nAnalyze the following news article and select the most appropriate category from the options below. Provide a brief justification for your choice.\n\n**Article:** [Insert News Article Text Here]\n\n**Categories:**\n\n*   Global Affairs: Covers international politics, diplomacy, and current events affecting nations worldwide.\n*   Sports & Recreation: Focuses on athletic competitions, teams, athletes, and related activities.\n*   Financial Markets: Deals with economic news, stock market trends, company performance, and investment strategies.\n*   Science & Technology: Reports on technological advancements, scientific discoveries, innovations, and their impact.\n\n**Instructions:**\n\n1.  Read the article carefully.\n2.  Select *one* category that best represents the primary subject of the article.\n3.  In a single sentence, briefly explain why you chose that category.\n\n**Output:**\n\nCategory: [Your Chosen Category]\nJustification: [Your One-Sentence Justification]",
+      "generation": 0,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.81,
+      "val_accuracy": 0.78
+    },
+    {
+      "id": 19,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\nRespond with ONLY the category name, nothing else.",
+      "generation": 1,
+      "parents": [],
+      "dev_accuracy": 0.72,
+      "val_accuracy": 0.78
+    }
+  ]
+}

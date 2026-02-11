@@ -20,6 +20,8 @@ def main():
     parser.add_argument("--test-only", action="store_true", help="Test LLM + eval initial agent")
     parser.add_argument("--tasks", nargs="*", help="Specific task IDs (default: all)")
     parser.add_argument("--hard-only", action="store_true", help="Only use hard tasks")
+    parser.add_argument("--agent-model", default=None, help="Model for coding agent (weaker)")
+    parser.add_argument("--diagnose-model", default=None, help="Model for diagnosis (stronger)")
     args = parser.parse_args()
 
     # Test LLM
@@ -82,6 +84,8 @@ def main():
     dgm = DGMLoop(
         output_dir=args.output_dir,
         task_ids=task_ids,
+        agent_model=args.agent_model,
+        diagnose_model=args.diagnose_model,
         max_generations=args.generations,
         attempts_per_generation=args.children,
     )

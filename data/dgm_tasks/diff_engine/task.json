@@ -1,0 +1,6 @@
+{
+  "id": "diff_engine",
+  "description": "Implement a unified diff engine. Given two strings (old and new), compute the minimal edit script using the Myers diff algorithm or similar. Output unified diff format lines: unchanged lines prefixed with ' ', removed with '-', added with '+'.",
+  "code_file": "solution.py",
+  "test_file": "test_solution.py"
+}

@@ -7,14 +7,18 @@ import os
 from openai import OpenAI
 
 DEFAULT_ENDPOINT = os.environ.get("DGM_LLM_ENDPOINT", "http://172.17.0.1:1234/v1")
-DEFAULT_MODEL = os.environ.get("DGM_LLM_MODEL", "qwen3-coder-30b-a3b-instruct")
-MAX_TOKENS = 8192
+DEFAULT_MODEL = os.environ.get("DGM_LLM_MODEL", "google/gemma-3-4b")
+
+# Agent model (weaker, what gets evolved) vs Diagnosis model (stronger, analyzes failures)
+AGENT_MODEL = os.environ.get("DGM_AGENT_MODEL", "google/gemma-3-4b")
+DIAGNOSE_MODEL = os.environ.get("DGM_DIAGNOSE_MODEL", "google/gemma-3-4b")  # same model, evolution improves the prompt
+MAX_TOKENS = 1024
 
 
 def create_client(endpoint=None, model=None):
     endpoint = endpoint or DEFAULT_ENDPOINT
     model = model or DEFAULT_MODEL
-    client = OpenAI(base_url=endpoint, api_key="not-needed")
+    client = OpenAI(base_url=endpoint, api_key="not-needed", timeout=60.0)
     return client, model
 
 

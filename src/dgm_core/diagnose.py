@@ -74,18 +74,19 @@ def diagnose_failure(client, model, agent_code, task_description, agent_log,
     return None
 
 
-IMPLEMENT_SYSTEM = """You are an expert software engineer. You will receive a coding agent's source code
-and a description of an improvement to make. Implement that improvement by modifying the agent's code.
+IMPLEMENT_SYSTEM = """You are an expert prompt engineer. You will receive a coding agent's current system prompt
+and a description of an improvement. Write an improved system prompt that incorporates the improvement.
 
-Output the COMPLETE modified agent code (the entire file).
-Wrap your code in:
-```python
-<your complete modified code>
-```"""
+Output ONLY the new system prompt text, wrapped in:
+```prompt
+<your improved system prompt>
+```
 
-IMPLEMENT_PROMPT = """# Current Agent Code
-```python
-{agent_code}
+The system prompt instructs an LLM to write Python code. Keep it concise but effective."""
+
+IMPLEMENT_PROMPT = """# Current System Prompt
+```
+{agent_prompt}
 ```
 
 # Improvement to Implement
@@ -94,15 +95,22 @@ IMPLEMENT_PROMPT = """# Current Agent Code
 # Implementation Plan
 {implementation_plan}
 
-Output the COMPLETE modified agent code. Must be valid Python.
-The agent uses tools (bash, editor) via chat_with_tools. The forward() method is the entry point.
+Write the improved system prompt. Keep it under 500 words. Be specific and actionable.
 """
 
 
 def implement_improvement(client, model, agent_code, improvement_description,
-                         implementation_plan, max_attempts=3):
+                         implementation_plan, max_attempts=2):
+    """Generate an improved system prompt (not full code rewrite)."""
+    import re as _re
+    # Extract current system prompt from agent code
+    match = _re.search(r'DIRECT_SYSTEM_PROMPT\s*=\s*"""(.*?)"""', agent_code, _re.DOTALL)
+    if not match:
+        match = _re.search(r'AGENT_SYSTEM_PROMPT\s*=\s*"""(.*?)"""', agent_code, _re.DOTALL)
+    current_prompt = match.group(1).strip() if match else "You are an expert programmer."
+
     prompt = IMPLEMENT_PROMPT.format(
-        agent_code=agent_code,
+        agent_prompt=current_prompt,
         improvement_description=improvement_description,
         implementation_plan=implementation_plan,
     )
@@ -110,15 +118,24 @@ def implement_improvement(client, model, agent_code, improvement_description,
     for attempt in range(max_attempts):
         try:
             response = chat(client, model, IMPLEMENT_SYSTEM, prompt,
-                          temperature=0.5, max_tokens=16384)
+                          temperature=0.5, max_tokens=1024)
 
-            pattern = r'```python\s*\n(.*?)\n```'
-            matches = re.findall(pattern, response, re.DOTALL)
-
+            # Extract from ```prompt ... ``` block
+            pattern = r'```prompt\s*\n(.*?)\n```'
+            matches = _re.findall(pattern, response, _re.DOTALL)
             if matches:
-                new_code = max(matches, key=len)
-                if "forward" in new_code:
-                    return new_code
+                return matches[0].strip()
+            
+            # Fallback: try ```...``` block
+            pattern = r'```\s*\n(.*?)\n```'
+            matches = _re.findall(pattern, response, _re.DOTALL)
+            if matches:
+                return max(matches, key=len).strip()
+            
+            # Last fallback: use response directly if it looks like a prompt
+            if len(response) > 20 and len(response) < 3000:
+                return response.strip()
+                
         except Exception as e:
             if attempt == max_attempts - 1:
                 return None

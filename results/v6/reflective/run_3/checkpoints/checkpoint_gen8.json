@@ -1,0 +1,778 @@
+{
+  "generation": 8,
+  "agent_counter": 56,
+  "config_mode": "reflective",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.75,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.73,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.65,
+          "val": 0.57,
+          "parents": []
+        }
+      ],
+      "best_val": 0.78,
+      "mean_val": 0.7388,
+      "duration_sec": 695.7
+    },
+    {
+      "generation": 1,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.82,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.81,
+          "parents": [
+            4
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.8,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.8,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.75,
+          "parents": [
+            7
+          ]
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8,
+      "duration_sec": 684.0
+    },
+    {
+      "generation": 2,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 16,
+          "gen": 1,
+          "dev": 0.83,
+          "val": 0.85,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.81,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.74,
+          "val": 0.75,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8363,
+      "duration_sec": 682.7
+    },
+    {
+      "generation": 3,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 16,
+          "gen": 1,
+          "dev": 0.84,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 16,
+          "gen": 1,
+          "dev": 0.84,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.66,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.85,
+      "duration_sec": 675.1
+    },
+    {
+      "generation": 4,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 31,
+          "gen": 3,
+          "dev": 0.8,
+          "val": 0.79,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.86,
+      "duration_sec": 676.1
+    },
+    {
+      "generation": 5,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 37,
+          "gen": 4,
+          "dev": 0.75,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8575,
+      "duration_sec": 686.2
+    },
+    {
+      "generation": 6,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.85,
+          "val": 0.87,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 43,
+          "gen": 5,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.86,
+      "duration_sec": 680.8
+    },
+    {
+      "generation": 7,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.87,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 47,
+          "gen": 6,
+          "dev": 0.84,
+          "val": 0.85,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 49,
+          "gen": 6,
+          "dev": 0.63,
+          "val": 0.56,
+          "parents": []
+        }
+      ],
+      "best_val": 0.86,
+      "mean_val": 0.8213,
+      "duration_sec": 676.7
+    },
+    {
+      "generation": 8,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 53,
+          "gen": 7,
+          "dev": 0.78,
+          "val": 0.87,
+          "parents": [
+            8
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.86,
+          "val": 0.86,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 55,
+          "gen": 7,
+          "dev": 0.73,
+          "val": 0.76,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8488,
+      "duration_sec": 674.1
+    }
+  ],
+  "population": [
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.86
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.86
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.86
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.86
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.86
+    },
+    {
+      "id": 53,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events. Pay particular attention to keywords related to finance, technology, scientific advancements, athletic competition, global affairs, and industry-specific terms.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Focus on the *primary* subject matter – don’t be swayed by minor details. If there's ambiguity, prioritize Sci/Tech for articles involving technology, scientific concepts, data analysis, or software. For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.\n4. Respond with ONLY the category name, nothing else.\n\nSpecifically:\n*   **Business misclassifications:** The prompt will now explicitly instruct the model to prioritize Sci/Tech over Business when dealing with technology and data-related terms within business articles (e.g., CRM, TCO, ROI, e-mail archiving).  It will also penalize reliance on keywords like “CFO” or \"turnover\" as primary indicators of category.\n*   **Sci/Tech misclassifications:** The prompt is clarified to emphasize Sci/Tech for articles involving technology, scientific concepts, data analysis, and software, regardless of the presence of financial terms. It will now prioritize identifying technological advancements or scientific breakthroughs over purely financial contexts.\n*   **World misclassifications:** The prompt reinforces that \"World\" applies to articles focused on global events, geography, or cutting-edge science, emphasizing the *primary* subject matter.\n\nFocus on identifying the *primary* subject matter – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts. For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 7,
+      "parents": [
+        8
+      ],
+      "dev_accuracy": 0.78,
+      "val_accuracy": 0.87
+    },
+    {
+      "id": 8,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain. Consider topics like technology, science, business, sports, or world events.\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech.  Pay close attention to keywords related to finance, technology, scientific advancements, athletic competition, and global affairs.\n4. Respond with ONLY the category name, nothing else.\n\nFocus on identifying the *primary* subject matter of the article – don’t be swayed by minor details. If there's ambiguity, err on the side of Sci/Tech if it involves technology or scientific concepts.  For articles focusing on human competition or athletic events, choose Sports. For financial matters, business news, and general current affairs, select Business. Finally, for articles relating to global events, geography, or cutting-edge science, categorize them as World.",
+      "generation": 0,
+      "parents": [
+        1
+      ],
+      "dev_accuracy": 0.86,
+      "val_accuracy": 0.86
+    },
+    {
+      "id": 55,
+      "strategy_prompt": "Classify the following news article into one of four categories.\nThink about the PRIMARY focus of the article, not secondary mentions.\nAn article mentioning a tech company's stock price is Business, not Sci/Tech.\nAn article about a sports league's financial deal is Business, not Sports.\nCategories: World, Sports, Business, Sci/Tech\nRespond with ONLY the category name.",
+      "generation": 7,
+      "parents": [],
+      "dev_accuracy": 0.73,
+      "val_accuracy": 0.76
+    }
+  ]
+}

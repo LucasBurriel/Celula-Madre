@@ -1,0 +1,30 @@
+{"type": "start", "message": "Starting DGM with 10 tasks, 10 generations", "timestamp": "2026-02-10T19:10:56.070270"}
+{"type": "init", "message": "Evaluating initial agent...", "timestamp": "2026-02-10T19:10:56.070459"}
+{"type": "init_done", "message": "Initial agent score: 0.699", "score": 0.6992948717948718, "task_results": {"fizzbuzz": 1.0, "matrix_rotate": 0.4, "linked_list": 1.0, "lru_cache": 1.0, "calculator": 1.0, "regex_engine": 0.3333333333333333, "json_parser": 0.38461538461538464, "graph_shortest": 1.0, "btree": 0.75, "task_scheduler": 0.125}, "timestamp": "2026-02-10T19:12:09.904828"}
+{"type": "gen_start", "message": "Generation 0", "timestamp": "2026-02-10T19:12:09.904881"}
+{"type": "attempt_start", "message": "Attempt gen0_attempt0", "timestamp": "2026-02-10T19:12:09.904901"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T19:12:09.905000"}
+{"type": "diagnosing", "message": "Diagnosing failure on regex_engine", "timestamp": "2026-02-10T19:13:27.669233"}
+{"type": "diagnosis_done", "message": "Provide a detailed algorithm description in the system prompt.", "timestamp": "2026-02-10T19:13:31.506959"}
+{"type": "impl_failed", "message": "Failed to implement improvement", "timestamp": "2026-02-10T19:14:13.648434"}
+{"type": "attempt_start", "message": "Attempt gen0_attempt1", "timestamp": "2026-02-10T19:14:13.648565"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T19:14:13.648727"}
+{"type": "diagnosing", "message": "Diagnosing failure on btree", "timestamp": "2026-02-10T19:17:55.527092"}
+{"type": "diagnosis_failed", "message": "Failed to diagnose", "timestamp": "2026-02-10T19:17:57.121202"}
+{"type": "gen_done", "message": "Gen 0 done. Archive size: 1. Best: 0.699", "archive_size": 1, "best_score": 0.6992948717948718, "new_entries": [], "timestamp": "2026-02-10T19:17:57.121333"}
+{"type": "gen_start", "message": "Generation 1", "timestamp": "2026-02-10T19:17:57.121374"}
+{"type": "attempt_start", "message": "Attempt gen1_attempt0", "timestamp": "2026-02-10T19:17:57.121396"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T19:17:57.121496"}
+{"type": "diagnosing", "message": "Diagnosing failure on matrix_rotate", "timestamp": "2026-02-10T19:19:21.422464"}
+{"type": "diagnosis_done", "message": "Provide more explicit instructions regarding in-place modification.", "timestamp": "2026-02-10T19:19:27.292916"}
+{"type": "impl_failed", "message": "Failed to implement improvement", "timestamp": "2026-02-10T19:20:02.742418"}
+{"type": "attempt_start", "message": "Attempt gen1_attempt1", "timestamp": "2026-02-10T19:20:02.742541"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T19:20:02.742690"}
+{"type": "diagnosing", "message": "Diagnosing failure on btree", "timestamp": "2026-02-10T19:22:48.349612"}
+{"type": "diagnosis_failed", "message": "Failed to diagnose", "timestamp": "2026-02-10T19:22:49.926389"}
+{"type": "gen_done", "message": "Gen 1 done. Archive size: 1. Best: 0.699", "archive_size": 1, "best_score": 0.6992948717948718, "new_entries": [], "timestamp": "2026-02-10T19:22:49.926520"}
+{"type": "gen_start", "message": "Generation 2", "timestamp": "2026-02-10T19:22:49.926559"}
+{"type": "attempt_start", "message": "Attempt gen2_attempt0", "timestamp": "2026-02-10T19:22:49.926575"}
+{"type": "parent_selected", "message": "Parent: initial", "timestamp": "2026-02-10T19:22:49.926710"}
+{"type": "diagnosing", "message": "Diagnosing failure on regex_engine", "timestamp": "2026-02-10T20:08:24.785523"}
+{"type": "diagnosis_done", "message": "Provide a detailed breakdown of the regex engine algorithm as part of the system prompt.", "timestamp": "2026-02-10T20:11:29.183178"}

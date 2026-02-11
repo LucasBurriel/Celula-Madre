@@ -1,0 +1,762 @@
+{
+  "generation": 8,
+  "agent_counter": 56,
+  "config_mode": "reflective",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.75,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.75,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.73,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.64,
+          "val": 0.58,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.74,
+      "duration_sec": 696.3
+    },
+    {
+      "generation": 1,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.8,
+          "parents": [
+            7
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.76,
+          "val": 0.79,
+          "parents": [
+            7
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.78,
+          "parents": [
+            5
+          ]
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.8,
+      "mean_val": 0.79,
+      "duration_sec": 681.3
+    },
+    {
+      "generation": 2,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.81,
+          "parents": []
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.8,
+          "parents": [
+            7
+          ]
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.62,
+          "val": 0.58,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.7838,
+      "duration_sec": 679.2
+    },
+    {
+      "generation": 3,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 23,
+          "gen": 2,
+          "dev": 0.85,
+          "val": 0.83,
+          "parents": [
+            7
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.73,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.8213,
+      "duration_sec": 676.8
+    },
+    {
+      "generation": 4,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 31,
+          "gen": 3,
+          "dev": 0.73,
+          "val": 0.82,
+          "parents": []
+        }
+      ],
+      "best_val": 0.83,
+      "mean_val": 0.8287,
+      "duration_sec": 680.4
+    },
+    {
+      "generation": 5,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.84,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 37,
+          "gen": 4,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.8325,
+      "duration_sec": 690.2
+    },
+    {
+      "generation": 6,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 43,
+          "gen": 5,
+          "dev": 0.78,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.815,
+      "duration_sec": 680.8
+    },
+    {
+      "generation": 7,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.76,
+          "val": 0.82,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 49,
+          "gen": 6,
+          "dev": 0.79,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.82,
+      "mean_val": 0.815,
+      "duration_sec": 677.9
+    },
+    {
+      "generation": 8,
+      "mode": "reflective",
+      "agents": [
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 18,
+          "gen": 1,
+          "dev": 0.77,
+          "val": 0.83,
+          "parents": [
+            10
+          ]
+        },
+        {
+          "id": 50,
+          "gen": 7,
+          "dev": 0.75,
+          "val": 0.81,
+          "parents": [
+            18
+          ]
+        },
+        {
+          "id": 54,
+          "gen": 7,
+          "dev": 0.74,
+          "val": 0.8,
+          "parents": [
+            18
+          ]
+        },
+        {
+          "id": 55,
+          "gen": 7,
+          "dev": 0.73,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.83,
+      "mean_val": 0.8175,
+      "duration_sec": 677.6
+    }
+  ],
+  "population": [
+    {
+      "id": 18,
+      "strategy_prompt": "You classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.\n*   **Handle nuanced cases carefully:**  If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nFor example: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or explanatory text in your response – just the category name.",
+      "generation": 1,
+      "parents": [
+        10
+      ],
+      "dev_accuracy": 0.77,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 18,
+      "strategy_prompt": "You classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.\n*   **Handle nuanced cases carefully:**  If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nFor example: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or explanatory text in your response – just the category name.",
+      "generation": 1,
+      "parents": [
+        10
+      ],
+      "dev_accuracy": 0.77,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 50,
+      "strategy_prompt": "```\nYou classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.\n*   **Handle nuanced cases carefully:** If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nHere are some examples to illustrate: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or explanatory text in your response – just the category name.\n\n**Important Clarifications & Revised Rules:**\n\n*   **Financial News is Primarily Business:**  Articles focused *primarily* on financial markets, stock prices, or corporate finance should almost always be categorized as **Business**, even if other topics are briefly mentioned.\n*   **Scientific/Technological Context Matters:** When a Sci/Tech article discusses a *financial* impact (e.g., the market reaction to a new technology), it remains **Sci/Tech**.  The focus is on the tech itself, not the financial implications.\n*   **Sports Details in Sports Articles:** While sports articles may include brief mentions of business-related topics (like sponsorship deals), the *core* subject must be athletic competition. If the primary discussion is about a game or athlete performance, it’s **Sports**.\n*   **World Events - Broader Scope:** “World” events encompass geopolitical situations and significant global consequences—not just simple news",
+      "generation": 7,
+      "parents": [
+        18
+      ],
+      "dev_accuracy": 0.75,
+      "val_accuracy": 0.81
+    },
+    {
+      "id": 18,
+      "strategy_prompt": "You classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.\n*   **Handle nuanced cases carefully:**  If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nFor example: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or explanatory text in your response – just the category name.",
+      "generation": 1,
+      "parents": [
+        10
+      ],
+      "dev_accuracy": 0.77,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 18,
+      "strategy_prompt": "You classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.\n*   **Handle nuanced cases carefully:**  If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nFor example: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or explanatory text in your response – just the category name.",
+      "generation": 1,
+      "parents": [
+        10
+      ],
+      "dev_accuracy": 0.77,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 18,
+      "strategy_prompt": "You classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.\n*   **Handle nuanced cases carefully:**  If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nFor example: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or explanatory text in your response – just the category name.",
+      "generation": 1,
+      "parents": [
+        10
+      ],
+      "dev_accuracy": 0.77,
+      "val_accuracy": 0.83
+    },
+    {
+      "id": 54,
+      "strategy_prompt": "You classify news articles into four categories: World, Sports, Business, and Sci/Tech.\n\nHere's how to categorize each article:\n\n*   **World:** Covers international events – politics, wars, elections, diplomacy, global economics, major disasters, and significant cultural shifts impacting the world stage.\n*   **Sports:** Focuses on athletic competitions – professional leagues (NBA, NFL, MLB, etc.), Olympic games, individual athlete achievements, team transfers, and related sports news.\n*   **Business:** Encompasses financial markets, corporate activities, economic trends, mergers & acquisitions, stock market data, earnings reports, and business strategy.\n*   **Sci/Tech:** Includes advancements in science, technology, engineering, medicine, and research – new inventions, scientific discoveries, technological innovations, software releases, space exploration, and emerging technologies.\n\nRead the article carefully and respond with **ONLY** the category name that best fits the content. Pay close attention to keywords and the overall subject matter of the article.  Specifically:\n\n*   **Avoid broad descriptions:** Don’t simply state “This is a news story.”\n*   **Focus on core topic:** Prioritize the primary subject of the article when determining the category. For example, if an article discusses *how* a new iPhone impacts the stock market, it's Business, not Sci/Tech.  If an article discusses a scientific breakthrough related to sports technology (e.g., bio-monitoring in athlete performance), lean towards Sports.\n*   **Handle nuanced cases carefully:** If an article blends topics, choose the *dominant* category. If unsure, lean towards the most specific category.\n*   **Ignore introductory text and summaries:** Your response should solely reflect the categorization of the content itself.\n\nTo help you make accurate judgments:\n\n*   **Financial/Economic Articles:** Look for terms like “stock,” “market,” “economy,” “earnings,” “revenue,” “investment,” \"GDP,\" etc.\n*   **Technology Articles:**  Look for terms related to “technology”, “innovation”, “software”, “hardware”, “digital”, “AI”, “internet”, “mobile”, “data”, “chip”, “algorithm” and specific tech company names (Apple, Google, Microsoft, Samsung, Qualcomm, Intel).\n*   **Sports Articles:** Look for team names, athlete names, competition terms (\"game,\" \"tournament,\" \"championship\"), sporting equipment, and athletic performance metrics.\n*   **World News Articles:** Look for country names, political figures, conflict terminology (war, terrorism, sanctions), international organizations (UN, NATO) and major global events.\n\nFor example: A story about a new iPhone would be Sci/Tech; a report on the stock market would be Business; a news item about a conflict between nations would be World; and a story about the latest NBA game would be Sports. Do not include any introductory or",
+      "generation": 7,
+      "parents": [
+        18
+      ],
+      "dev_accuracy": 0.74,
+      "val_accuracy": 0.8
+    },
+    {
+      "id": 55,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\nRespond with ONLY the category name, nothing else.",
+      "generation": 7,
+      "parents": [],
+      "dev_accuracy": 0.73,
+      "val_accuracy": 0.78
+    }
+  ]
+}
