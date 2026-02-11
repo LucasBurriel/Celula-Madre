@@ -35,9 +35,15 @@ Automatic prompt optimization has been explored through gradient-based methods (
 
 EvoPrompt (Guo et al., 2024) applies genetic algorithms (GA and DE) to prompt optimization with crossover and mutation operators, achieving state-of-the-art on multiple NLP benchmarks. Promptbreeder (Fernando et al., 2023) introduces self-referential self-improvement, where both task prompts and mutation prompts co-evolve—a meta-evolutionary approach. Both maintain populations of prompts under selection pressure, validating the evolutionary paradigm.
 
+More recently, SCOPE (Pei et al., 2025) evolves individual agent prompts online by synthesizing guidelines from execution traces, using a dual-stream mechanism that balances tactical error fixes with strategic principles. EvoLattice (2025) addresses population diversity through quality-diversity graph representations that prevent destructive edits. These works validate the evolutionary paradigm but operate at the single-agent level (SCOPE) or on program synthesis (EvoLattice) rather than populations of competing agents.
+
 A key question these works leave open is whether *error-informed* mutation outperforms *blind* mutation. Reflective mutation—where the LLM analyzes its own errors before generating improved prompts—is intuitively appealing but lacks controlled comparison against random variation. Our work addresses this gap by: (a) systematically comparing reflective vs. random mutation with proper statistical controls (3 runs per condition), (b) testing population-level dynamics (elitism, gating, tournament selection), and (c) introducing market-based selection as an alternative to tournament selection, inspired by Austrian economics.
 
-### 2.3 Austrian Economics and Agent Coordination
+### 2.3 Ecological and Market-Based Approaches
+
+FinEvo (Zou et al., 2026) models trading strategies as adaptive agents competing in a shared market ecology, showing that strategy evaluation must account for interactions—dominance, collapse, and coalition formation depend on the competitive context. This ecological perspective validates our market-based selection intuition but studies pre-built strategies rather than evolving new ones through prompt mutation.
+
+### 2.4 Austrian Economics and Agent Coordination
 
 The market-selection component of Célula Madre draws on Hayek's (1945) argument that prices aggregate distributed knowledge more efficiently than centralized planning. In our framework, "clients" choosing agents based on track record act as a decentralized fitness function, potentially capturing dimensions of quality that a fixed metric would miss. This connects to recent work on LLM agent economies (Park et al., 2023) but applies market logic to the *evolution* of agents rather than their runtime behavior.
 
@@ -253,9 +259,11 @@ The broader implication is that **selection, not design, may be the more powerfu
 - Hayek, F. A. (1945). The Use of Knowledge in Society. *American Economic Review*, 35(4), 519-530.
 - Kirzner, I. M. (1973). *Competition and Entrepreneurship.* University of Chicago Press.
 - Menger, C. (1871). *Grundsätze der Volkswirtschaftslehre* [Principles of Economics]. Wilhelm Braumüller.
+- Pei, Z., Zhen, H.-L., Kai, S., Pan, S. J., Wang, Y., Yuan, M., & Yu, B. (2025). SCOPE: Prompt Evolution for Enhancing Agent Effectiveness. *arXiv:2512.15374*.
 - Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). Generative Agents: Interactive Simulacra of Human Behavior. *UIST 2023*. *arXiv:2304.03442*.
 - Prasad, A., Hase, P., Zhou, X., & Bansal, M. (2023). GrIPS: Gradient-free, Edit-based Instruction Search for Prompting Large Language Models. *EACL 2023*. *arXiv:2203.07281*.
 - Shin, T., Razeghi, Y., Logan IV, R. L., Wallace, E., & Singh, S. (2020). AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts. *EMNLP 2020*. *arXiv:2010.15980*.
+- Zou, M., Chen, J., Luo, A., Dai, J., Zhang, C., Sun, D., & Xu, Z. (2026). FinEvo: From Isolated Backtests to Ecological Market Games for Multi-Agent Financial Strategy Evolution. *arXiv:2602.00948*.
 - Zhou, Y., Muresanu, A. I., Han, Z., Paster, K., Pinto, S., & Ba, J. (2023). Large Language Models Are Human-Level Prompt Engineers. *ICLR 2023*. *arXiv:2211.01910*.
 
 ---
