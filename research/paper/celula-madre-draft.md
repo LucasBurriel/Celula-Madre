@@ -178,6 +178,8 @@ However, the null result on reflective vs. random mutation (p=0.932) demands exp
 
 V7's negotiation task is designed to test hypothesis (1): if reflective mutation helps on tasks with genuine strategic depth, the task complexity threshold hypothesis is supported.
 
+A fourth, more fundamental possibility is worth considering: **LLM-generated text is never truly "random."** Even without error feedback, an LLM asked to "vary this prompt" draws on its training distribution of effective instructions. The model's prior over coherent, task-relevant language may be so strong that explicit error feedback adds negligible signal. This would imply that the real mutation operator is the LLM's own implicit understanding of what makes good prompts—and that understanding is equally available to both "reflective" and "random" conditions.
+
 ### 5.2 Population Dynamics > Mutation Quality
 
 V4's dramatic result (random mutation 2.3× better) was driven entirely by population dynamics: fewer agents → more evaluations per agent → better selection signal. This suggests that in evolutionary prompt optimization, **the selection mechanism's ability to accurately identify fitness matters more than the mutation operator's ability to produce good candidates.**
@@ -193,16 +195,52 @@ This insight motivates V7's market-based selection: if selection quality is the 
 
 ### 5.4 Connections to Austrian Economics
 
-The Célula Madre project is grounded in the observation that centralized fitness evaluation has the same information problem as centralized economic planning: a single metric cannot capture all dimensions of agent quality. Market-based selection, where evaluation emerges from the aggregated choices of many "clients," may better capture multi-dimensional fitness. V7 is the first direct test of this hypothesis.
+The Célula Madre project is grounded in Hayek's (1945) knowledge problem: centralized fitness evaluation faces the same information limitations as centralized economic planning. A single metric (accuracy, profit) cannot capture all dimensions of agent quality—reliability across domains, stylistic fit for different use cases, robustness to adversarial inputs. Market-based selection, where evaluation emerges from the aggregated choices of many "clients," may better capture this multi-dimensional fitness landscape.
 
-## 6. Limitations
+There is a deeper connection to Menger's (1871) theory of subjective value: agent quality is not intrinsic but depends on the evaluator's context and needs. A negotiation agent that excels at cooperative deals has different "value" to a client facing a hostile counterparty versus a cooperative one. Tournament selection, by reducing fitness to a scalar, discards this contextual information. Market selection preserves it—each client's choice implicitly weights different quality dimensions based on their specific scenario.
+
+Furthermore, Kirzner's (1973) concept of entrepreneurial discovery suggests that market dynamics create incentives for agents to discover and exploit underserved niches. If all top agents specialize in aggressive negotiation, a cooperative agent—even if mediocre overall—may attract clients in cooperative scenarios, earning enough revenue to survive and improve. This endogenous diversification pressure is absent in tournament selection, where only the globally best survive regardless of niche value. V7 directly tests whether this theoretical advantage translates to empirical gains.
+
+## 6. Ongoing Work: Market-Based Selection on Strategic Tasks (V7)
+
+V6's null result on mutation quality raises a critical question: is the finding task-specific, or fundamental? V7 is designed to answer this through a 2×2 factorial experiment on a strategically complex task.
+
+### 6.1 Task: Multi-Turn Negotiation
+
+We adopt a Deal-or-No-Deal negotiation game where two agents split a set of items (books, hats, balls) with asymmetric private valuations. Unlike classification, negotiation demands multi-step planning, opponent modeling, and adaptive tactics—capabilities where error analysis ("I conceded too early on high-value items") should produce more actionable mutations than random prompt variation.
+
+Each negotiation runs for up to 5 turns. An agent's score is the total value of items it secures, based on its private valuation. Agents compete against a fixed opponent to ensure consistent evaluation. We generate 200 scenarios with controlled difficulty: 60 dev, 60 val, 80 test, each with 3 items and randomly assigned private valuations guaranteeing integrative potential (differing item valuations between players).
+
+### 6.2 Market-Based Selection
+
+V7 introduces market-based selection as an alternative to tournament selection. The mechanism works as follows:
+
+1. **Client choice:** Each evaluation scenario acts as a "client" that selects an agent via softmax over the agent's historical scores on similar scenarios. Temperature controls exploration/exploitation.
+2. **Revenue accumulation:** Agents earn revenue proportional to scenarios served and scores achieved.
+3. **Survival threshold:** Agents earning below 30% of mean revenue are eliminated.
+4. **Proportional reproduction:** Surviving agents reproduce with probability proportional to their revenue share.
+
+This creates a decentralized fitness signal where quality emerges from aggregated client choices—directly implementing Hayek's (1945) insight that prices convey information no central planner can aggregate. In evolutionary terms, market selection captures multi-dimensional fitness (reliability, specialization, client satisfaction) that a single score metric may miss.
+
+### 6.3 Experimental Design
+
+The 2×2 factorial design crosses selection mechanism (tournament vs. market) with mutation operator (reflective vs. random), yielding 4 groups with 3 runs each (12 total). All groups share the same 8 seed strategies spanning negotiation archetypes: aggressive, cooperative, analytical, deceptive, tit-for-tat, deadline-exploiting, package-dealing, and minimalist.
+
+**Predictions:**
+- *H1:* Reflective > random on negotiation (unlike V6's classification null result)
+- *H2:* Market selection preserves greater strategic diversity (measured by Gini coefficient and strategy cluster analysis)
+- *H3:* Market × reflective produces the highest absolute performance
+
+If H1 holds but H2 does not, mutation quality is task-dependent but selection mechanism doesn't matter. If both hold, the original Célula Madre thesis—that market dynamics drive superior agent evolution—is supported.
+
+## 7. Limitations
 
 - **Static control incomplete in V6:** Infrastructure failure (LM Studio model unload) invalidated static runs. The ~79% baseline is estimated from Gen0 scores, which is conservative but not directly measured post-evolution.
 - **Single LLM:** All experiments used Qwen3-30B. Results may not generalize to other model families or scales.
 - **Small run counts:** 3 runs per condition provides limited statistical power. Larger-scale replication is needed.
 - **Single task per version:** Each version tested one task, making cross-task generalization uncertain.
 
-## 7. Conclusion
+## 8. Conclusion
 
 Célula Madre demonstrates that evolutionary selection pressure can systematically improve LLM agent prompts, producing statistically significant gains over static baselines without modifying model weights. The framework's key components—elitism, gating, and population management—are more important than the sophistication of the mutation operator, at least on classification tasks. Whether reflective mutation and market-based selection add value on strategically complex tasks remains an open question, currently under investigation (V7).
 
@@ -213,6 +251,8 @@ The broader implication is that **selection, not design, may be the more powerfu
 - Fernando, C., Banarse, D., Michalewski, H., Osindero, S., & Rocktäschel, T. (2023). Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution. *arXiv:2309.16797*.
 - Guo, Q., Wang, R., Guo, J., Li, B., Song, K., Tan, X., Liu, G., Bian, J., & Yang, Y. (2024). EvoPrompt: Connecting LLMs with Evolutionary Algorithms Yields Powerful Prompt Optimizers. *ICLR 2024*. *arXiv:2309.08532*.
 - Hayek, F. A. (1945). The Use of Knowledge in Society. *American Economic Review*, 35(4), 519-530.
+- Kirzner, I. M. (1973). *Competition and Entrepreneurship.* University of Chicago Press.
+- Menger, C. (1871). *Grundsätze der Volkswirtschaftslehre* [Principles of Economics]. Wilhelm Braumüller.
 - Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). Generative Agents: Interactive Simulacra of Human Behavior. *UIST 2023*. *arXiv:2304.03442*.
 - Prasad, A., Hase, P., Zhou, X., & Bansal, M. (2023). GrIPS: Gradient-free, Edit-based Instruction Search for Prompting Large Language Models. *EACL 2023*. *arXiv:2203.07281*.
 - Shin, T., Razeghi, Y., Logan IV, R. L., Wallace, E., & Singh, S. (2020). AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts. *EMNLP 2020*. *arXiv:2010.15980*.
@@ -264,12 +304,42 @@ The broader implication is that **selection, not design, may be the more powerfu
 
 ## Appendix B: V6 Generational Trajectories
 
-```
-Reflective (mean best_val across 3 runs):
-Gen:  0     1     2     3     4     5     6     7     8     9
-     78.5  83.5  85.5  85.5  85.0  85.5  84.5  84.0  85.0  85.5
+### Mean Best Validation Accuracy (%) by Generation
 
-Random (mean best_val across 3 runs):
-Gen:  0     1     2     3     4     5     6     7     8     9
-     79.0  82.0  82.0  82.7  84.3  85.7  86.3  86.3  85.0  85.7
+```
+  Val%
+  88 |                                          R
+  87 |                                    R  R
+  86 |                              R  R        
+  85 |        E  E  E  E  E     E     E  E     R
+  84 |                       E              R
+  83 |     E              R
+  82 |        R  R                              
+  81 |
+  80 |
+  79 |  R                                       
+  78 |  E
+     +--+--+--+--+--+--+--+--+--+--+
+       0  1  2  3  4  5  6  7  8  9   Generation
+
+  E = Reflective (experimental)    R = Random (control)
+  Static baseline ≈ 79% (dashed, not shown)
+```
+
+**Key observations:**
+- Reflective mutation shows faster early gains (Gen 0→1: +5pp) but plateaus at Gen 2
+- Random mutation climbs more gradually but reaches the same ceiling by Gen 5
+- Both converge to ~85-86% validation accuracy, well above the ~79% static baseline
+- Most improvement occurs in generations 0–3; later generations show diminishing returns
+
+### Individual Run Test Scores
+
+```
+           Run 1    Run 2    Run 3    Mean ± Std
+Reflect:   89.0%    80.5%    81.5%    83.7 ± 3.8%
+Random:    87.0%    78.5%    84.5%    83.3 ± 3.6%
+Static:     —*       —*       —*      ~79% (est.)
+
+* Static runs invalidated (infrastructure failure)
+  Estimate from Gen0 seeds across reflective/random runs
 ```
