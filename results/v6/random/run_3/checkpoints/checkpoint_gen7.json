@@ -1,6 +1,6 @@
 {
-  "generation": 9,
-  "agent_counter": 62,
+  "generation": 7,
+  "agent_counter": 50,
   "config_mode": "random",
   "history": [
     {
@@ -616,164 +616,6 @@
       "best_val": 0.87,
       "mean_val": 0.8575,
       "duration_sec": 673.2
-    },
-    {
-      "generation": 8,
-      "mode": "random",
-      "agents": [
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.87,
-          "val": 0.84,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 55,
-          "gen": 7,
-          "dev": 0.66,
-          "val": 0.59,
-          "parents": []
-        }
-      ],
-      "best_val": 0.84,
-      "mean_val": 0.8087,
-      "duration_sec": 673.7
-    },
-    {
-      "generation": 9,
-      "mode": "random",
-      "agents": [
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 61,
-          "gen": 8,
-          "dev": 0.68,
-          "val": 0.77,
-          "parents": []
-        }
-      ],
-      "best_val": 0.87,
-      "mean_val": 0.8575,
-      "duration_sec": 673.1
     }
   ],
   "population": [
@@ -784,7 +626,7 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
@@ -794,7 +636,7 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
@@ -804,7 +646,7 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
@@ -814,7 +656,7 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
@@ -824,7 +666,7 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
@@ -834,7 +676,7 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
@@ -844,15 +686,15 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
+      "dev_accuracy": 0.89,
       "val_accuracy": 0.87
     },
     {
-      "id": 61,
-      "strategy_prompt": "You are a news classifier. Use keyword signals to classify articles:\n- World: countries, diplomacy, politics, international events, government, war, elections\n- Sports: teams, players, scores, games, tournaments, championships, athletes\n- Business: companies, stocks, markets, revenue, CEO, economy, trade, earnings\n- Sci/Tech: software, research, internet, computers, technology, science, space, discovery\nRespond with ONLY the category name.",
-      "generation": 8,
+      "id": 49,
+      "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\nOutput ONLY the category name on its own line at the end.",
+      "generation": 6,
       "parents": [],
-      "dev_accuracy": 0.68,
+      "dev_accuracy": 0.78,
       "val_accuracy": 0.77
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generation": 9,
-  "agent_counter": 62,
+  "generation": 8,
+  "agent_counter": 56,
   "config_mode": "random",
   "history": [
     {
@@ -695,85 +695,6 @@
       "best_val": 0.84,
       "mean_val": 0.8087,
       "duration_sec": 673.7
-    },
-    {
-      "generation": 9,
-      "mode": "random",
-      "agents": [
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 30,
-          "gen": 3,
-          "dev": 0.88,
-          "val": 0.87,
-          "parents": [
-            12
-          ]
-        },
-        {
-          "id": 61,
-          "gen": 8,
-          "dev": 0.68,
-          "val": 0.77,
-          "parents": []
-        }
-      ],
-      "best_val": 0.87,
-      "mean_val": 0.8575,
-      "duration_sec": 673.1
     }
   ],
   "population": [
@@ -784,8 +705,8 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
       "id": 30,
@@ -794,8 +715,8 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
       "id": 30,
@@ -804,8 +725,8 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
       "id": 30,
@@ -814,8 +735,8 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
       "id": 30,
@@ -824,8 +745,8 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
       "id": 30,
@@ -834,8 +755,8 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
       "id": 30,
@@ -844,16 +765,16 @@
       "parents": [
         12
       ],
-      "dev_accuracy": 0.88,
-      "val_accuracy": 0.87
+      "dev_accuracy": 0.87,
+      "val_accuracy": 0.84
     },
     {
-      "id": 61,
-      "strategy_prompt": "You are a news classifier. Use keyword signals to classify articles:\n- World: countries, diplomacy, politics, international events, government, war, elections\n- Sports: teams, players, scores, games, tournaments, championships, athletes\n- Business: companies, stocks, markets, revenue, CEO, economy, trade, earnings\n- Sci/Tech: software, research, internet, computers, technology, science, space, discovery\nRespond with ONLY the category name.",
-      "generation": 8,
+      "id": 55,
+      "strategy_prompt": "News classifier. Categories: World, Sports, Business, Sci/Tech.\nRead → classify → output category name only.",
+      "generation": 7,
       "parents": [],
-      "dev_accuracy": 0.68,
-      "val_accuracy": 0.77
+      "dev_accuracy": 0.66,
+      "val_accuracy": 0.59
     }
   ]
 }

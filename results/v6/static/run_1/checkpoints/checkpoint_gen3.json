@@ -1,0 +1,333 @@
+{
+  "generation": 3,
+  "agent_counter": 8,
+  "config_mode": "static",
+  "history": [
+    {
+      "generation": 0,
+      "mode": "static",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.77,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.68,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.68,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.64,
+          "val": 0.58,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7425,
+      "duration_sec": 668.9
+    },
+    {
+      "generation": 1,
+      "mode": "static",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.68,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.65,
+          "val": 0.58,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7425,
+      "duration_sec": 660.9
+    },
+    {
+      "generation": 2,
+      "mode": "static",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.76,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.68,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.65,
+          "val": 0.58,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7425,
+      "duration_sec": 656.1
+    },
+    {
+      "generation": 3,
+      "mode": "static",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.67,
+          "val": 0.77,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.06,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.0,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.0,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.65,
+          "val": 0.0,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.0,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.3,
+      "duration_sec": 21061.8
+    }
+  ],
+  "population": [
+    {
+      "id": 0,
+      "strategy_prompt": "You are a news article classifier. Classify each article into exactly one of these four categories: World, Sports, Business, Sci/Tech.\nRead the article carefully and respond with ONLY the category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.75,
+      "val_accuracy": 0.79
+    },
+    {
+      "id": 1,
+      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\nRespond with ONLY the category name, nothing else.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.72,
+      "val_accuracy": 0.78
+    },
+    {
+      "id": 2,
+      "strategy_prompt": "You are a news classifier. Use keyword signals to classify articles:\n- World: countries, diplomacy, politics, international events, government, war, elections\n- Sports: teams, players, scores, games, tournaments, championships, athletes\n- Business: companies, stocks, markets, revenue, CEO, economy, trade, earnings\n- Sci/Tech: software, research, internet, computers, technology, science, space, discovery\nRespond with ONLY the category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.67,
+      "val_accuracy": 0.77
+    },
+    {
+      "id": 3,
+      "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\nOutput ONLY the category name on its own line at the end.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.79,
+      "val_accuracy": 0.06
+    },
+    {
+      "id": 4,
+      "strategy_prompt": "You are a precise news classifier. Use elimination:\n- Is it about sports, athletes, or games? → Sports\n- Is it about technology, science, or computing? → Sci/Tech\n- Is it about companies, markets, or economy? → Business\n- Otherwise → World\nRespond with ONLY: World, Sports, Business, or Sci/Tech",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.71,
+      "val_accuracy": 0.0
+    },
+    {
+      "id": 5,
+      "strategy_prompt": "Classify the following news article into one of four categories.\nThink about the PRIMARY focus of the article, not secondary mentions.\nAn article mentioning a tech company's stock price is Business, not Sci/Tech.\nAn article about a sports league's financial deal is Business, not Sports.\nCategories: World, Sports, Business, Sci/Tech\nRespond with ONLY the category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.72,
+      "val_accuracy": 0.0
+    },
+    {
+      "id": 6,
+      "strategy_prompt": "News classifier. Categories: World, Sports, Business, Sci/Tech.\nRead → classify → output category name only.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.65,
+      "val_accuracy": 0.0
+    },
+    {
+      "id": 7,
+      "strategy_prompt": "You classify news articles. The four categories are:\n- World: e.g., UN decisions, wars, elections, diplomacy\n- Sports: e.g., NBA finals, Olympics, player transfers\n- Business: e.g., stock prices, mergers, quarterly earnings\n- Sci/Tech: e.g., new software, space missions, research papers\nRead the article and respond with ONLY the matching category name.",
+      "generation": 0,
+      "parents": [],
+      "dev_accuracy": 0.7,
+      "val_accuracy": 0.0
+    }
+  ]
+}

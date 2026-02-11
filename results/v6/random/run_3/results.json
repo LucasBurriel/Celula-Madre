@@ -1,0 +1,797 @@
+{
+  "mode": "random",
+  "best_agent_id": 30,
+  "best_agent_generation": 3,
+  "best_agent_strategy": "You are a highly skilled news analyst specializing in rapid categorization. Your task is to quickly and accurately assign each incoming news article to one of four distinct categories: Global Affairs, Athletics & Recreation, Commerce & Finance, and Innovation & Technology.  Your responses should be brief – just the category name is sufficient.\n\nHere’s your guiding framework:\n\n*   **Global Affairs:** This encompasses international events, political developments impacting nations worldwide, diplomatic relations, human rights concerns, and major geopolitical shifts. Think broad world news.\n*   **Athletics & Recreation:**  This category includes all sporting activities – from professional leagues (soccer, basketball, American football) to individual competitions, athlete profiles, tournament results, training regimes, and related sports content.\n*   **Commerce & Finance:** This focuses on economic matters—stock market fluctuations, corporate earnings, financial regulations, trade agreements, banking operations, investment strategies, and business news impacting economies globally.\n*   **Innovation & Technology:**  This category covers scientific breakthroughs, technological advancements (artificial intelligence, robotics, biotechnology), internet trends, computing innovations, engineering projects, and space exploration endeavors.\n\nTo ensure consistency and accuracy, prioritize the *primary focus* of each article. If an article touches on multiple topics, select the category that represents its dominant theme.  Provide only the category name for each assignment. Your speed and precision are critical to maintaining accurate news categorization.",
+  "best_val_accuracy": 0.87,
+  "test_accuracy": 0.845,
+  "test_per_class": {
+    "World": 0.836,
+    "Sports": 0.98,
+    "Business": 0.907,
+    "Sci/Tech": 0.619
+  },
+  "history": [
+    {
+      "generation": 0,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 1,
+          "gen": 0,
+          "dev": 0.69,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 2,
+          "gen": 0,
+          "dev": 0.66,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 3,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 5,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.78,
+          "parents": []
+        },
+        {
+          "id": 4,
+          "gen": 0,
+          "dev": 0.72,
+          "val": 0.66,
+          "parents": []
+        },
+        {
+          "id": 6,
+          "gen": 0,
+          "dev": 0.63,
+          "val": 0.59,
+          "parents": []
+        }
+      ],
+      "best_val": 0.79,
+      "mean_val": 0.7438,
+      "duration_sec": 668.8
+    },
+    {
+      "generation": 1,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.83,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.81,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.8,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 11,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.8,
+          "parents": [
+            1
+          ]
+        },
+        {
+          "id": 13,
+          "gen": 0,
+          "dev": 0.74,
+          "val": 0.8,
+          "parents": []
+        },
+        {
+          "id": 0,
+          "gen": 0,
+          "dev": 0.73,
+          "val": 0.79,
+          "parents": []
+        },
+        {
+          "id": 8,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.79,
+          "parents": [
+            3
+          ]
+        },
+        {
+          "id": 7,
+          "gen": 0,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.83,
+      "mean_val": 0.8025,
+      "duration_sec": 683.3
+    },
+    {
+      "generation": 2,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.81,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.81,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.78,
+          "val": 0.81,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 9,
+          "gen": 0,
+          "dev": 0.7,
+          "val": 0.81,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 14,
+          "gen": 1,
+          "dev": 0.78,
+          "val": 0.8,
+          "parents": [
+            11
+          ]
+        },
+        {
+          "id": 19,
+          "gen": 1,
+          "dev": 0.75,
+          "val": 0.79,
+          "parents": []
+        }
+      ],
+      "best_val": 0.83,
+      "mean_val": 0.8113,
+      "duration_sec": 672.2
+    },
+    {
+      "generation": 3,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.82,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 10,
+          "gen": 0,
+          "dev": 0.79,
+          "val": 0.82,
+          "parents": [
+            0
+          ]
+        },
+        {
+          "id": 25,
+          "gen": 2,
+          "dev": 0.78,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.83,
+      "mean_val": 0.8212,
+      "duration_sec": 671.7
+    },
+    {
+      "generation": 4,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.88,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.83,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 31,
+          "gen": 3,
+          "dev": 0.71,
+          "val": 0.78,
+          "parents": []
+        }
+      ],
+      "best_val": 0.88,
+      "mean_val": 0.83,
+      "duration_sec": 673.4
+    },
+    {
+      "generation": 5,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 33,
+          "gen": 4,
+          "dev": 0.85,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 34,
+          "gen": 4,
+          "dev": 0.87,
+          "val": 0.82,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 37,
+          "gen": 4,
+          "dev": 0.71,
+          "val": 0.79,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.825,
+      "duration_sec": 673.3
+    },
+    {
+      "generation": 6,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 33,
+          "gen": 4,
+          "dev": 0.85,
+          "val": 0.85,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 33,
+          "gen": 4,
+          "dev": 0.85,
+          "val": 0.85,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 12,
+          "gen": 0,
+          "dev": 0.82,
+          "val": 0.82,
+          "parents": [
+            2
+          ]
+        },
+        {
+          "id": 43,
+          "gen": 5,
+          "dev": 0.74,
+          "val": 0.74,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.83,
+      "duration_sec": 673.2
+    },
+    {
+      "generation": 7,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.89,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 49,
+          "gen": 6,
+          "dev": 0.78,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8575,
+      "duration_sec": 673.2
+    },
+    {
+      "generation": 8,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.87,
+          "val": 0.84,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 55,
+          "gen": 7,
+          "dev": 0.66,
+          "val": 0.59,
+          "parents": []
+        }
+      ],
+      "best_val": 0.84,
+      "mean_val": 0.8087,
+      "duration_sec": 673.7
+    },
+    {
+      "generation": 9,
+      "mode": "random",
+      "agents": [
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 30,
+          "gen": 3,
+          "dev": 0.88,
+          "val": 0.87,
+          "parents": [
+            12
+          ]
+        },
+        {
+          "id": 61,
+          "gen": 8,
+          "dev": 0.68,
+          "val": 0.77,
+          "parents": []
+        }
+      ],
+      "best_val": 0.87,
+      "mean_val": 0.8575,
+      "duration_sec": 673.1
+    }
+  ],
+  "config": {
+    "population_size": 8,
+    "max_generations": 10,
+    "elitism_count": 2,
+    "mutation_mode": "random"
+  },
+  "run_num": 3,
+  "elapsed_seconds": 8802.8,
+  "elapsed_hours": 2.45
+}
