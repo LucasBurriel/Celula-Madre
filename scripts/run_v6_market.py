@@ -56,6 +56,12 @@ def run_experiment(group: str, run_num: int, resume: bool = False):
         min_assignments=5,  # At least 5 examples per agent
     )
 
+    # Allow model override via environment variable
+    llm_kwargs = {}
+    if os.environ.get("V65_MODEL"):
+        llm_kwargs["model"] = os.environ["V65_MODEL"]
+        print(f"Using model: {llm_kwargs['model']}")
+
     config = V65Config(
         population_size=8,
         max_generations=10,
@@ -64,6 +70,7 @@ def run_experiment(group: str, run_num: int, resume: bool = False):
         mutation_mode=group_cfg["mutation_mode"],
         selection_mode=group_cfg["selection_mode"],
         market_config=market_config,
+        llm_kwargs=llm_kwargs,
     )
 
     engine = EvolutionEngineV65(config)

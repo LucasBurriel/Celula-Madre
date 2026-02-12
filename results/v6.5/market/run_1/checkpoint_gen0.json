@@ -1,6 +1,6 @@
 {
   "generation": 0,
-  "agent_counter": 8,
+  "agent_counter": 14,
   "selection_mode": "market",
   "mutation_mode": "reflective",
   "history": [
@@ -10,79 +10,79 @@
       "mutation_mode": "reflective",
       "agents": [
         {
-          "id": 1,
+          "id": 3,
           "gen": 0,
-          "dev": 0.7857,
+          "dev": 0.8182,
           "val": 0.91,
           "parents": []
         },
         {
-          "id": 3,
+          "id": 5,
           "gen": 0,
-          "dev": 0.8462,
+          "dev": 0.8571,
           "val": 0.91,
           "parents": []
         },
         {
           "id": 0,
           "gen": 0,
-          "dev": 1.0,
+          "dev": 0.8182,
           "val": 0.9,
           "parents": []
         },
         {
-          "id": 5,
+          "id": 1,
           "gen": 0,
-          "dev": 0.9375,
+          "dev": 0.9,
           "val": 0.9,
           "parents": []
         },
         {
           "id": 2,
           "gen": 0,
-          "dev": 0.8125,
+          "dev": 1.0,
           "val": 0.89,
           "parents": []
         },
         {
           "id": 6,
           "gen": 0,
-          "dev": 0.9,
+          "dev": 0.9231,
           "val": 0.89,
           "parents": []
         },
         {
           "id": 7,
           "gen": 0,
-          "dev": 1.0,
+          "dev": 0.8,
           "val": 0.89,
           "parents": []
         },
         {
           "id": 4,
           "gen": 0,
-          "dev": 1.0,
+          "dev": 0.8125,
           "val": 0.88,
           "parents": []
         }
       ],
       "best_val": 0.91,
       "mean_val": 0.8962,
-      "duration_sec": 1057.5,
+      "duration_sec": 1017.1,
       "market_stats": {
-        "mean_revenue": 11.25,
-        "max_revenue": 15.0,
-        "min_revenue": 8.0,
-        "gini_coefficient": 0.1,
-        "hhi": 0.1291,
+        "mean_revenue": 10.75,
+        "max_revenue": 13.0,
+        "min_revenue": 9.0,
+        "gini_coefficient": 0.0785,
+        "hhi": 0.1276,
         "revenue_distribution": {
-          "0": 11.0,
-          "1": 11.0,
-          "2": 13.0,
-          "3": 11.0,
-          "4": 8.0,
-          "5": 15.0,
-          "6": 9.0,
+          "0": 9.0,
+          "1": 9.0,
+          "2": 10.0,
+          "3": 9.0,
+          "4": 13.0,
+          "5": 12.0,
+          "6": 12.0,
           "7": 12.0
         }
       }
@@ -90,68 +90,78 @@
   ],
   "population": [
     {
-      "id": 0,
-      "strategy_prompt": "You are a news article classifier. Classify each article into exactly one of these four categories: World, Sports, Business, Sci/Tech.\nRead the article carefully and respond with ONLY the category name.",
-      "generation": 0,
-      "parents": [],
-      "dev_accuracy": 1.0,
-      "val_accuracy": 0.9
-    },
-    {
-      "id": 1,
-      "strategy_prompt": "You are a news classifier. For each article:\n1. Read the full text\n2. Identify the main subject and domain\n3. Determine which category fits best: World, Sports, Business, or Sci/Tech\nRespond with ONLY the category name, nothing else.",
-      "generation": 0,
-      "parents": [],
-      "dev_accuracy": 0.7857142857142857,
-      "val_accuracy": 0.91
-    },
-    {
-      "id": 2,
-      "strategy_prompt": "You are a news classifier. Use keyword signals to classify articles:\n- World: countries, diplomacy, politics, international events, government, war, elections\n- Sports: teams, players, scores, games, tournaments, championships, athletes\n- Business: companies, stocks, markets, revenue, CEO, economy, trade, earnings\n- Sci/Tech: software, research, internet, computers, technology, science, space, discovery\nRespond with ONLY the category name.",
-      "generation": 0,
-      "parents": [],
-      "dev_accuracy": 0.8125,
-      "val_accuracy": 0.89
-    },
-    {
       "id": 3,
       "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\nOutput ONLY the category name on its own line at the end.",
       "generation": 0,
       "parents": [],
-      "dev_accuracy": 0.8461538461538461,
+      "dev_accuracy": 0.8181818181818182,
       "val_accuracy": 0.91
-    },
-    {
-      "id": 4,
-      "strategy_prompt": "You are a precise news classifier. Use elimination:\n- Is it about sports, athletes, or games? → Sports\n- Is it about technology, science, or computing? → Sci/Tech\n- Is it about companies, markets, or economy? → Business\n- Otherwise → World\nRespond with ONLY: World, Sports, Business, or Sci/Tech",
-      "generation": 0,
-      "parents": [],
-      "dev_accuracy": 1.0,
-      "val_accuracy": 0.88
     },
     {
       "id": 5,
       "strategy_prompt": "Classify the following news article into one of four categories.\nThink about the PRIMARY focus of the article, not secondary mentions.\nAn article mentioning a tech company's stock price is Business, not Sci/Tech.\nAn article about a sports league's financial deal is Business, not Sports.\nCategories: World, Sports, Business, Sci/Tech\nRespond with ONLY the category name.",
       "generation": 0,
       "parents": [],
-      "dev_accuracy": 0.9375,
-      "val_accuracy": 0.9
+      "dev_accuracy": 0.8571428571428571,
+      "val_accuracy": 0.91
     },
     {
-      "id": 6,
-      "strategy_prompt": "News classifier. Categories: World, Sports, Business, Sci/Tech.\nRead → classify → output category name only.",
+      "id": 8,
+      "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\n\nImportant rules:\n- If an article discusses companies, stocks, or financial markets, classify as BUSINESS\n- If an article mentions technology products, software, hardware, scientific research, or technical innovations, classify as SCI/TECH\n- If an article is about international affairs, politics, government, or foreign relations, classify as WORLD\n- If an article covers sports events, games, athletes, or competitions, classify as SPORTS\n\nSpecial attention to these patterns:\n- Articles with \"shares\", \"stock\", \"market\", \"investors\", \"financial\" - BUSINESS\n- Articles with \"software\", \"hardware\", \"technology\", \"research\", \"innovation\", \"digital\", \"cyber\", \"AI\", \"computer\", \"device\" - SCI/TECH\n\nOutput ONLY the category name on its own line at the end.",
       "generation": 0,
-      "parents": [],
-      "dev_accuracy": 0.9,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.0,
       "val_accuracy": 0.89
     },
     {
-      "id": 7,
-      "strategy_prompt": "You classify news articles. The four categories are:\n- World: e.g., UN decisions, wars, elections, diplomacy\n- Sports: e.g., NBA finals, Olympics, player transfers\n- Business: e.g., stock prices, mergers, quarterly earnings\n- Sci/Tech: e.g., new software, space missions, research papers\nRead the article and respond with ONLY the matching category name.",
+      "id": 9,
+      "strategy_prompt": "You are a news classifier. Use keyword signals to classify articles:\n- World: countries, diplomacy, politics, international events, government, war, elections, global affairs, foreign policy, ambassadors, treaties, UN, NATO, conflicts, refugees, humanitarian crises, international relations\n- Sports: teams, players, scores, games, tournaments, championships, athletes, competitions, Olympics, World Cup, playoffs, matches, leagues, sportsmanship, training, injuries, endorsements, fan culture\n- Business: companies, stocks, markets, revenue, CEO, economy, trade, earnings, profits, investments, mergers, acquisitions, financial reports, banking, advertising, supply chain, startups, IPOs, market analysis, economic policies\n- Sci/Tech: software, research, internet, computers, technology, science, space, discovery, innovations, patents, AI, robotics, medical breakthroughs, climate science, engineering, data analytics, cybersecurity, digital transformation\n\nRespond with ONLY the category name.\n\nKey improvements made:\n1. Expanded keyword lists with more specific terms that commonly appear in each category\n2. Added context words like \"global affairs,\" \"financial reports,\" \"medical breakthroughs\" to capture nuanced content\n3. Included industry-specific terminology (e.g., \"IPOs,\" \"supply chain,\" \"patents\") to reduce misclassification of specialized content\n4. Added descriptive phrases that help distinguish between similar categories (e.g., \"foreign policy\" vs \"domestic politics\")\n5. Used more comprehensive examples for each category to better define boundaries and capture edge cases",
+      "generation": 0,
+      "parents": [
+        2
+      ],
+      "dev_accuracy": 0.0,
+      "val_accuracy": 0.89
+    },
+    {
+      "id": 10,
+      "strategy_prompt": "You are a precise news classifier. Analyze the content carefully and use this prioritized decision tree:\n\n1. **Sci/Tech**: If text contains terms like \"technology\", \"software\", \"computing\", \"IT\", \"network\", \"application\", \"digital\", \"programming\", \"innovation\", \"devices\", or discusses software products, platforms, or technical applications → Sci/Tech\n\n2. **Business**: If text discusses companies, financial products (like \"Quicken personal-finance software\"), markets, economic data, corporate activities, mergers, acquisitions, or consumer goods/industries → Business\n\n3. **Sports**: If text mentions athletes, teams, games, competitions, tournaments, scores, or sporting events → Sports\n\n4. **World**: Everything else that doesn't fit the above categories, including general news about weather, travel delays, social issues, politics (when not specifically economic), or broad topic coverage without clear domain focus\n\nImportant: When in doubt between Business and Sci/Tech, prioritize based on the primary focus - if it's about a software product or IT application, classify as Sci/Tech; if it's about financial markets or corporate strategy, classify as Business.\n\nRespond with ONLY: World, Sports, Business, or Sci/Tech",
+      "generation": 0,
+      "parents": [
+        4
+      ],
+      "dev_accuracy": 0.0,
+      "val_accuracy": 0.89
+    },
+    {
+      "id": 11,
+      "strategy_prompt": "Classify the news article into one category.\nStep 1: What is the article about? (one sentence)\nStep 2: Analyze key keywords and domain indicators:\n- Look for technology terms (software, hardware, digital, computing, innovation, platforms, apps, AI, cybersecurity)\n- Look for science terms (research, discovery, laboratory, study, scientific, breakthrough, theory)\n- Look for business/financial terms (stocks, earnings, market, investment, company, revenue, profits, acquisitions)\n- Look for sports terms (games, teams, players, tournaments, championships, scores, leagues)\n\nStep 3: Which domain does it belong to?\nCategories: World (politics/international), Sports (athletics/games), Business (economy/companies), Sci/Tech (technology/science)\nFocus on technical and scientific content over financial/business content when they overlap.\n\nOutput ONLY the category name on its own line at the end.",
+      "generation": 0,
+      "parents": [
+        3
+      ],
+      "dev_accuracy": 0.0,
+      "val_accuracy": 0.93
+    },
+    {
+      "id": 12,
+      "strategy_prompt": "You are a precise news classifier. Analyze the content carefully and use this priority hierarchy:\n\n1. **Sci/Tech**: If the text discusses software, IT, computing, technology products, technical applications, or scientific innovations\n2. **Business**: If the text focuses on companies, financial services, markets, economic data, corporate updates, or consumer products that are part of business operations\n3. **Sports**: If the text mentions athletes, games, competitions, teams, or sporting events\n4. **World**: Everything else\n\nKey considerations:\n- \"Travelers\" and \"US\" alone don't make something Business - look for financial/economic context\n- Software updates, IT applications, and technical tools fall under Sci/Tech even if they come from business companies\n- Consumer safety reports about products are typically Business news (consumer protection/economic impact)\n- Look for specific keywords and context: \"software\", \"technology\", \"IT\", \"financial\", \"market\", \"company\", \"economy\", \"travel\" (in financial/business context), etc.\n\nRespond with ONLY: World, Sports, Business, or Sci/Tech",
+      "generation": 0,
+      "parents": [
+        4
+      ],
+      "dev_accuracy": 0.0,
+      "val_accuracy": 0.88
+    },
+    {
+      "id": 13,
+      "strategy_prompt": "Classify the following news article into one of four categories.\nThink about the PRIMARY focus of the article, not secondary mentions.\nAn article mentioning a tech company's stock price is Business, not Sci/Tech.\nAn article about a sports league's financial deal is Business, not Sports.\nCategories: World, Sports, Business, Sci/Tech\nRespond with ONLY the category name.",
       "generation": 0,
       "parents": [],
-      "dev_accuracy": 1.0,
-      "val_accuracy": 0.89
+      "dev_accuracy": 0.0,
+      "val_accuracy": 0.0
     }
   ],
   "market_state": {
@@ -163,208 +173,100 @@
       "min_assignments": 5
     },
     "client_memories": {
-      "12": {
-        "scenario_id": 12,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
+      "1": {
+        "scenario_id": 1,
+        "agent_scores": {}
       },
-      "21": {
-        "scenario_id": 21,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
+      "8": {
+        "scenario_id": 8,
+        "agent_scores": {}
       },
-      "22": {
-        "scenario_id": 22,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "23": {
-        "scenario_id": 23,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "27": {
-        "scenario_id": 27,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "42": {
-        "scenario_id": 42,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "43": {
-        "scenario_id": 43,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "53": {
-        "scenario_id": 53,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "72": {
-        "scenario_id": 72,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "74": {
-        "scenario_id": 74,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "81": {
-        "scenario_id": 81,
-        "agent_scores": {
-          "0": [
-            1.0
-          ]
-        }
-      },
-      "5": {
-        "scenario_id": 5,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
+      "10": {
+        "scenario_id": 10,
+        "agent_scores": {}
       },
       "11": {
         "scenario_id": 11,
+        "agent_scores": {}
+      },
+      "19": {
+        "scenario_id": 19,
+        "agent_scores": {}
+      },
+      "28": {
+        "scenario_id": 28,
+        "agent_scores": {}
+      },
+      "40": {
+        "scenario_id": 40,
+        "agent_scores": {}
+      },
+      "44": {
+        "scenario_id": 44,
+        "agent_scores": {}
+      },
+      "77": {
+        "scenario_id": 77,
+        "agent_scores": {}
+      },
+      "90": {
+        "scenario_id": 90,
+        "agent_scores": {}
+      },
+      "99": {
+        "scenario_id": 99,
+        "agent_scores": {}
+      },
+      "6": {
+        "scenario_id": 6,
+        "agent_scores": {}
+      },
+      "13": {
+        "scenario_id": 13,
+        "agent_scores": {}
+      },
+      "34": {
+        "scenario_id": 34,
+        "agent_scores": {}
+      },
+      "35": {
+        "scenario_id": 35,
+        "agent_scores": {}
+      },
+      "55": {
+        "scenario_id": 55,
+        "agent_scores": {}
+      },
+      "58": {
+        "scenario_id": 58,
+        "agent_scores": {}
+      },
+      "60": {
+        "scenario_id": 60,
+        "agent_scores": {}
+      },
+      "72": {
+        "scenario_id": 72,
+        "agent_scores": {}
+      },
+      "73": {
+        "scenario_id": 73,
+        "agent_scores": {}
+      },
+      "94": {
+        "scenario_id": 94,
+        "agent_scores": {}
+      },
+      "12": {
+        "scenario_id": 12,
         "agent_scores": {
-          "1": [
+          "2": [
             1.0
           ]
         }
       },
       "15": {
         "scenario_id": 15,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "24": {
-        "scenario_id": 24,
-        "agent_scores": {
-          "1": [
-            0.0
-          ]
-        }
-      },
-      "35": {
-        "scenario_id": 35,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "41": {
-        "scenario_id": 41,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "46": {
-        "scenario_id": 46,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "47": {
-        "scenario_id": 47,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "61": {
-        "scenario_id": 61,
-        "agent_scores": {
-          "1": [
-            0.0
-          ]
-        }
-      },
-      "64": {
-        "scenario_id": 64,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "67": {
-        "scenario_id": 67,
-        "agent_scores": {
-          "1": [
-            0.0
-          ]
-        }
-      },
-      "82": {
-        "scenario_id": 82,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "88": {
-        "scenario_id": 88,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "91": {
-        "scenario_id": 91,
-        "agent_scores": {
-          "1": [
-            1.0
-          ]
-        }
-      },
-      "17": {
-        "scenario_id": 17,
         "agent_scores": {
           "2": [
             1.0
@@ -379,40 +281,24 @@
           ]
         }
       },
-      "20": {
-        "scenario_id": 20,
+      "26": {
+        "scenario_id": 26,
         "agent_scores": {
           "2": [
             1.0
           ]
         }
       },
-      "25": {
-        "scenario_id": 25,
+      "43": {
+        "scenario_id": 43,
         "agent_scores": {
           "2": [
             1.0
           ]
         }
       },
-      "28": {
-        "scenario_id": 28,
-        "agent_scores": {
-          "2": [
-            1.0
-          ]
-        }
-      },
-      "36": {
-        "scenario_id": 36,
-        "agent_scores": {
-          "2": [
-            1.0
-          ]
-        }
-      },
-      "40": {
-        "scenario_id": 40,
+      "50": {
+        "scenario_id": 50,
         "agent_scores": {
           "2": [
             1.0
@@ -435,88 +321,40 @@
           ]
         }
       },
-      "56": {
-        "scenario_id": 56,
+      "61": {
+        "scenario_id": 61,
         "agent_scores": {
           "2": [
             1.0
           ]
         }
       },
-      "57": {
-        "scenario_id": 57,
+      "93": {
+        "scenario_id": 93,
         "agent_scores": {
           "2": [
             1.0
           ]
         }
       },
-      "60": {
-        "scenario_id": 60,
-        "agent_scores": {
-          "2": [
-            0.0
-          ]
-        }
-      },
-      "66": {
-        "scenario_id": 66,
-        "agent_scores": {
-          "2": [
-            1.0
-          ]
-        }
-      },
-      "75": {
-        "scenario_id": 75,
-        "agent_scores": {
-          "2": [
-            1.0
-          ]
-        }
-      },
-      "98": {
-        "scenario_id": 98,
-        "agent_scores": {
-          "2": [
-            0.0
-          ]
-        }
-      },
-      "99": {
-        "scenario_id": 99,
-        "agent_scores": {
-          "2": [
-            0.0
-          ]
-        }
-      },
-      "2": {
-        "scenario_id": 2,
+      "20": {
+        "scenario_id": 20,
         "agent_scores": {
           "3": [
             1.0
           ]
         }
       },
-      "16": {
-        "scenario_id": 16,
+      "38": {
+        "scenario_id": 38,
         "agent_scores": {
           "3": [
             1.0
           ]
         }
       },
-      "33": {
-        "scenario_id": 33,
-        "agent_scores": {
-          "3": [
-            0.0
-          ]
-        }
-      },
-      "39": {
-        "scenario_id": 39,
+      "49": {
+        "scenario_id": 49,
         "agent_scores": {
           "3": [
             1.0
@@ -531,8 +369,24 @@
           ]
         }
       },
-      "65": {
-        "scenario_id": 65,
+      "63": {
+        "scenario_id": 63,
+        "agent_scores": {
+          "3": [
+            1.0
+          ]
+        }
+      },
+      "66": {
+        "scenario_id": 66,
+        "agent_scores": {
+          "3": [
+            1.0
+          ]
+        }
+      },
+      "69": {
+        "scenario_id": 69,
         "agent_scores": {
           "3": [
             1.0
@@ -547,35 +401,19 @@
           ]
         }
       },
-      "76": {
-        "scenario_id": 76,
+      "81": {
+        "scenario_id": 81,
         "agent_scores": {
           "3": [
             1.0
           ]
         }
       },
-      "78": {
-        "scenario_id": 78,
+      "82": {
+        "scenario_id": 82,
         "agent_scores": {
           "3": [
-            1.0
-          ]
-        }
-      },
-      "80": {
-        "scenario_id": 80,
-        "agent_scores": {
-          "3": [
-            1.0
-          ]
-        }
-      },
-      "87": {
-        "scenario_id": 87,
-        "agent_scores": {
-          "3": [
-            1.0
+            0.0
           ]
         }
       },
@@ -587,10 +425,18 @@
           ]
         }
       },
-      "92": {
-        "scenario_id": 92,
+      "0": {
+        "scenario_id": 0,
         "agent_scores": {
-          "3": [
+          "4": [
+            1.0
+          ]
+        }
+      },
+      "2": {
+        "scenario_id": 2,
+        "agent_scores": {
+          "4": [
             1.0
           ]
         }
@@ -603,11 +449,27 @@
           ]
         }
       },
-      "9": {
-        "scenario_id": 9,
+      "17": {
+        "scenario_id": 17,
         "agent_scores": {
           "4": [
             1.0
+          ]
+        }
+      },
+      "25": {
+        "scenario_id": 25,
+        "agent_scores": {
+          "4": [
+            1.0
+          ]
+        }
+      },
+      "29": {
+        "scenario_id": 29,
+        "agent_scores": {
+          "4": [
+            0.0
           ]
         }
       },
@@ -619,72 +481,112 @@
           ]
         }
       },
-      "34": {
-        "scenario_id": 34,
+      "36": {
+        "scenario_id": 36,
+        "agent_scores": {
+          "4": [
+            0.0
+          ]
+        }
+      },
+      "37": {
+        "scenario_id": 37,
         "agent_scores": {
           "4": [
             1.0
           ]
         }
       },
-      "77": {
-        "scenario_id": 77,
+      "51": {
+        "scenario_id": 51,
         "agent_scores": {
           "4": [
             1.0
           ]
         }
       },
-      "86": {
-        "scenario_id": 86,
+      "53": {
+        "scenario_id": 53,
         "agent_scores": {
           "4": [
             1.0
           ]
         }
       },
-      "90": {
-        "scenario_id": 90,
+      "65": {
+        "scenario_id": 65,
+        "agent_scores": {
+          "4": [
+            0.0
+          ]
+        }
+      },
+      "74": {
+        "scenario_id": 74,
         "agent_scores": {
           "4": [
             1.0
           ]
         }
       },
-      "93": {
-        "scenario_id": 93,
+      "76": {
+        "scenario_id": 76,
         "agent_scores": {
           "4": [
             1.0
           ]
         }
       },
-      "0": {
-        "scenario_id": 0,
+      "79": {
+        "scenario_id": 79,
+        "agent_scores": {
+          "4": [
+            1.0
+          ]
+        }
+      },
+      "97": {
+        "scenario_id": 97,
+        "agent_scores": {
+          "4": [
+            1.0
+          ]
+        }
+      },
+      "3": {
+        "scenario_id": 3,
         "agent_scores": {
           "5": [
             1.0
           ]
         }
       },
-      "6": {
-        "scenario_id": 6,
+      "5": {
+        "scenario_id": 5,
         "agent_scores": {
           "5": [
             1.0
           ]
         }
       },
-      "19": {
-        "scenario_id": 19,
+      "21": {
+        "scenario_id": 21,
         "agent_scores": {
           "5": [
             1.0
           ]
         }
       },
-      "26": {
-        "scenario_id": 26,
+      "23": {
+        "scenario_id": 23,
+        "agent_scores": {
+          "5": [
+            1.0
+          ]
+        }
+      },
+      "27": {
+        "scenario_id": 27,
         "agent_scores": {
           "5": [
             1.0
@@ -707,48 +609,32 @@
           ]
         }
       },
-      "37": {
-        "scenario_id": 37,
+      "33": {
+        "scenario_id": 33,
+        "agent_scores": {
+          "5": [
+            0.0
+          ]
+        }
+      },
+      "47": {
+        "scenario_id": 47,
         "agent_scores": {
           "5": [
             1.0
           ]
         }
       },
-      "38": {
-        "scenario_id": 38,
+      "48": {
+        "scenario_id": 48,
         "agent_scores": {
           "5": [
             1.0
           ]
         }
       },
-      "45": {
-        "scenario_id": 45,
-        "agent_scores": {
-          "5": [
-            1.0
-          ]
-        }
-      },
-      "50": {
-        "scenario_id": 50,
-        "agent_scores": {
-          "5": [
-            1.0
-          ]
-        }
-      },
-      "59": {
-        "scenario_id": 59,
-        "agent_scores": {
-          "5": [
-            1.0
-          ]
-        }
-      },
-      "79": {
-        "scenario_id": 79,
+      "68": {
+        "scenario_id": 68,
         "agent_scores": {
           "5": [
             1.0
@@ -763,96 +649,96 @@
           ]
         }
       },
-      "94": {
-        "scenario_id": 94,
+      "87": {
+        "scenario_id": 87,
         "agent_scores": {
           "5": [
             1.0
           ]
         }
       },
-      "95": {
-        "scenario_id": 95,
+      "88": {
+        "scenario_id": 88,
         "agent_scores": {
           "5": [
             0.0
           ]
         }
       },
-      "97": {
-        "scenario_id": 97,
+      "16": {
+        "scenario_id": 16,
         "agent_scores": {
-          "5": [
+          "6": [
             1.0
           ]
         }
       },
-      "1": {
-        "scenario_id": 1,
+      "24": {
+        "scenario_id": 24,
         "agent_scores": {
           "6": [
             0.0
           ]
         }
       },
-      "4": {
-        "scenario_id": 4,
+      "41": {
+        "scenario_id": 41,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "8": {
-        "scenario_id": 8,
+      "45": {
+        "scenario_id": 45,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "10": {
-        "scenario_id": 10,
+      "46": {
+        "scenario_id": 46,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "14": {
-        "scenario_id": 14,
+      "57": {
+        "scenario_id": 57,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "48": {
-        "scenario_id": 48,
+      "59": {
+        "scenario_id": 59,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "49": {
-        "scenario_id": 49,
+      "64": {
+        "scenario_id": 64,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "51": {
-        "scenario_id": 51,
+      "78": {
+        "scenario_id": 78,
         "agent_scores": {
           "6": [
             1.0
           ]
         }
       },
-      "70": {
-        "scenario_id": 70,
+      "80": {
+        "scenario_id": 80,
         "agent_scores": {
           "6": [
             1.0
@@ -867,90 +753,10 @@
           ]
         }
       },
-      "3": {
-        "scenario_id": 3,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "13": {
-        "scenario_id": 13,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "29": {
-        "scenario_id": 29,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "44": {
-        "scenario_id": 44,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "55": {
-        "scenario_id": 55,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "58": {
-        "scenario_id": 58,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "63": {
-        "scenario_id": 63,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "68": {
-        "scenario_id": 68,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "69": {
-        "scenario_id": 69,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
-      "73": {
-        "scenario_id": 73,
-        "agent_scores": {
-          "7": [
-            1.0
-          ]
-        }
-      },
       "84": {
         "scenario_id": 84,
         "agent_scores": {
-          "7": [
+          "6": [
             1.0
           ]
         }
@@ -958,21 +764,141 @@
       "96": {
         "scenario_id": 96,
         "agent_scores": {
+          "6": [
+            1.0
+          ]
+        }
+      },
+      "4": {
+        "scenario_id": 4,
+        "agent_scores": {
           "7": [
             1.0
+          ]
+        }
+      },
+      "9": {
+        "scenario_id": 9,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "14": {
+        "scenario_id": 14,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "22": {
+        "scenario_id": 22,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "39": {
+        "scenario_id": 39,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "42": {
+        "scenario_id": 42,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "56": {
+        "scenario_id": 56,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "67": {
+        "scenario_id": 67,
+        "agent_scores": {
+          "7": [
+            0.0
+          ]
+        }
+      },
+      "70": {
+        "scenario_id": 70,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "75": {
+        "scenario_id": 75,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "86": {
+        "scenario_id": 86,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "91": {
+        "scenario_id": 91,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "92": {
+        "scenario_id": 92,
+        "agent_scores": {
+          "7": [
+            1.0
+          ]
+        }
+      },
+      "95": {
+        "scenario_id": 95,
+        "agent_scores": {
+          "7": [
+            0.0
+          ]
+        }
+      },
+      "98": {
+        "scenario_id": 98,
+        "agent_scores": {
+          "7": [
+            0.0
           ]
         }
       }
     },
     "revenue_history": [
       {
-        "0": 11.0,
-        "1": 11.0,
-        "2": 13.0,
-        "3": 11.0,
-        "4": 8.0,
-        "5": 15.0,
-        "6": 9.0,
+        "0": 9.0,
+        "1": 9.0,
+        "2": 10.0,
+        "3": 9.0,
+        "4": 13.0,
+        "5": 12.0,
+        "6": 12.0,
         "7": 12.0
       }
     ]
