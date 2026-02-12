@@ -90,21 +90,46 @@ def chat_with_tools(client, model, system_message, messages, tools, max_iteratio
 
 
 def extract_json(text):
-    """Extract JSON from LLM output (handles ```json blocks)."""
+    """Extract JSON from LLM output (handles ```json blocks and nested objects)."""
+    # Try ```json blocks first
     pattern = r'```json\s*\n(.*?)\n\s*```'
     matches = re.findall(pattern, text, re.DOTALL)
     if matches:
-        try:
-            return json.loads(matches[0])
-        except json.JSONDecodeError:
-            pass
+        for m in matches:
+            try:
+                return json.loads(m)
+            except json.JSONDecodeError:
+                pass
 
-    pattern = r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}'
-    matches = re.findall(pattern, text, re.DOTALL)
-    for m in matches:
-        try:
-            return json.loads(m)
-        except json.JSONDecodeError:
-            continue
+    # Find JSON by matching braces (handles nested)
+    start = text.find('{')
+    while start != -1:
+        depth = 0
+        in_string = False
+        escape = False
+        for i in range(start, len(text)):
+            c = text[i]
+            if escape:
+                escape = False
+                continue
+            if c == '\\':
+                escape = True
+                continue
+            if c == '"' and not escape:
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if c == '{':
+                depth += 1
+            elif c == '}':
+                depth -= 1
+                if depth == 0:
+                    candidate = text[start:i+1]
+                    try:
+                        return json.loads(candidate)
+                    except json.JSONDecodeError:
+                        break
+        start = text.find('{', start + 1)
 
     return None

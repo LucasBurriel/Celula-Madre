@@ -247,8 +247,37 @@ def diagnose_failure(client, model, agent_code, task_description, agent_log,
     return None
 
 
+SYNTAX_FIX_PROMPT = """The following Python code has a syntax error:
+```python
+{code}
+```
+
+Error: {error}
+
+Fix the syntax error and output the COMPLETE corrected code in ```python ... ```.
+Do not change any logic, only fix the syntax."""
+
+
+def _try_fix_syntax(code):
+    """Try simple auto-fixes for common LLM code generation errors."""
+    # Fix unclosed triple-quoted strings
+    triple_double = code.count('"""')
+    if triple_double % 2 != 0:
+        code += '\n"""'
+    triple_single = code.count("'''")
+    if triple_single % 2 != 0:
+        code += "\n'''"
+    # Fix unclosed f-strings (common LLM error)
+    # Remove incomplete lines at the end
+    lines = code.rstrip().split('\n')
+    while lines and lines[-1].strip().startswith('#'):
+        lines.pop()
+    code = '\n'.join(lines)
+    return code
+
+
 def implement_improvement(client, model, agent_code, improvement_description,
-                         implementation_plan, max_attempts=2):
+                         implementation_plan, max_attempts=3):
     """Use strong model to implement code improvement."""
     prompt = IMPLEMENT_PROMPT.format(
         agent_code=agent_code,
@@ -256,25 +285,54 @@ def implement_improvement(client, model, agent_code, improvement_description,
         implementation_plan=implementation_plan,
     )
     
+    last_code = None
+    last_error = None
+    
     for attempt in range(max_attempts):
         try:
-            response = chat(client, model, IMPLEMENT_SYSTEM, prompt,
-                          temperature=0.5, max_tokens=4096)
+            if attempt == 0 or last_code is None:
+                response = chat(client, model, IMPLEMENT_SYSTEM, prompt,
+                              temperature=0.5, max_tokens=4096)
+            else:
+                # Ask LLM to fix syntax error from previous attempt
+                fix_prompt = SYNTAX_FIX_PROMPT.format(
+                    code=last_code[:3000],
+                    error=str(last_error),
+                )
+                response = chat(client, model, 
+                    "Fix the Python syntax error. Output complete code in ```python block.",
+                    fix_prompt, temperature=0.3, max_tokens=4096)
             
             # Extract code
             pattern = r'```python\s*\n(.*?)\n```'
             matches = re.findall(pattern, response, re.DOTALL)
             
+            if not matches:
+                # Try without language specifier
+                pattern = r'```\s*\n(.*?)\n```'
+                matches = re.findall(pattern, response, re.DOTALL)
+            
             if matches:
                 new_code = max(matches, key=len)
-                # Validate it has forward()
-                if "def forward" in new_code:
-                    # Quick syntax check
+                
+                if "def forward" not in new_code:
+                    continue
+                
+                # Try compile
+                try:
+                    compile(new_code, "<agent>", "exec")
+                    return new_code
+                except SyntaxError as e:
+                    last_code = new_code
+                    last_error = e
+                    # Try auto-fix
+                    fixed = _try_fix_syntax(new_code)
                     try:
-                        compile(new_code, "<agent>", "exec")
-                        return new_code
+                        compile(fixed, "<agent>", "exec")
+                        return fixed
                     except SyntaxError:
                         continue
+                        
         except Exception as e:
             if attempt == max_attempts - 1:
                 return None
