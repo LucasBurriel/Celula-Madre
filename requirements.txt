@@ -1,7 +1,18 @@
-anthropic==0.40.0
-pydantic==2.10.5
-python-dotenv==1.0.1
+# Célula Madre — Requirements
+# Core
+requests>=2.31.0
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+
+# Data
+aiohttp>=3.8.0        # async LLM calls (optional, for parallel eval)
 
 # Testing
-pytest==8.3.4
-pytest-asyncio==0.25.2
+pytest>=8.0.0
+
+# Note: No LLM provider SDK required — all calls use raw HTTP (OpenAI-compatible API)
+# You need one of:
+#   - LM Studio (local, free) — default at http://localhost:1234
+#   - Groq API key (fast cloud, free tier available)
+#   - Any OpenAI-compatible endpoint
