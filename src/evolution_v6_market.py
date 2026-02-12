@@ -233,6 +233,11 @@ class EvolutionEngineV65:
             gen_best = ranked[0]
             print(f"  Gen {gen} best: Agent {gen_best.id} val={gen_best.val_accuracy:.1%}")
 
+            # Health check: abort if LLM is broken (all agents 0%)
+            if gen == 0 and all(a.val_accuracy == 0.0 for a in ranked):
+                print("  ❌ ABORT: All agents scored 0% on val set. LLM likely broken/unloaded.")
+                raise RuntimeError("LLM health check failed: all agents scored 0% in gen 0")
+
             market_stats = self.market.get_market_stats() if self.market else {}
             gen_info = {
                 "generation": gen,
