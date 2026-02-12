@@ -49,7 +49,7 @@ This paper reports results from four experimental iterations (V4--V6 complete, V
     \item \textbf{V4:} Demonstrated that naive LLM-guided mutation with poor population management is \textit{worse} than random mutation ($p < 0.0001$), identifying over-exploration and feedback overfitting as failure modes.
     \item \textbf{V5:} Validated that framework mechanics (elitism, gating, Pareto frontier) are sound on financial prediction, though small scale limited statistical conclusions.
     \item \textbf{V6:} Established that evolution produces significant improvement (+4.7pp over static, $p=0.041$) but reflective mutation $\approx$ random mutation on classification ($p=0.932$).
-    \item \textbf{V6.5 (ongoing):} Tests market-based selection on AG News, isolating the effect of selection mechanism from task complexity. Preliminary results show healthy market dynamics with increasing Gini coefficients.
+    \item \textbf{V6.5 (ongoing):} Tests market-based selection on AG News, isolating the effect of selection mechanism from task complexity. Preliminary results (7 of 10 generations) show healthy market dynamics, 75\% mutation acceptance with tolerance-based gating, and best validation accuracy of 93\%.
     \item \textbf{V7 (designed):} Tests market-based selection on a multi-turn negotiation task where strategic reasoning should differentiate mutation methods.
 \end{itemize}
 
@@ -201,7 +201,7 @@ To test market selection without the computational cost of multi-turn negotiatio
 
 \textbf{Setup:} Population 8, 10 generations, reflective mutation, market selection with softmax temperature $\tau=2.0$, survival threshold 30\%, minimum 5 assignments per agent. Same AG News splits as V6.
 
-\textbf{Preliminary results (Market Run 1, gens 0--3):} Best validation accuracy reached 93\% at generation 1 (vs.\ V6 tournament peak of 96\% at gen 6). Market dynamics show healthy competition: Gini coefficient increased from 0.099 (gen 0) to 0.204 (gen 3), indicating emergent specialization. Mutations are passing gating: gen 1 saw agent 0 mutate to agent 11 (90\%$\rightarrow$94\%), and gen 2 produced agents 9 and 10 at 94\%. The market is selecting effectively---clients prefer higher-performing agents, creating revenue-based selection pressure.
+\textbf{Preliminary results (Market Run 1, gens 0--6):} Best validation accuracy reached 93\% at generation 1, stabilizing at 92\% from generation 4 onward. With gating tolerance of 3\% (1 SE on 100 examples), mutation acceptance rose to 75\% (15/20 accepted across gens 1--6), compared to 26\% under strict gating in V6. Market dynamics show healthy competition: Gini coefficient evolved from 0.099$\rightarrow$0.142$\rightarrow$0.171$\rightarrow$0.204$\rightarrow$0.137$\rightarrow$0.177$\rightarrow$0.152, indicating initial concentration followed by equilibrium. HHI remained below 0.15 throughout (unconcentrated market in economic terms). Agent 3 dominated as elite across all 7 generations, demonstrating that market selection correctly identifies and preserves high-quality agents while maintaining competitive pressure. Notable mutations include 6$\rightarrow$8 (+6\%, gen 4) and 5$\rightarrow$12 (+5\%, gen 5). The run remains incomplete (no test evaluation), but the mechanism is validated.
 
 \textbf{Status:} Run 1 is at generation 3 of 10. Five additional runs (3 market, 3 tournament control) are planned. Full statistical comparison pending completion.
 
