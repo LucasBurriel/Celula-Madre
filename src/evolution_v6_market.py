@@ -33,6 +33,7 @@ class V65Config:
     max_generations: int = 10
     elitism_count: int = 2
     fresh_injection: int = 1
+    gating_tolerance: float = 0.03    # Accept child if child_acc >= parent_acc - tolerance
     mutation_mode: str = "reflective"  # "reflective" | "random" | "static"
     selection_mode: str = "market"     # "market" | "tournament"
     market_config: MarketConfig = field(default_factory=MarketConfig)
@@ -298,9 +299,12 @@ class EvolutionEngineV65:
                 child_result = self._eval_agent_on_examples(child, val_examples)
                 child.val_accuracy = child_result["accuracy"]
 
-                if child.val_accuracy >= parent.val_accuracy:
+                tolerance = cfg.gating_tolerance
+                if child.val_accuracy >= parent.val_accuracy - tolerance:
                     new_pop.append(child)
-                    print(f"  ✓ Mutation: {parent.id}→{child.id} ({parent.val_accuracy:.1%}→{child.val_accuracy:.1%})")
+                    delta = child.val_accuracy - parent.val_accuracy
+                    marker = "✓" if delta >= 0 else "≈"
+                    print(f"  {marker} Mutation: {parent.id}→{child.id} ({parent.val_accuracy:.1%}→{child.val_accuracy:.1%}, Δ={delta:+.1%})")
                 else:
                     new_pop.append(parent)
                     print(f"  ✗ Rejected: {parent.id}→{child.id} ({parent.val_accuracy:.1%}→{child.val_accuracy:.1%})")
