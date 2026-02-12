@@ -18,7 +18,7 @@ MAX_TOKENS = 1024
 def create_client(endpoint=None, model=None):
     endpoint = endpoint or DEFAULT_ENDPOINT
     model = model or DEFAULT_MODEL
-    client = OpenAI(base_url=endpoint, api_key="not-needed", timeout=60.0)
+    client = OpenAI(base_url=endpoint, api_key="not-needed", timeout=600.0)
     return client, model
 
 

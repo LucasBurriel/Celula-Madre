@@ -1,0 +1,808 @@
+{
+  "dev": [
+    {
+      "id": "scenario_000",
+      "items": {
+        "books": 1,
+        "hats": 1,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 0,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 3,
+        "hats": 1,
+        "balls": 4
+      },
+      "max_possible_agent": 9,
+      "max_possible_opponent": 16
+    },
+    {
+      "id": "scenario_001",
+      "items": {
+        "books": 1,
+        "hats": 5,
+        "balls": 4
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 4,
+        "hats": 3,
+        "balls": 0
+      },
+      "max_possible_agent": 23,
+      "max_possible_opponent": 19
+    },
+    {
+      "id": "scenario_002",
+      "items": {
+        "books": 4,
+        "hats": 2,
+        "balls": 4
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 2
+      },
+      "max_possible_agent": 14,
+      "max_possible_opponent": 10
+    },
+    {
+      "id": "scenario_003",
+      "items": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 2,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 2,
+        "balls": 2
+      },
+      "max_possible_agent": 13,
+      "max_possible_opponent": 12
+    },
+    {
+      "id": "scenario_004",
+      "items": {
+        "books": 4,
+        "hats": 5,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 0,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 4,
+        "hats": 1,
+        "balls": 2
+      },
+      "max_possible_agent": 14,
+      "max_possible_opponent": 23
+    },
+    {
+      "id": "scenario_005",
+      "items": {
+        "books": 5,
+        "hats": 2,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 0,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 0,
+        "balls": 2
+      },
+      "max_possible_agent": 13,
+      "max_possible_opponent": 12
+    },
+    {
+      "id": "scenario_006",
+      "items": {
+        "books": 3,
+        "hats": 4,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 1,
+        "balls": 0
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 4
+      },
+      "max_possible_agent": 13,
+      "max_possible_opponent": 23
+    },
+    {
+      "id": "scenario_007",
+      "items": {
+        "books": 1,
+        "hats": 5,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 1,
+        "balls": 4
+      },
+      "max_possible_agent": 12,
+      "max_possible_opponent": 14
+    },
+    {
+      "id": "scenario_008",
+      "items": {
+        "books": 5,
+        "hats": 2,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 0
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 0
+      },
+      "max_possible_agent": 2,
+      "max_possible_opponent": 2
+    },
+    {
+      "id": "scenario_009",
+      "items": {
+        "books": 1,
+        "hats": 2,
+        "balls": 5
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 2,
+        "balls": 3
+      },
+      "max_possible_agent": 19,
+      "max_possible_opponent": 21
+    }
+  ],
+  "val": [
+    {
+      "id": "scenario_060",
+      "items": {
+        "books": 5,
+        "hats": 1,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 0,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 0,
+        "balls": 2
+      },
+      "max_possible_agent": 16,
+      "max_possible_opponent": 11
+    },
+    {
+      "id": "scenario_061",
+      "items": {
+        "books": 1,
+        "hats": 4,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 2,
+        "balls": 4
+      },
+      "max_possible_agent": 16,
+      "max_possible_opponent": 22
+    },
+    {
+      "id": "scenario_062",
+      "items": {
+        "books": 2,
+        "hats": 1,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 3
+      },
+      "max_possible_agent": 14,
+      "max_possible_opponent": 13
+    },
+    {
+      "id": "scenario_063",
+      "items": {
+        "books": 3,
+        "hats": 2,
+        "balls": 4
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 3,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 4,
+        "balls": 0
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 14
+    },
+    {
+      "id": "scenario_064",
+      "items": {
+        "books": 2,
+        "hats": 1,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 4,
+        "hats": 2,
+        "balls": 3
+      },
+      "max_possible_agent": 13,
+      "max_possible_opponent": 16
+    },
+    {
+      "id": "scenario_065",
+      "items": {
+        "books": 4,
+        "hats": 1,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 0,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 1,
+        "balls": 2
+      },
+      "max_possible_agent": 6,
+      "max_possible_opponent": 11
+    },
+    {
+      "id": "scenario_066",
+      "items": {
+        "books": 4,
+        "hats": 3,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 2,
+        "balls": 2
+      },
+      "max_possible_agent": 19,
+      "max_possible_opponent": 20
+    },
+    {
+      "id": "scenario_067",
+      "items": {
+        "books": 5,
+        "hats": 2,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 2,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 0
+      },
+      "max_possible_agent": 6,
+      "max_possible_opponent": 2
+    },
+    {
+      "id": "scenario_068",
+      "items": {
+        "books": 2,
+        "hats": 3,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 0,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 1,
+        "balls": 2
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 11
+    },
+    {
+      "id": "scenario_069",
+      "items": {
+        "books": 2,
+        "hats": 4,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 2
+      },
+      "max_possible_agent": 19,
+      "max_possible_opponent": 18
+    }
+  ],
+  "test": [
+    {
+      "id": "scenario_120",
+      "items": {
+        "books": 5,
+        "hats": 1,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 2,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 0
+      },
+      "max_possible_agent": 3,
+      "max_possible_opponent": 7
+    },
+    {
+      "id": "scenario_121",
+      "items": {
+        "books": 5,
+        "hats": 1,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 4,
+        "hats": 2,
+        "balls": 0
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 22
+    },
+    {
+      "id": "scenario_122",
+      "items": {
+        "books": 3,
+        "hats": 3,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 0,
+        "balls": 0
+      },
+      "max_possible_agent": 9,
+      "max_possible_opponent": 3
+    },
+    {
+      "id": "scenario_123",
+      "items": {
+        "books": 5,
+        "hats": 3,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 2
+      },
+      "max_possible_agent": 20,
+      "max_possible_opponent": 13
+    },
+    {
+      "id": "scenario_124",
+      "items": {
+        "books": 1,
+        "hats": 4,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 3,
+        "balls": 1
+      },
+      "max_possible_agent": 15,
+      "max_possible_opponent": 13
+    },
+    {
+      "id": "scenario_125",
+      "items": {
+        "books": 4,
+        "hats": 5,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 1,
+        "balls": 0
+      },
+      "max_possible_agent": 8,
+      "max_possible_opponent": 13
+    },
+    {
+      "id": "scenario_126",
+      "items": {
+        "books": 1,
+        "hats": 5,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "max_possible_agent": 13,
+      "max_possible_opponent": 18
+    },
+    {
+      "id": "scenario_127",
+      "items": {
+        "books": 2,
+        "hats": 1,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 0,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 3,
+        "hats": 0,
+        "balls": 2
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 10
+    },
+    {
+      "id": "scenario_128",
+      "items": {
+        "books": 2,
+        "hats": 4,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 3,
+        "hats": 0,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 1,
+        "balls": 2
+      },
+      "max_possible_agent": 7,
+      "max_possible_opponent": 8
+    },
+    {
+      "id": "scenario_129",
+      "items": {
+        "books": 1,
+        "hats": 1,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 0,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 4
+      },
+      "max_possible_agent": 9,
+      "max_possible_opponent": 13
+    },
+    {
+      "id": "scenario_130",
+      "items": {
+        "books": 1,
+        "hats": 4,
+        "balls": 5
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 0
+      },
+      "max_possible_agent": 19,
+      "max_possible_opponent": 13
+    },
+    {
+      "id": "scenario_131",
+      "items": {
+        "books": 3,
+        "hats": 1,
+        "balls": 5
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 1,
+        "balls": 3
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 2,
+        "balls": 4
+      },
+      "max_possible_agent": 16,
+      "max_possible_opponent": 22
+    },
+    {
+      "id": "scenario_132",
+      "items": {
+        "books": 5,
+        "hats": 2,
+        "balls": 3
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 3,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 4,
+        "balls": 1
+      },
+      "max_possible_agent": 9,
+      "max_possible_opponent": 16
+    },
+    {
+      "id": "scenario_133",
+      "items": {
+        "books": 1,
+        "hats": 3,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 0,
+        "hats": 2,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "max_possible_agent": 7,
+      "max_possible_opponent": 12
+    },
+    {
+      "id": "scenario_134",
+      "items": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 2,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 3
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 16
+    },
+    {
+      "id": "scenario_135",
+      "items": {
+        "books": 1,
+        "hats": 3,
+        "balls": 5
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 0
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 4,
+        "balls": 1
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 18
+    },
+    {
+      "id": "scenario_136",
+      "items": {
+        "books": 5,
+        "hats": 3,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 0
+      },
+      "opponent_values": {
+        "books": 0,
+        "hats": 2,
+        "balls": 1
+      },
+      "max_possible_agent": 19,
+      "max_possible_opponent": 7
+    },
+    {
+      "id": "scenario_137",
+      "items": {
+        "books": 2,
+        "hats": 2,
+        "balls": 1
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 2
+      },
+      "opponent_values": {
+        "books": 3,
+        "hats": 3,
+        "balls": 2
+      },
+      "max_possible_agent": 10,
+      "max_possible_opponent": 14
+    },
+    {
+      "id": "scenario_138",
+      "items": {
+        "books": 2,
+        "hats": 2,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 0
+      },
+      "opponent_values": {
+        "books": 1,
+        "hats": 3,
+        "balls": 1
+      },
+      "max_possible_agent": 8,
+      "max_possible_opponent": 10
+    },
+    {
+      "id": "scenario_139",
+      "items": {
+        "books": 3,
+        "hats": 4,
+        "balls": 2
+      },
+      "agent_values": {
+        "books": 2,
+        "hats": 3,
+        "balls": 1
+      },
+      "opponent_values": {
+        "books": 2,
+        "hats": 4,
+        "balls": 2
+      },
+      "max_possible_agent": 20,
+      "max_possible_opponent": 26
+    }
+  ]
+}

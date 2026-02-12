@@ -188,7 +188,7 @@ class EvolutionEngineV7:
         """Evaluate all agents on given scenarios."""
         results = {}
         for agent in population:
-            print(f"    Evaluating {agent.id}...")
+            print(f"    Evaluating {agent.id}...", flush=True)
             result = evaluate_agent(
                 agent.prompt, scenarios,
                 llm_fn=self.llm_fn,
@@ -274,14 +274,14 @@ class EvolutionEngineV7:
         if checkpoint:
             start_gen, population, history = checkpoint
             start_gen += 1  # Resume from next gen
-            print(f"Resumed from gen {start_gen - 1}")
+            print(f"Resumed from gen {start_gen - 1}", flush=True)
         else:
             population = self._create_seeds()
 
         for gen in range(start_gen, self.num_gens):
-            print(f"\n{'='*60}")
-            print(f"Generation {gen}/{self.num_gens} | Mode: {self.mode}")
-            print(f"{'='*60}")
+            print(f"\n{'='*60}", flush=True)
+            print(f"Generation {gen}/{self.num_gens} | Mode: {self.mode}", flush=True)
+            print(f"{'='*60}", flush=True)
 
             # Evaluate on dev set
             print("  Evaluating population on dev set...")
@@ -384,7 +384,7 @@ class EvolutionEngineV7:
                         )
                         new_pop.append(child)
                         rev = self.market.agent_revenues.get(pidx, 0)
-                        print(f"    + {child_name} (parent revenue: {rev:.2f})")
+                        print(f"    + {child_name} (parent revenue: {rev:.2f})", flush=True)
 
                 population = new_pop[:self.pop_size]
 
@@ -392,9 +392,9 @@ class EvolutionEngineV7:
             self._save_checkpoint(gen, population, history)
 
         # Final evaluation on test set
-        print(f"\n{'='*60}")
+        print(f"\n{'='*60}", flush=True)
         print("FINAL: Evaluating best agent on test set")
-        print(f"{'='*60}")
+        print(f"{'='*60}", flush=True)
         best = max(population, key=lambda a: a.dev_score)
         test_result = evaluate_agent(
             best.prompt, test,
@@ -414,7 +414,7 @@ class EvolutionEngineV7:
         with open(os.path.join(self.results_dir, "results.json"), "w") as f:
             json.dump(final, f, indent=2)
 
-        print(f"\n🏆 Best agent: {best.id}")
-        print(f"   Test score: {test_result['mean_score']:.2%}")
-        print(f"   Deal rate: {test_result['deal_rate']:.0%}")
+        print(f"\n🏆 Best agent: {best.id}", flush=True)
+        print(f"   Test score: {test_result['mean_score']:.2%}", flush=True)
+        print(f"   Deal rate: {test_result['deal_rate']:.0%}", flush=True)
         return final

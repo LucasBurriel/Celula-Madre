@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "id": "initial",
+      "code_file": "results/dgm_v2_test/archive/initial_agent.py",
+      "score": 0.5448717948717948,
+      "parent_id": null,
+      "children_count": 0,
+      "created_at": "2026-02-11T21:35:00.974079",
+      "metadata": {
+        "results": {
+          "regex_engine": {
+            "score": 1.0,
+            "passed": 9,
+            "total": 9
+          },
+          "json_parser": {
+            "score": 0.38461538461538464,
+            "passed": 5,
+            "total": 13
+          },
+          "task_scheduler": {
+            "score": 0.25,
+            "passed": 2,
+            "total": 8
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+############################################################
+V7 Experiment: Group A (Tournament × Reflective)
+Run 1 | Mode: tournament_reflective
+Results: results/v7/A_tournament_reflective/run_1
+############################################################
+
+============================================================
+Generation 0/10 | Mode: tournament_reflective
+============================================================
+  Evaluating population on dev set...
+    Evaluating gen0_aggressive...
