@@ -1,0 +1,342 @@
+{
+  "gen": 0,
+  "history": [
+    {
+      "gen": 0,
+      "scores": {
+        "aggressive": 0.3279700171004519,
+        "cooperative": 0.333917552910688,
+        "analytical": 0.2805250305250305,
+        "tit_for_tat": 0.2701615233651847
+      },
+      "best_dev": "cooperative",
+      "best_dev_score": 0.333917552910688,
+      "val_score": 0.3836117586117586,
+      "elapsed_s": 1575.8500728607178
+    }
+  ],
+  "best_val_score": 0.3836117586117586,
+  "best_agent": {
+    "name": "cooperative",
+    "prompt": "You are a cooperative negotiator. Look for win-win deals. Propose fair splits. Be willing to make concessions if the opponent reciprocates. Build trust through reasonable offers.",
+    "gen": 0,
+    "dev_score": 0.333917552910688,
+    "dev_result": {
+      "mean_score": 0.333917552910688,
+      "scores": [
+        0.2222222222222222,
+        0.30434782608695654,
+        0.7142857142857143,
+        0.46153846153846156,
+        0.42857142857142855,
+        0.46153846153846156,
+        0.3076923076923077,
+        0.0,
+        0.5,
+        0.5263157894736842,
+        0.0,
+        0.23809523809523808,
+        0.5714285714285714,
+        0.0,
+        0.2727272727272727
+      ],
+      "deals": [
+        {
+          "scenario_id": "scenario_000",
+          "agreed": true,
+          "agent_score": 2,
+          "opponent_score": 11,
+          "normalized": 0.2222222222222222,
+          "agent_gets": {
+            "books": 0,
+            "hats": 0,
+            "balls": 1
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 0,
+            "balls": 2
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_001",
+          "agreed": true,
+          "agent_score": 7,
+          "opponent_score": 13,
+          "normalized": 0.30434782608695654,
+          "agent_gets": {
+            "books": 0,
+            "hats": 2,
+            "balls": 1
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 3,
+            "balls": 0
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_002",
+          "agreed": true,
+          "agent_score": 10,
+          "opponent_score": 2,
+          "normalized": 0.7142857142857143,
+          "agent_gets": {
+            "books": 2,
+            "hats": 1,
+            "balls": 3
+          },
+          "opponent_gets": {
+            "books": 2,
+            "hats": 0,
+            "balls": 1
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_003",
+          "agreed": true,
+          "agent_score": 6,
+          "opponent_score": 6,
+          "normalized": 0.46153846153846156,
+          "agent_gets": {
+            "books": 1,
+            "hats": 1,
+            "balls": 1
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 2,
+            "balls": 0
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_004",
+          "agreed": true,
+          "agent_score": 6,
+          "opponent_score": 8,
+          "normalized": 0.42857142857142855,
+          "agent_gets": {
+            "books": 2,
+            "hats": 1,
+            "balls": 0
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 2,
+            "balls": 1
+          },
+          "turns": 2
+        },
+        {
+          "scenario_id": "scenario_005",
+          "agreed": true,
+          "agent_score": 6,
+          "opponent_score": 6,
+          "normalized": 0.46153846153846156,
+          "agent_gets": {
+            "books": 3,
+            "hats": 0,
+            "balls": 0
+          },
+          "opponent_gets": {
+            "books": 2,
+            "hats": 0,
+            "balls": 1
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_006",
+          "agreed": true,
+          "agent_score": 4,
+          "opponent_score": 12,
+          "normalized": 0.3076923076923077,
+          "agent_gets": {
+            "books": 1,
+            "hats": 1,
+            "balls": 2
+          },
+          "opponent_gets": {
+            "books": 2,
+            "hats": 3,
+            "balls": 1
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_007",
+          "agreed": false,
+          "agent_score": 0.0,
+          "opponent_score": 0.0,
+          "normalized": 0.0,
+          "agent_gets": {
+            "books": 0,
+            "hats": 0,
+            "balls": 0
+          },
+          "opponent_gets": {
+            "books": 0,
+            "hats": 0,
+            "balls": 0
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_008",
+          "agreed": true,
+          "agent_score": 1,
+          "opponent_score": 1,
+          "normalized": 0.5,
+          "agent_gets": {
+            "books": 1,
+            "hats": 1,
+            "balls": 0
+          },
+          "opponent_gets": {
+            "books": 0,
+            "hats": 1,
+            "balls": 1
+          },
+          "turns": 2
+        },
+        {
+          "scenario_id": "scenario_009",
+          "agreed": true,
+          "agent_score": 10,
+          "opponent_score": 8,
+          "normalized": 0.5263157894736842,
+          "agent_gets": {
+            "books": 0,
+            "hats": 1,
+            "balls": 3
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 0,
+            "balls": 2
+          },
+          "turns": 5
+        },
+        {
+          "scenario_id": "scenario_010",
+          "agreed": false,
+          "agent_score": 0.0,
+          "opponent_score": 0.0,
+          "normalized": 0.0,
+          "agent_gets": {
+            "books": 0,
+            "hats": 0,
+            "balls": 0
+          },
+          "opponent_gets": {
+            "books": 0,
+            "hats": 0,
+            "balls": 0
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_011",
+          "agreed": true,
+          "agent_score": 5,
+          "opponent_score": 6,
+          "normalized": 0.23809523809523808,
+          "agent_gets": {
+            "books": 0,
+            "hats": 1,
+            "balls": 1
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 0,
+            "balls": 1
+          },
+          "turns": 3
+        },
+        {
+          "scenario_id": "scenario_012",
+          "agreed": true,
+          "agent_score": 4,
+          "opponent_score": 3,
+          "normalized": 0.5714285714285714,
+          "agent_gets": {
+            "books": 2,
+            "hats": 2,
+            "balls": 1
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 3,
+            "balls": 0
+          },
+          "turns": 3
+        },
+        {
+          "scenario_id": "scenario_013",
+          "agreed": true,
+          "agent_score": 0,
+          "opponent_score": 6,
+          "normalized": 0.0,
+          "agent_gets": {
+            "books": 0,
+            "hats": 0,
+            "balls": 0
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 0,
+            "balls": 2
+          },
+          "turns": 6
+        },
+        {
+          "scenario_id": "scenario_014",
+          "agreed": true,
+          "agent_score": 3,
+          "opponent_score": 4,
+          "normalized": 0.2727272727272727,
+          "agent_gets": {
+            "books": 0,
+            "hats": 1,
+            "balls": 1
+          },
+          "opponent_gets": {
+            "books": 1,
+            "hats": 2,
+            "balls": 0
+          },
+          "turns": 6
+        }
+      ],
+      "deal_rate": 0.8666666666666667,
+      "n_scenarios": 15
+    },
+    "val_score": 0.3836117586117586
+  },
+  "population": [
+    {
+      "name": "aggressive",
+      "prompt": "You are an aggressive negotiator. Demand high value for yourself. Start with extreme offers. Make small concessions only when necessary. Your goal is to maximize YOUR score.",
+      "gen": 0
+    },
+    {
+      "name": "cooperative",
+      "prompt": "You are a cooperative negotiator. Look for win-win deals. Propose fair splits. Be willing to make concessions if the opponent reciprocates. Build trust through reasonable offers.",
+      "gen": 0
+    },
+    {
+      "name": "analytical",
+      "prompt": "You are an analytical negotiator. Calculate the total items and try to identify which items the opponent values less. Propose trades that give you high-value items while giving them items you value less.",
+      "gen": 0
+    },
+    {
+      "name": "tit_for_tat",
+      "prompt": "You are a tit-for-tat negotiator. Start cooperatively with a fair offer. If the opponent makes a reasonable counter, stay cooperative. If they are greedy, become aggressive. Mirror their behavior.",
+      "gen": 0
+    }
+  ]
+}

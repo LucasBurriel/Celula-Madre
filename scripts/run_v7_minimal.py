@@ -1,76 +1,50 @@
-"""V7 Minimal Runner — feasible scale for Qwen3-30B local.
+#!/usr/bin/env python3
+"""V7 Minimal Proof-of-Concept: 2 groups, small scale, fast model.
 
-Runs 2 key groups (A: tournament_reflective, D: tournament_random) with reduced params:
-- pop=4, gens=5, dev=10, val=10, test=20, max_turns=3
-- Estimated: ~3-4h per run, ~6-8h total for 2 runs
-
-Usage:
-  python3 scripts/run_v7_minimal.py --group A --run 1
-  python3 scripts/run_v7_minimal.py --all
-  python3 scripts/run_v7_minimal.py --all --resume
+Goal: Prove the V7 machinery works end-to-end and get preliminary results.
+Scale: pop=4, gens=5, dev=10, val=10, test=20, max_turns=3
+Groups: tournament_reflective vs tournament_random
+Model: gemma-3-4b (faster than qwen3-30b for negotiation)
 """
 
-import argparse
 import json
 import os
 import sys
 import time
 
-sys.path.insert(0, ".")
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.negotiation import generate_splits, save_scenarios, load_scenarios, call_llm
+from src.negotiation import call_llm, generate_splits, save_scenarios, load_scenarios
 from src.evolution_v7 import EvolutionEngineV7
-from functools import partial
 
-# Use gemma-3-4b for speed (4s vs 60s+ per call with Qwen3)
-fast_llm = partial(call_llm, model="google/gemma-3-4b")
-
-GROUPS = {
-    "A": "tournament_reflective",
-    "D": "tournament_random",
-}
-
-GROUP_NAMES = {
-    "A": "Tournament × Reflective",
-    "D": "Tournament × Random (Control)",
-}
-
-# Minimal but meaningful params
+# Config
+MODEL = "google/gemma-3-4b"
+BASE_URL = "http://172.17.0.1:1234"
 POP_SIZE = 4
 NUM_GENS = 5
-ELITE_COUNT = 1
 DEV_SCENARIOS = 10
 VAL_SCENARIOS = 10
+TEST_SCENARIOS = 20
 MAX_TURNS = 3
+RESULTS_BASE = "results/v7_minimal"
+
+def fast_llm(system_prompt, user_prompt, **kwargs):
+    """Use gemma-3-4b for speed."""
+    max_tokens = kwargs.get("max_tokens", 300)
+    return call_llm(system_prompt, user_prompt, model=MODEL, base_url=BASE_URL,
+                    max_tokens=max_tokens, temperature=0.7)
 
 
-def ensure_scenarios():
-    path = "data/v7_scenarios.json"
-    if not os.path.exists(path):
-        print("Generating scenarios...")
-        splits = generate_splits(seed=42)
-        save_scenarios(splits, path)
-    return load_scenarios(path)
-
-
-def run_single(group: str, run_num: int, resume: bool = False):
-    mode = GROUPS[group]
-    results_dir = f"results/v7_minimal/{group}_{mode}/run_{run_num}"
-
-    print(f"\n{'#'*60}", flush=True)
-    print(f"V7 Minimal: Group {group} ({GROUP_NAMES[group]})", flush=True)
-    print(f"Run {run_num} | Mode: {mode}", flush=True)
-    print(f"Pop={POP_SIZE}, Gens={NUM_GENS}, Dev={DEV_SCENARIOS}, Val={VAL_SCENARIOS}, Turns={MAX_TURNS}", flush=True)
-    print(f"Results: {results_dir}", flush=True)
-    print(f"{'#'*60}", flush=True)
-
-    scenarios = ensure_scenarios()
-
+def run_group(mode: str, scenarios: dict):
+    """Run one group experiment."""
+    results_dir = os.path.join(RESULTS_BASE, mode)
+    os.makedirs(results_dir, exist_ok=True)
+    
     engine = EvolutionEngineV7(
         mode=mode,
         population_size=POP_SIZE,
         num_generations=NUM_GENS,
-        elite_count=ELITE_COUNT,
+        elite_count=1,
         tournament_k=2,
         dev_scenarios=DEV_SCENARIOS,
         val_scenarios=VAL_SCENARIOS,
@@ -78,57 +52,83 @@ def run_single(group: str, run_num: int, resume: bool = False):
         results_dir=results_dir,
         llm_fn=fast_llm,
     )
+    
+    print(f"\n{'#'*60}")
+    print(f"# V7 Minimal: {mode}")
+    print(f"# Pop={POP_SIZE}, Gens={NUM_GENS}, Dev={DEV_SCENARIOS}, Val={VAL_SCENARIOS}")
+    print(f"# Model: {MODEL}")
+    print(f"{'#'*60}\n")
+    
+    t0 = time.time()
+    result = engine.run(scenarios, resume=True)
+    elapsed = time.time() - t0
+    
+    print(f"\n⏱️  {mode} completed in {elapsed/60:.1f} minutes")
+    print(f"   Best test score: {result['test_accuracy']:.2%}")
+    print(f"   Best test deal rate: {result['test_deal_rate']:.0%}")
+    
+    return result
 
-    start = time.time()
-    results = engine.run(scenarios, resume=resume)
-    elapsed = (time.time() - start) / 60
 
-    print(f"\n⏱️ Completed in {elapsed:.1f} minutes", flush=True)
-    print(f"📊 Test score: {results['test_accuracy']:.2%}", flush=True)
-    return results
-
-
-def run_all(resume: bool = False):
+def main():
+    os.makedirs(RESULTS_BASE, exist_ok=True)
+    
+    # Generate or load scenarios
+    scenario_path = os.path.join(RESULTS_BASE, "scenarios.json")
+    if os.path.exists(scenario_path):
+        scenarios = load_scenarios(scenario_path)
+    else:
+        scenarios = generate_splits(seed=42)
+        save_scenarios(scenarios, scenario_path)
+    # Trim to minimal size
+    scenarios = {
+        "dev": scenarios["dev"][:DEV_SCENARIOS],
+        "val": scenarios["val"][:VAL_SCENARIOS],
+        "test": scenarios["test"][:TEST_SCENARIOS],
+    }
+    print(f"Scenarios: dev={len(scenarios['dev'])}, val={len(scenarios['val'])}, test={len(scenarios['test'])}")
+    
+    # Test LLM connectivity
+    print("Testing LLM connectivity...")
+    try:
+        resp = fast_llm("You are helpful.", "Say 'OK' in one word.")
+        print(f"  LLM OK: {resp[:50]}")
+    except Exception as e:
+        print(f"  LLM FAILED: {e}")
+        sys.exit(1)
+    
+    # Run both groups
     all_results = {}
-    for group in ["A", "D"]:
-        for run_num in [1]:  # 1 run each for initial proof
-            key = f"{group}_run{run_num}"
-            results_path = f"results/v7_minimal/{group}_{GROUPS[group]}/run_{run_num}/results.json"
-            if os.path.exists(results_path) and not resume:
-                print(f"\n⏭️ Skipping {key} (already complete)")
-                with open(results_path) as f:
-                    all_results[key] = json.load(f)
-                continue
-
-            try:
-                result = run_single(group, run_num, resume=resume)
-                all_results[key] = result
-            except Exception as e:
-                print(f"\n❌ {key} failed: {e}", flush=True)
-                all_results[key] = {"error": str(e)}
-
+    
+    for mode in ["tournament_reflective", "tournament_random"]:
+        try:
+            result = run_group(mode, scenarios)
+            all_results[mode] = result
+        except Exception as e:
+            print(f"\n❌ {mode} FAILED: {e}")
+            import traceback
+            traceback.print_exc()
+            all_results[mode] = {"error": str(e)}
+    
     # Summary
-    print(f"\n{'='*60}", flush=True)
-    print("SUMMARY", flush=True)
-    print(f"{'='*60}", flush=True)
-    for key, r in all_results.items():
-        if "error" in r:
-            print(f"  {key}: FAILED ({r['error']})")
+    print(f"\n{'='*60}")
+    print("V7 MINIMAL RESULTS SUMMARY")
+    print(f"{'='*60}")
+    for mode, result in all_results.items():
+        if "error" in result:
+            print(f"  {mode}: FAILED - {result['error']}")
         else:
-            print(f"  {key}: test={r['test_accuracy']:.2%}")
+            print(f"  {mode}: test={result['test_accuracy']:.2%}, deal_rate={result['test_deal_rate']:.0%}")
+            # Gen-over-gen
+            for h in result.get("history", []):
+                print(f"    Gen {h['generation']}: mean={h['mean_score']:.2%}, best={h['best_score']:.2%}")
+    
+    # Save summary
+    with open(os.path.join(RESULTS_BASE, "summary.json"), "w") as f:
+        json.dump(all_results, f, indent=2, default=str)
+    
+    print(f"\nResults saved to {RESULTS_BASE}/")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--group", choices=["A", "D"])
-    parser.add_argument("--run", type=int, default=1)
-    parser.add_argument("--all", action="store_true")
-    parser.add_argument("--resume", action="store_true")
-    args = parser.parse_args()
-
-    if args.all:
-        run_all(resume=args.resume)
-    elif args.group:
-        run_single(args.group, args.run, resume=args.resume)
-    else:
-        parser.print_help()
+    main()

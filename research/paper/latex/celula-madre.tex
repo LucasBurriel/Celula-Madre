@@ -23,7 +23,7 @@
 \textit{Independent Research}\\
 \texttt{teslaburriel@gmail.com}}
 
-\date{February 2026 — Draft}
+\date{February 2026 — Preprint}
 
 \begin{document}
 \maketitle
@@ -49,7 +49,8 @@ This paper reports results from four experimental iterations (V4--V6 complete, V
     \item \textbf{V4:} Demonstrated that naive LLM-guided mutation with poor population management is \textit{worse} than random mutation ($p < 0.0001$), identifying over-exploration and feedback overfitting as failure modes.
     \item \textbf{V5:} Validated that framework mechanics (elitism, gating, Pareto frontier) are sound on financial prediction, though small scale limited statistical conclusions.
     \item \textbf{V6:} Established that evolution produces significant improvement (+4.7pp over static, $p=0.041$) but reflective mutation $\approx$ random mutation on classification ($p=0.932$).
-    \item \textbf{V7 (ongoing):} Tests market-based selection on a multi-turn negotiation task where strategic reasoning should differentiate mutation methods.
+    \item \textbf{V6.5 (ongoing):} Tests market-based selection on AG News, isolating the effect of selection mechanism from task complexity. Preliminary results show healthy market dynamics with increasing Gini coefficients.
+    \item \textbf{V7 (designed):} Tests market-based selection on a multi-turn negotiation task where strategic reasoning should differentiate mutation methods.
 \end{itemize}
 
 \section{Related Work}
@@ -193,6 +194,16 @@ V7 adopts a Deal-or-No-Deal negotiation game where two agents split items with a
 The $2 \times 2$ factorial design crosses selection mechanism (tournament vs.\ market) with mutation operator (reflective vs.\ random), yielding 4 groups with 3 runs each. Market selection implements softmax client choice, revenue accumulation, survival thresholds, and proportional reproduction---directly implementing \citeauthor{hayek1945}'s insight that prices convey information no central planner can aggregate.
 
 \textbf{Hypotheses:} (H1)~Reflective mutation outperforms random on strategic tasks. (H2)~Market-based selection preserves greater strategic diversity. (H3)~Market $\times$ reflective produces the highest overall performance.
+
+\subsection{V6.5: Market Selection on AG News (Preliminary)}
+
+To test market selection without the computational cost of multi-turn negotiation, we applied the market selection engine to the same AG News task used in V6. This isolates the effect of selection mechanism (market vs.\ tournament) while controlling for task and mutation operator (both reflective).
+
+\textbf{Setup:} Population 8, 10 generations, reflective mutation, market selection with softmax temperature $\tau=2.0$, survival threshold 30\%, minimum 5 assignments per agent. Same AG News splits as V6.
+
+\textbf{Preliminary results (Market Run 1, gens 0--3):} Best validation accuracy reached 93\% at generation 1 (vs.\ V6 tournament peak of 96\% at gen 6). Market dynamics show healthy competition: Gini coefficient increased from 0.099 (gen 0) to 0.204 (gen 3), indicating emergent specialization. Mutations are passing gating: gen 1 saw agent 0 mutate to agent 11 (90\%$\rightarrow$94\%), and gen 2 produced agents 9 and 10 at 94\%. The market is selecting effectively---clients prefer higher-performing agents, creating revenue-based selection pressure.
+
+\textbf{Status:} Run 1 is at generation 3 of 10. Five additional runs (3 market, 3 tournament control) are planned. Full statistical comparison pending completion.
 
 \section{Discussion}
 
