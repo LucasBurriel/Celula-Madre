@@ -362,15 +362,14 @@ class EvolutionEngineV6:
             }
             self.history.append(gen_info)
 
-            self.save_checkpoint(population, gen)
-
             # ── Phase 3: Generate next gen (unless last) ──
             if gen >= cfg.max_generations - 1:
+                self.save_checkpoint(population, gen)
                 break
 
             if cfg.mutation_mode == "static":
                 # No mutation — keep same population, just re-evaluate next gen
-                # (stochastic eval means scores may shift slightly)
+                self.save_checkpoint(population, gen)
                 continue
 
             new_pop = []
@@ -416,6 +415,8 @@ class EvolutionEngineV6:
                 print(f"  🌱 Fresh: Agent {fresh.id}")
 
             population = new_pop[:cfg.population_size]
+            # Save checkpoint AFTER mutations so resume loads mutated population
+            self.save_checkpoint(population, gen)
 
         # ── Final test ──
         print(f"\n{'='*50}\nFinal Test ({cfg.mutation_mode})\n{'='*50}")

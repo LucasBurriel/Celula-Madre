@@ -249,12 +249,13 @@ class EvolutionEngineV65:
                 "market_stats": market_stats,
             }
             self.history.append(gen_info)
-            self.save_checkpoint(population, gen)
 
             if gen >= cfg.max_generations - 1:
+                self.save_checkpoint(population, gen)
                 break
 
             if cfg.mutation_mode == "static":
+                self.save_checkpoint(population, gen)
                 continue
 
             # Build next generation
@@ -316,6 +317,8 @@ class EvolutionEngineV65:
                 print(f"  🌱 Fresh: Agent {fresh.id}")
 
             population = new_pop[:cfg.population_size]
+            # Save checkpoint AFTER mutations so resume loads mutated population
+            self.save_checkpoint(population, gen)
 
         # Final test
         print(f"\n{'='*50}\nFinal Test ({cfg.selection_mode}×{cfg.mutation_mode})\n{'='*50}")
