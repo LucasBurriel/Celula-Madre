@@ -1,70 +1,116 @@
-# Célula Madre
+# Célula Madre 🧬
 
-**Price-Driven Evolution of AI Agents via Market Selection**
+**Evolutionary Optimization of LLM Agent Prompts Through Selection Pressure**
 
-An experimental system where AI agents evolve based on market price signals rather than traditional benchmarks, inspired by Austrian economics and Darwinian selection.
+> Can selection pressure alone improve AI agent prompts — without modifying model weights?
 
-## Core Hypothesis
+Célula Madre ("stem cell" in Spanish) evolves LLM agent system prompts through iterative selection, mutation, and reproduction. Inspired by Austrian economics and Darwinian evolution.
 
-Can price signals from a competitive marketplace guide agent evolution more effectively than random mutation?
+**[📄 Paper (Preprint)](research/paper/latex/celula-madre.pdf)** · **[📊 Results](research/experiments/)** · **[🧪 Reproduce](REPRODUCTION.md)**
 
-## Status: V5 In Progress
+---
 
-### Completed Experiments
+## Key Findings
 
-| Version | What | Result |
-|---------|------|--------|
-| MVP-1 | Basic marketplace + mutation | ✅ Agents evolved, prices emerged |
-| MVP-2 | Generational death + client choice | ✅ Gen1 > Gen0, validated core hypothesis |
-| V3 | Clade-Metaproductivity selection | ⚠️ Mixed results |
-| V4 | Control group (random vs guided) | ❌ Random mutation won — guided over-explored |
-| V5 | GEPA-style reflective mutation + real market data | 🔄 In progress |
+| Finding | Evidence |
+|---------|----------|
+| ✅ **Evolution works** | +4.7pp over static baseline (p=0.041) on AG News 4-class classification |
+| 🤔 **Reflective ≈ Random mutation** | Error-informed mutation provides no advantage over random (p=0.932, d=0.09) |
+| 🏗️ **Population management > mutation quality** | Elitism, gating, and selection design drive improvement — not mutation sophistication |
+| 🏪 **Market selection (preliminary)** | Austrian economics-inspired client choice shows promising diversity dynamics |
 
-### V4 Key Finding
-Guided evolution with LLM-driven mutation **lost** to random mutation (Cohen's d = -2.01, p < 0.0001). Root causes: over-exploration (too many agents), no elitism, feedback overfitting.
+## Experiment History
 
-### V5 Design (current)
-- **Task:** BTC/ETH price direction prediction (real historical data)
-- **Population:** 8 agents, 10-20 generations
-- **Selection:** Elitism (top-2 survive), tournament selection
-- **Mutation:** GEPA-style reflective mutation (LLM analyzes failures)
-- **Gating:** New prompts must beat parent on dev set
-- **Diversity:** Fitness sharing to prevent convergence
+| Version | Task | Key Result |
+|---------|------|------------|
+| V4 | Financial prediction (synthetic) | Guided mutation worse than random — over-exploration kills |
+| V5 | BTC/ETH direction prediction | Framework validated, scale too small for conclusions |
+| V6 | AG News 4-class classification | **Main result:** Evolution +4.7pp, reflective ≈ random |
+| V6.5 | AG News + market selection | Preliminary: market dynamics working, run incomplete |
+| V7 | Deal-or-No-Deal negotiation | Designed + implemented, blocked on compute |
+
+## Quick Start
+
+```bash
+# Clone
+git clone https://github.com/LucasBurriel/Celula-Madre.git
+cd Celula-Madre
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download AG News data
+python -c "from src.ag_news_data import download_ag_news; download_ag_news()"
+
+# Run V6 experiment (needs OpenAI-compatible LLM endpoint)
+export LLM_ENDPOINT="http://localhost:1234"  # LM Studio, Ollama, etc.
+python scripts/run_v6.py --mode reflective --run 1
+
+# Analyze results
+python scripts/analyze_v6.py
+```
+
+See **[REPRODUCTION.md](REPRODUCTION.md)** for detailed step-by-step instructions.
+
+## Architecture
+
+```
+Population (8 agents) → Evaluate (dev set) → Select (tournament/market)
+     ↑                                              ↓
+     └──── Mutate (reflective/random) ← ── Reproduce (top agents)
+```
+
+**Selection modes:**
+- **Tournament** (V6): Top-k elitism, deterministic
+- **Market** (V6.5/V7): Clients choose agents via softmax over track record (Austrian economics price signal)
+
+**Mutation modes:**
+- **Reflective**: LLM analyzes errors and proposes targeted improvements
+- **Random**: LLM generates variation without error context
+- **Static**: No mutation (control group)
 
 ## Project Structure
 
 ```
-├── main_v5.py              # V5 experiment runner
-├── src/
-│   ├── evolution_v5.py     # V5 evolution engine
-│   ├── market_data.py      # BTC/ETH data pipeline
-│   ├── agent.py            # Agent class
-│   ├── database.py         # SQLite persistence
-│   └── ...                 # Earlier version modules
-├── scripts/
-│   └── fetch_market_data.py # Data download script
-├── research/
-│   ├── experiments/         # Statistical analyses
-│   │   ├── v4-statistical-analysis.md
-│   │   └── v4-conclusions-and-v5-decisions.md
-│   ├── cell-physiology-deep.md
-│   └── cell-regulation-notes.md
-├── data/                   # Market data (BTC/ETH OHLCV)
-├── checkpoints/            # V5 evolution checkpoints
-├── archive/                # Old versions, DBs, scripts
-├── logs/                   # Experiment logs (v3, v4, v5)
-├── DESIGN-V5.md            # V5 detailed design document
-└── hayek.pdf               # Reference: Hayek on price signals
+src/
+├── ag_news_data.py          # AG News dataset pipeline
+├── evolution_v6.py          # V6 evolution engine (tournament selection)
+├── evolution_v6_market.py   # V6.5 engine (market selection)
+├── evolution_v7.py          # V7 engine (negotiation task)
+├── market_selection.py      # Market selection engine
+├── negotiation.py           # Deal-or-No-Deal game engine
+├── llm_providers.py         # Multi-provider LLM abstraction
+└── market_data.py           # BTC/ETH data pipeline
+
+scripts/
+├── run_v6.py                # Run V6 experiments
+├── run_v6_market.py         # Run V6.5 market experiments
+├── run_v7.py                # Run V7 negotiation experiments
+├── analyze_v6.py            # Statistical analysis
+└── fetch_market_data.py     # Download price data
+
+research/
+├── paper/                   # Academic paper (LaTeX + PDF)
+├── experiments/             # Detailed experiment analyses
+├── literature/              # Literature review
+└── competitive-analysis.md  # Comparison with related work
 ```
 
-## Research
+## Citation
 
-Analysis documents in `research/experiments/`:
-- **v4-statistical-analysis.md** — Full statistical analysis of V4 (t-test, bootstrap CI, Cohen's d)
-- **v4-conclusions-and-v5-decisions.md** — What went wrong in V4 and design decisions for V5
+```bibtex
+@misc{tesla2026celula,
+  title={Célula Madre: Evolutionary Optimization of LLM Agent Prompts Through Selection Pressure},
+  author={Tesla and Burriel, Lucas},
+  year={2026},
+  note={Preprint}
+}
+```
 
-## Author
+## License
 
-Developed by **Tesla** ⚡ (AI research agent), project granted by Lucas Burriel.
+MIT License. See [LICENSE](LICENSE).
 
-Repository: [github.com/LucasBurriel/Celula-Madre](https://github.com/LucasBurriel/Celula-Madre)
+---
+
+*Built by [Tesla](https://github.com/LucasBurriel/Celula-Madre) ⚡ — an AI research agent named after a cat.*
