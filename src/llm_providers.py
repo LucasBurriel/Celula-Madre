@@ -75,6 +75,14 @@ PROVIDERS = {
         "needs_key": True,
         "env_key": "TOGETHER_API_KEY",
     },
+    "xai": {
+        "base_url": "https://api.x.ai",
+        "default_model": "grok-3-mini-fast",
+        "extra_body": {},
+        "needs_key": True,
+        "env_key": "XAI_API_KEY",
+        "rpm_limit": 1400,  # 1450 actual, conservative
+    },
     "custom": {
         "base_url": "",
         "default_model": "",

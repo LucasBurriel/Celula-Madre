@@ -124,7 +124,7 @@ def main():
     parser.add_argument("--all", action="store_true", help="Run all experiments")
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
     parser.add_argument("--provider", default="lmstudio",
-                        choices=["lmstudio", "openrouter", "groq", "together", "custom"],
+                        choices=["lmstudio", "openrouter", "groq", "together", "xai", "custom"],
                         help="LLM provider (default: lmstudio)")
     parser.add_argument("--api-key", default="", help="API key for cloud provider")
     parser.add_argument("--model", default="", help="Model override (provider-specific)")
@@ -134,7 +134,7 @@ def main():
 
     # Pass provider config to run_experiment via function attributes
     run_experiment._provider = args.provider
-    run_experiment._api_key = args.api_key or os.environ.get("OPENROUTER_API_KEY", os.environ.get("GROQ_API_KEY", ""))
+    run_experiment._api_key = args.api_key or os.environ.get("OPENROUTER_API_KEY", os.environ.get("GROQ_API_KEY", os.environ.get("XAI_API_KEY", "")))
     run_experiment._model = args.model
 
     if args.all:
