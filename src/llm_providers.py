@@ -62,10 +62,11 @@ PROVIDERS = {
     },
     "openrouter": {
         "base_url": "https://openrouter.ai/api",
-        "default_model": "meta-llama/llama-3.3-70b-instruct",
+        "default_model": "qwen/qwen3-coder:free",
         "extra_body": {},
         "needs_key": True,
         "env_key": "OPENROUTER_API_KEY",
+        "rpm_limit": 20,  # Free tier conservative limit
     },
     "together": {
         "base_url": "https://api.together.xyz",

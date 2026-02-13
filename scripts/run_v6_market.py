@@ -56,11 +56,26 @@ def run_experiment(group: str, run_num: int, resume: bool = False):
         min_assignments=5,  # At least 5 examples per agent
     )
 
-    # Allow model override via environment variable
+    # Allow model/provider override via CLI args or environment
     llm_kwargs = {}
-    if os.environ.get("V65_MODEL"):
-        llm_kwargs["model"] = os.environ["V65_MODEL"]
-        print(f"Using model: {llm_kwargs['model']}")
+    provider = os.environ.get("V65_PROVIDER", "lmstudio")
+    api_key = os.environ.get("V65_API_KEY", "")
+    model = os.environ.get("V65_MODEL", "")
+    # CLI args take precedence (passed via closure from main)
+    if hasattr(run_experiment, '_provider'):
+        provider = run_experiment._provider
+    if hasattr(run_experiment, '_api_key'):
+        api_key = run_experiment._api_key
+    if hasattr(run_experiment, '_model'):
+        model = run_experiment._model
+    if provider != "lmstudio":
+        llm_kwargs["provider"] = provider
+        if api_key:
+            llm_kwargs["api_key"] = api_key
+        print(f"Using provider: {provider}")
+    if model:
+        llm_kwargs["model"] = model
+        print(f"Using model: {model}")
 
     config = V65Config(
         population_size=8,
@@ -108,9 +123,19 @@ def main():
     parser.add_argument("--run", type=int, default=1, help="Run number (1-3)")
     parser.add_argument("--all", action="store_true", help="Run all experiments")
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
+    parser.add_argument("--provider", default="lmstudio",
+                        choices=["lmstudio", "openrouter", "groq", "together", "custom"],
+                        help="LLM provider (default: lmstudio)")
+    parser.add_argument("--api-key", default="", help="API key for cloud provider")
+    parser.add_argument("--model", default="", help="Model override (provider-specific)")
     args = parser.parse_args()
 
     os.makedirs(RESULTS_BASE, exist_ok=True)
+
+    # Pass provider config to run_experiment via function attributes
+    run_experiment._provider = args.provider
+    run_experiment._api_key = args.api_key or os.environ.get("OPENROUTER_API_KEY", os.environ.get("GROQ_API_KEY", ""))
+    run_experiment._model = args.model
 
     if args.all:
         all_results = {}

@@ -17,9 +17,29 @@ from typing import Callable, Optional
 
 from src.ag_news_data import LABELS, evaluate_agent, load_splits
 
-# ── LLM Interface (reuse from V5) ──────────────────────────────────
+# ── LLM Interface (multi-provider) ──────────────────────────────────
 
 import requests
+
+from src.llm_providers import LLMConfig, create_llm_fn
+
+# Cache provider functions to avoid recreating on every call
+_provider_cache: dict = {}
+
+
+def _get_provider_fn(provider: str, api_key: str = "", model: str = "", base_url: str = ""):
+    """Get or create a cached LLM function for the given provider."""
+    cache_key = f"{provider}:{model}:{base_url}"
+    if cache_key not in _provider_cache:
+        kwargs = {"provider": provider}
+        if api_key:
+            kwargs["api_key"] = api_key
+        if model:
+            kwargs["model"] = model
+        if base_url:
+            kwargs["base_url"] = base_url
+        _provider_cache[cache_key] = create_llm_fn(LLMConfig(**kwargs))
+    return _provider_cache[cache_key]
 
 
 def call_llm(
@@ -29,7 +49,37 @@ def call_llm(
     base_url: str = "http://172.17.0.1:1234",
     temperature: float = 0.7,
     max_tokens: int = 512,
+    provider: str = "lmstudio",
+    api_key: str = "",
 ) -> str:
+    """Call LLM via any supported provider.
+    
+    For backward compat, defaults to lmstudio. Pass provider="openrouter"
+    (+ api_key) to use cloud APIs.
+    """
+    # Use provider abstraction for non-lmstudio providers
+    if provider != "lmstudio":
+        fn = _get_provider_fn(provider, api_key, model, base_url)
+        # Override temperature/max_tokens via config mutation (acceptable for cache)
+        fn_config = None
+        for k, v in _provider_cache.items():
+            if v is fn:
+                break
+        # Direct call — llm_providers handles retries
+        try:
+            cfg = LLMConfig(
+                provider=provider, api_key=api_key,
+                model=model if model != "qwen3-coder-30b-a3b-instruct" else None,
+                base_url=base_url if base_url != "http://172.17.0.1:1234" else None,
+                temperature=temperature, max_tokens=max_tokens,
+            )
+            fn = create_llm_fn(cfg)
+            return fn(system_prompt, user_prompt)
+        except Exception as e:
+            print(f"  ❌ Provider {provider} error: {e}", flush=True)
+            return f"ERROR: {e}"
+
+    # Legacy lmstudio path (direct requests, no_think flag)
     for attempt in range(3):
         try:
             r = requests.post(
