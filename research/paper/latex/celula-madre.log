@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.11)  12 FEB 2026 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.11)  13 FEB 2026 03:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,7 +391,7 @@ Package caption Info: New subtype `subfigure' on input line 238.
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count302
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 18.
+Package hyperref Info: Option `colorlinks' set `true' on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
@@ -401,24 +401,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 (./celula-madre.aux)
 \openout1 = `celula-madre.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -442,7 +442,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 28.
+Package hyperref Info: Link coloring ON on input line 37.
 
 (./celula-madre.out) (./celula-madre.out)
 \@outlinefile=\write3
@@ -485,24 +485,24 @@ Package hyperref Info: Link coloring ON on input line 28.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-0.
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Overfull \hbox (4.48714pt too wide) in paragraph at lines 46--47
+Overfull \hbox (4.48714pt too wide) in paragraph at lines 55--56
 []\T1/cmr/m/n/10.95 This pa-per re-ports re-sults from four ex-per-i-men-tal it
 -er-a-tions (V4--V6 com-plete, V7 in progress),
  []
@@ -511,12 +511,12 @@ Overfull \hbox (4.48714pt too wide) in paragraph at lines 46--47
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 85.
+put line 94.
  [3]
 <figures/v4_comparison.pdf, id=184, 352.87146pt x 278.47789pt>
 File: figures/v4_comparison.pdf Graphic file (type pdf)
 <use figures/v4_comparison.pdf>
-Package pdftex.def Info: figures/v4_comparison.pdf  used on input line 135.
+Package pdftex.def Info: figures/v4_comparison.pdf  used on input line 144.
 (pdftex.def)             Requested size: 271.7835pt x 214.50085pt.
 
 
@@ -525,43 +525,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figures/v6_test_accuracy.pdf, id=187, 425.08185pt x 280.76242pt>
 File: figures/v6_test_accuracy.pdf Graphic file (type pdf)
 <use figures/v6_test_accuracy.pdf>
-Package pdftex.def Info: figures/v6_test_accuracy.pdf  used on input line 176.
+Package pdftex.def Info: figures/v6_test_accuracy.pdf  used on input line 185.
 (pdftex.def)             Requested size: 217.42265pt x 143.6025pt.
 <figures/v6_gen_trajectory.pdf, id=188, 425.14145pt x 279.89757pt>
 File: figures/v6_gen_trajectory.pdf Graphic file (type pdf)
 <use figures/v6_gen_trajectory.pdf>
-Package pdftex.def Info: figures/v6_gen_trajectory.pdf  used on input line 181.
+Package pdftex.def Info: figures/v6_gen_trajectory.pdf  used on input line 190.
 
 (pdftex.def)             Requested size: 217.42265pt x 143.14732pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4 <./figures/v4_comparison.pdf>]
-Overfull \hbox (2.8772pt too wide) in paragraph at lines 196--197
+Overfull \hbox (2.8772pt too wide) in paragraph at lines 205--206
 []\T1/cmr/bx/n/10.95 Hypotheses: \T1/cmr/m/n/10.95 (H1) Re-flec-tive mu-ta-tion
  out-per-forms ran-dom on strate-gic tasks. (H2) Market-
  []
 
 [5 <./figures/v6_test_accuracy.pdf> <./figures/v6_gen_trajectory.pdf>]
-
-LaTeX Warning: Reference `fig:v65market' on page 6 undefined on input line 206.
-
-
-<figures/v65_market_dynamics.pdf, id=426, 715.36761pt x 280.32478pt>
+<figures/v65_market_dynamics.pdf, id=427, 715.36761pt x 280.32478pt>
 File: figures/v65_market_dynamics.pdf Graphic file (type pdf)
 <use figures/v65_market_dynamics.pdf>
-Package pdftex.def Info: figures/v65_market_dynamics.pdf  used on input line 21
-2.
+Package pdftex.def Info: figures/v65_market_dynamics.pdf  used on input line 22
+1.
 (pdftex.def)             Requested size: 452.9679pt x 177.5038pt.
-[6 <./figures/v65_market_dynamics.pdf>]
-Overfull \hbox (2.54855pt too wide) in paragraph at lines 251--252
+ [6 <./figures/v65_market_dynamics.pdf>]
+Overfull \hbox (2.54855pt too wide) in paragraph at lines 260--261
 []\T1/cmr/m/n/10.95 V6.5 pro-vides pre-lim-i-nary em-pir-i-cal sup-port for thi
 s the-sis. The mar-ket main-tained HHI$\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 
 0.15
  []
 
 [7]
-Overfull \hbox (4.36925pt too wide) in paragraph at lines 267--268
+Overfull \hbox (4.36925pt too wide) in paragraph at lines 276--277
 \T1/cmr/m/n/10.95 model weights. The frame-work's key components---elitism, gat
 -ing, and pop-u-la-tion management---
  []
@@ -571,21 +567,8 @@ Overfull \hbox (4.36925pt too wide) in paragraph at lines 267--268
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `celula-madre.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `celula-madre.out':
-(rerunfilecheck)             Before: D36C7187CD2BAAFDDC5CB60AE591B830;4667
-(rerunfilecheck)             After:  975CEC436F133650270620D1BB5276F1;4588.
+Package rerunfilecheck Info: File `celula-madre.out' has not changed.
+(rerunfilecheck)             Checksum: 975CEC436F133650270620D1BB5276F1;4588.
  ) 
 Here is how much of TeX's memory you used:
  13129 strings out of 476106
@@ -616,10 +599,10 @@ mi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on celula-madre.pdf (9 pages, 324459 bytes).
+Output written on celula-madre.pdf (9 pages, 325551 bytes).
 PDF statistics:
  1076 PDF objects out of 1200 (max. 8388607)
- 332 compressed objects within 4 object streams
+ 333 compressed objects within 4 object streams
  80 named destinations out of 1000 (max. 500000)
  205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
