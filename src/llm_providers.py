@@ -102,7 +102,7 @@ class LLMConfig:
     temperature: float = 0.7
     max_tokens: int = 300
     retries: int = 3
-    timeout: int = 60
+    timeout: int = 30
     # Rate limiting
     rpm_limit: Optional[int] = None  # requests per minute
     _last_call: float = field(default=0.0, repr=False)
